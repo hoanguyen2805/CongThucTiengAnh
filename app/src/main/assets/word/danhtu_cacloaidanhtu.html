@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem-->
+    </div>
+    </div>
+    <br>
+    <br>
+    <b>1. Danh từ riêng – Proper nouns</b></p>
+
+    Là những danh từ chỉ tên của <b>người và địa điểm cụ thể, chỉ các ngày trong tuần, tên các tôn
+    giáo, các tổ chức, </b>
+    … Danh từ riêng phải được <b>viết hoa chữ cái đầu</b> để phân biệt nó với các danh từ khác.</p>
+
+    <b>- Danh từ riêng là tên của người cụ thể:</b></p>
+    William Shakespeare was a playwright.<br>
+    William Shakespeare là một nhà viết kịch.</p>
+
+    <b>- Danh từ riêng là tên của một địa điểm cụ thể:</b></p>
+    I will be visiting New York next month.<br>
+    Tôi sẽ đến thăm New York vào tháng tới.</p>
+
+    <b>- Danh từ riêng là tên của một ngày cụ thể:</b></p>
+    Everyone dislikes Monday mornings.<br>
+    Mọi người đều không thích những buổi sáng thứ Hai.</p>
+
+    <b>- Danh từ riêng là tên một tôn giáo và văn bản tôn giáo:</b></p>
+    The holy book of Islam is the Koran.<br>
+    Kinh thánh của Hồi giáo là kinh Koran.</p>
+
+    2. <b>Danh từ chung – Common nouns</b></p>
+
+    Là những danh từ được dùng để chỉ một loại nói chung của người, địa điểm hoặc sự vật, sự việc.
+    Chỉ được viết hoa khi đứng ở đầu câu.
+    </p>
+    The boys went to play cricket.<br>
+
+    Các cậu bé đi chơi cricket. </p>
+    – Cả hai từ boys và cricket đều là danh từ chung. Nó <b>không có liên hệ cụ thể là cậu bé nào
+    hay trận cricket cụ thể nào.
+</b></p>
+    She was trying to answer her phone while buying coffee.
+    <br>
+    Cô đã cố gắng để trả lời điện thoại trong khi mua cà phê. </p>
+    – Ở đây điện thoại và cà phê cả hai đều chỉ đối tượng và các đồ uống nói chung.
+    </p>
+    3. <b>Danh từ trừu tượng – Abstract nouns</b>
+    </p>
+    Danh từ trừu tượng chỉ những điều chúng ta <b>không thể cảm nhận được qua 5 giác quan: chạm,
+    ngửi, nhìn, nghe, nếm.</b> Danh từ trừu tượng cũng có thể dùng với các trạng thái liên quan đến
+    trí não hoặc dùng để bày tỏ suy nghĩ.
+    </p>
+    She screamed with great delight.
+    <br>
+    Cô reo lên với niềm vui lớn.</p>
+    – Delight là một danh từ trừu tượng – nó nói về trạng thái của tâm trí của một người.
+    </p>
+    His bravery in the war won him a medal.<br>
+
+    Bản lĩnh trong chiến tranh của ông đã giúp ông giành được huân chương. </p>
+    – Danh từ trừu tượng bravery được sử dụng để nói đến động lực đằng sau những hành động nào đó
+    thực hiện bởi con người.
+
+    </p>
+
+    4. <b>Danh từ đếm được – Countable nouns</b></p>
+
+    Các danh từ đếm được là các danh từ <b>có cả hai hình thức số ít và số nhiều</b>. Nó có thể kết
+    hợp với động từ số ít hoặc động từ số nhiều trong câu.
+    </p>
+    I need to buy four new suitcases for my trip.
+    <br>
+    Tôi cần mua bốn chiếc vali mới cho chuyến đi của tôi. </p>
+    – Suitcase(s) là một danh từ đếm được, thêm ‘s’ để hình thành dạng số nhiều.
+    </p>
+    Does anyone want some oranges?
+    <br>
+    Ai muốn có vài quả cam không? </p>
+    – Orange là danh từ đếm được, số nhiều là oranges
+
+    </p>
+
+    5. <b>Danh từ không đếm được – Uncountable nouns</b>
+    </p>
+    Ngược với danh từ đếm được là những danh từ không đếm được. Những danh từ này <b>chỉ có một hình
+    thức số ít</b> và sử dụng với động từ số ít trong câu.
+    </p>
+    The furniture was damaged in moving out.
+    <br>
+    Các đồ nội thất đã bị hư hại trong khi chuyển ra ngoài.</p>
+    – Furniture là một danh từ không đếm được và do đó, chúng ta sử dụng động từ số ít “was”.
+    </p>
+    Is 250gms of sugar enough?
+    <br>
+    250gms đường có đủ không?</p>
+    – Ở đây, đường là một danh từ không đếm được, chỉ có thể xác định bằng cách cân.
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem -->
+    </div>
+
+    </div><br>
+    <br>
+    <b>I- PHÂN BIỆT CÂU TRỰC TIẾP VÀ CÂU GIÁN TIẾP</b><br>
+    <br>
+    <table border=2>
+        <tr>
+            <td><p>Câu trực tiếp</p></td>
+            <td><p> Câu gián tiếp</p></td>
+        <tr>
+            <td>
+                - Câu trực tiếp là câu nói của ai đó được trích dẫn lại nguyên văn và thường được để
+                trong dấu ngoặc kép (“… ”).
+                <br> <br>
+                VD:
+                <br>
+                + Mary said “ <b>I don’t like ice-cream</b>”. (Cô ấy nói rằng: “Tôi không thích
+                kem”.)
+                <br>
+                Ta thấy trong dấu ngoặc kép là lời nói trực tiếp của Mary và nó được trích dẫn lại
+                một cách nguyên văn.
+            </td>
+
+            <td>
+                - Câu gián tiếp là câu tường thuật lại lời nói của người khác theo ý của người tường
+                thuật và ý nghĩa không thay đổi.
+                <br> <br>
+                VD:
+                <br>
+                + Mary said that <b>she didn’t like ice-cream</b>. (Mary nói cô ấy không thích kem.)
+                <br>
+                Ta thấy câu nói của Mary được tường thuật lại theo cách nói của người tường thuật và
+                ý nghĩa thì vẫn giữ nguyên.
+            </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <b>II- CÁC CÁCH TƯỜNG THUẬT TỪ CÂU NÓI TRỰC TIẾP SANG CÂU NÓI GIÁN TIẾP</b>
+    <br>
+    <br>
+    <b>1. Các thành phần cần biến đổi trong câu gián tiếp:</b> <br>
+    <br>
+    <b>* Các đại từ: Ta cần thay đổi đại từ sao cho phù hợp với ngữ cảnh trong câu</b>
+    <br>
+    <br>
+    <b> * Thay đổi thì của </b>
+    <br>
+    Thì của các động từ trong lời nói gián tiếp thay đổi theo một nguyên tắc chung là lùi về quá khứ
+    <br><br>
+    <table border="2">
+        <tbody>
+        <tr>
+            <td>
+                <p>Câu trực tiếp</p>
+            </td>
+            <td>
+                <p>Câu gián tiếp</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Hiện tại đơn</p>
+            </td>
+            <td>
+                <p>-&gt; Quá khứ đơn</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Hiện tại tiếp diễn</p>
+            </td>
+            <td>
+                <p>-&gt; Quá khứ tiếp diễn</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Hiện tại hoàn thành</p>
+            </td>
+            <td>
+                <p>-&gt; Quá khứ hoàn thành</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Quá khứ đơn</p>
+            </td>
+            <td>
+                <p>-&gt; Quá khứ hoàn thành</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Quá khứ tiếp diễn</p>
+            </td>
+            <td>
+                <p>-&gt; Quá khứ hoàn thành tiếp diễn</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Tương lai đơn: will/ shall</p>
+            </td>
+            <td>
+                <p>-&gt; would/ should</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Tương lai gần: be going to</p>
+            </td>
+            <td>
+                <p>-&gt; was/were going to</p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <b>* Thay đổi một số động từ khuyết thiếu:</b>
+    <br>
+    <br>
+    <table border="2">
+        <tbody>
+        <tr>
+            <td>
+                <p>Đại từ
+                </p>
+            </td>
+            <td>
+                <p>Câu trực tiếp
+                </p>
+            </td>
+            <td>
+                <p>Câu gián tiếp
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Đại từ nhân xưng
+                </p>
+            </td>
+            <td>
+                <p>I
+                </p>
+            </td>
+            <td>
+                <p>he/she
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>we
+                </p>
+            </td>
+            <td>
+                <p>they
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>you
+                </p>
+            </td>
+            <td>
+                <p>they/I/he/her
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>me
+                </p>
+            </td>
+            <td>
+                <p>him/her
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>us
+                </p>
+            </td>
+            <td>
+                <p>them
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>you
+                </p>
+            </td>
+            <td>
+                <p>them/me/him/her
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Đại từ sở hữu
+                </p>
+            </td>
+            <td>
+                <p>my
+                </p>
+            </td>
+            <td>
+                <p>her/his
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>our
+                </p>
+            </td>
+            <td>
+                <p>their
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>your
+                </p>
+            </td>
+            <td>
+                <p>them/my/his/her
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>mine
+                </p>
+            </td>
+            <td>
+                <p>his/hers
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>ours
+                </p>
+            </td>
+            <td>
+                <p>theirs
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>yours
+                </p>
+            </td>
+            <td>
+                <p>theirs/mine/his/hers
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Đại từ chỉ định
+                </p>
+            </td>
+            <td>
+                <p>this
+                </p>
+            </td>
+            <td>
+                <p>that
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>these
+                </p>
+            </td>
+            <td>
+                <p>those
+                </p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <b>* Các trạng từ chỉ nơi chốn, thời gian:</b>
+    <br>
+    <br>
+    <table border="2">
+        <tbody>
+        <tr>
+            <td>
+                <p>
+                    Trực tiếp
+                </p>
+            </td>
+            <td>
+                <p>
+                    Gián tiếp
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Here
+                </p>
+                <p>Now
+                </p>
+                <p>Today
+                </p>
+                <p>Ago
+                </p>
+                <p>Tomorrow
+                </p>
+                <p>The day after tomorrow
+                </p>
+                <p>Yesterday
+                </p>
+                <p>The day before yesterday
+                </p>
+                <p>Next week
+                </p>
+                <p>Last week
+                </p>
+                <p>Last year
+                </p>
+            </td>
+            <td>
+                <p>There
+                </p>
+                <p>Then
+                </p>
+                <p>That day
+                </p>
+                <p>Before
+                </p>
+                <p>The next day / the following day
+                </p>
+                <p>In two day’s time / two days after
+                </p>
+                <p>The day before / the previous day
+                </p>
+                <p>Two day before
+                </p>
+                <p>The following week
+                </p>
+                <p>The previous week / the week before
+                </p>
+                <p>The previous year / the year before
+                </p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <tr>
+    <tr>
+        <b> 2. Khi trong dấu ngoặc kép là một câu trần thuật (là một câu khẳng định và mang nghĩa kể
+            lại, trần thuật lại điều gì đó).</b>
+        <br> <br>
+        - Ta cần biến đổi các đại từ cho phù hợp với ý nghĩa của câu
+        <br>
+        - Các động từ giới thiệu thường dùng là: say (that), tell sb (that)
+        <br> <br>
+        <b>* Nếu động từ giới thiệu chia ở các thì hiện tại, hoặc tương lai:</b>
+        <br>
+        <br> -> ta không cần lùi thì động từ chính trong câu gián tiếp
+        <br>
+        VD:<br>
+        - She <b>says</b> “I <b>don’t want</b> to stay at home every day.”
+        <br>
+        -> She <b>says / tells me</b> that <b>she doesn’t want </b> to stay at home every day.
+        <br> <br>
+        <b> * Nếu động từ giới thiệu chia ở các thì quá khứ: </b>
+        <br> <br>
+        -> Ta cần lùi thì động từ chính trong câu gián tiếp
+        <br>
+        VD:
+        <br>
+        - She <b>said</b> “My father <b>is travelling</b> in America”.
+        <br>
+        -> She <b>said</b> that her father <b>was travelling</b> in America.<br>
+        <br>
+        <b> 3. Khi trong dấu ngoặc kép là câu </b>
+        <br> <br>
+        <b>* Nếu trong dấu ngoặc kép là câu hỏi không có từ hỏi.</b>
+        <br> <br>
+        -> Trong câu gián tiếp thêm “if” hoặc “whether” và mệnh đề theo sau biến đổi về dạng khẳng
+        định.
+        <br>
+        -> Động từ giới thiệu thường sử dụng: ask, wonder
+        <br>
+        VD: <br>
+
+        - She said “<b>Do</b> you <b>want</b> to go with me?”
+        <br>
+        -> She <b>asked if I wanted</b> to go with her.
+        <br>
+        - Mary said “<b>Do</b> you <b>go</b> to school by bus, Peter?”
+        <br>
+        -> Mary <b>asked</b> Peter <b>whether</b> he <b>went</b> to school by bus.
+        <br> <br>
+        <b>* Nếu trong dấu ngoặc kép là câu hỏi có từ hỏi (what/where/when/how/who/…) </b>
+        <br>
+        -> Trong câu gián tiếp phải biến đổi mệnh đề sau từ hỏi về dạng khẳng định.
+        <br>
+        -> Động từ giới thiệu thường sử dụng: ask, wonder, want to know
+        <br>
+        VD: <br>
+
+        - He asked “what time <b>will</b> you come?”
+        <br>
+        -> He <b>asked</b> what time I <b>would come.</b>
+        <br> <br>
+        <b>4. Khi trong dấu ngoặc kép là câu mệnh lệnh thức. </b>
+        <br> <br>
+        -> Ta xét nghĩa của câu rồi sử dụng các cấu trúc cho phù hợp.
+        <br>
+        <b>* Khi câu mệnh lệnh thức trong dấu ngoặc kép mang nghĩa yêu cầu, đề nghị ai đó làm gì ta
+            có thể sử dụng các cấu trúc sau:
+        </b> <br> <br>
+        - <b>tell/ ask/ require/ request/ demand + sb + to do st:</b> Yêu cầu, đề nghị hay đòi hỏi
+        ai làm gì.
+        <br>
+        VD: <br>
+
+        - She said to me “close the door!”
+        <br>
+        -> She <b>asked me to</b> close the door.
+        <br> <br>
+        <b>* Khi trong dấu ngoặc kép mang nghĩa ra lệnh ta sử dụng cấu trúc sau:</b>
+        <br> <br>
+        - <b>order sb to do st:</b> ra lệnh cho ai làm gì.
+        <br>
+        VD: <br>
+        - He said to me angrily “go out!”.
+        <br>
+        -> He <b>ordered me to go</b> out.
+        <br> <br>
+        <b>5. Các trường hợp khác:</b>
+        <br> <br>
+        <b>* Khi trong dấu ngoặc kép mang nghĩa đề nghị làm gì cho ai ta sử dụng cấu trúc:</b>
+        <br>
+        <br>
+        <b>- offer to do st:</b>
+        <br>
+        VD : <br>
+        - He said “Shall I make you a cup of coffee?”
+        <br>
+        -> He <b>offered to make</b> me a cup of coffee.
+        <br>
+        <br>
+        <b>*Khi trong dấu ngoặc kép mang nghĩa khuyên bảo ta sử dụng cấu trúc sau:</b>
+        <br> <br>
+        - <b>advise sb to do st:</b> khuyên ai đó nên làm gì.
+        <br>
+        VD: <br>
+
+        - He said to me “You should go to bed early”.
+        <br>
+        -> He <b>advised me to go</b> to bed early.
+        <br> <br>
+        <b>* Khi trong dấu ngoặc kép mang nghĩa mời mọc ta sử dụng cấu trúc sau:</b>
+        <br> <br>
+        - <b>invite sb to do st</b>
+        <br>
+        VD:<br>
+
+        - My friend said “Will you go the zoo with me?”
+        <br>
+        -> My friend friend <b>invited me to go</b> to the zoo with her.
+        <br> <br>
+        * <b>Khi trong dấu ngoặc kép là câu cảm thán ta sử dụng động từ “exclaim”</b>
+        <br> <br>
+
+        VD: <br>
+
+        - She said “What an intelligent boy!”
+        <br>
+        -> She <b>exclaimed</b> that the boy was intelligent.
+        <br> <br>
+        * <b>Khi trong dấu ngoặc kép mang nghĩa xin lỗi ta sử dụng cấu trúc:</b>
+        <br> <br>
+        - <b>apologize (to sb) for st/ for doing st:</b> xin lỗi (ai) về điều gì/ vì đã làm gì
+        <br>
+        VD:
+        <br>
+        - She said "I'm sorry. I'm late."
+        <br>
+        -> She <b>apologized for being</b> late.
+        <br> <br>
+        * <b>Khi trong dấu ngoặc kép mang nghĩa nhắc nhở ta sử dụng cấu trúc:</b>
+        <br> <br>
+        - <b>remind sb to do st:</b> Nhắc nhở ai làm gì
+        <br>
+        VD: <br>
+
+        - My mother said "Don't forget to bring your umbrella."
+        <br>
+        -> My mother<b> reminded me to bring</b> my umbrella.
+        <br> <br>
+        * <b>Khi trong dấu ngoặc kép mang nghĩa buộc tội ai đó ta sử dụng cấu trúc:</b>
+        <br>
+        - <b>accuse sb of st/ doing st:</b> Buộc tội ai về điều gì/ vì đã làm gì
+        <br>
+        VD: <br>
+
+        - She said "No one else but you did it."
+        <br>
+        -> She <b>accused me of doing</b> it.
+
+    </tr>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </body>
+</head>

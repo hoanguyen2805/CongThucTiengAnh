@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem-->
+    </div>
+    </div>
+    <br><br>
+    <b>Cách sử dụng danh từ đếm được và danh từ không đếm được.</b><br>
+    Một số mạo từ và tính từ có thể đi cùng thể dùng với cả 2 loại danh từ trên nhưng một
+    số khác chỉ có thể đi kèm với danh từ đếm được hoặc danh từ không đếm được<br>
+    <table border="2">
+        <tbody>
+        <tr>
+            <th colspan="2"><span>Chỉ dùng với danh từ đếm được</span></th>
+        </tr>
+        <tr>
+            <td><span><strong>a</strong></span></td>
+            <td><span>a doctor, a pen, a meal, a class, a college</span></td>
+        </tr>
+        <tr>
+            <td><span><strong>many</strong></span></td>
+            <td><span>many cups, many books, many libraries, many flights</span></td>
+        </tr>
+        <tr>
+            <td><span><strong>few</strong></span></td>
+            <td><span>few questions, few tables, few apples, few holidays, few countries</span></td>
+        </tr>
+        <tr>
+            <td><span><strong>a few</strong></span></td>
+            <td><span>a few questions, a few problems, a few issues, a few issues</span></td>
+        </tr>
+        </tbody>
+    </table>
+    <p>
+    <table border="2">
+        <tbody>
+        <tr>
+            <th colspan="2"><span>Chỉ dùng với danh từ không đếm được</span></th>
+        </tr>
+        <tr>
+            <td><span><strong>much</strong></span></td>
+            <td><span>much money, much time, much food, much water, much energy</span></td>
+        </tr>
+        <tr>
+            <td><span><strong>little</strong></span></td>
+            <td><span>little trouble, little equipment, little meat, little patience</span></td>
+        </tr>
+        <tr>
+            <td><span><strong>a little bit of</strong></span></td>
+            <td><span>a little bit of confidence, a little bit of sleep, a little bit of snow</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </p>
+    <p>
+    <table border="2">
+        <tbody>
+        <tr>
+            <th colspan="3"><span>Dùng với cả danh từ đếm được và danh từ không đếm được</span></th>
+        </tr>
+        <tr>
+            <td rowspan="2"><span><strong>the</strong></span></td>
+            <td><em><span>countable</span></em></td>
+            <td><span>the monkeys, the schools, the teachers, the boats, the bananas</span></td>
+        </tr>
+        <tr>
+            <td><em><span>uncountable</span></em></td>
+            <td><span>the cheese, the machinery, the luggage, the grass, the knowledge</span></td>
+        </tr>
+        <tr>
+            <td rowspan="2"><span><strong>some</strong></span></td>
+            <td><em><span>countable</span></em></td>
+            <td><span>some tables, some stores, some grapes, some cities, some nurses</span></td>
+        </tr>
+        <tr>
+            <td><em><span>uncountable</span></em></td>
+            <td><span>some time, some news, some bread, some salt, some mail</span></td>
+        </tr>
+        <tr>
+            <td rowspan="2"><span><strong>any</strong></span></td>
+            <td><em><span>countable</span></em></td>
+            <td><span>any forks, any socks, any bathrooms, any waiters, any beliefs</span></td>
+        </tr>
+        <tr>
+            <td><em><span>uncountable</span></em></td>
+            <td><span>any advice, any soap, any transportation, any gold, any homework</span></td>
+        </tr>
+        <tr>
+            <td rowspan="2"><span><strong>no</strong></span></td>
+            <td><em><span>countable</span></em></td>
+            <td><span>no magazines, no chocolates, no pilots, no rings, no markers</span></td>
+        </tr>
+        <tr>
+            <td><em><span>uncountable</span></em></td>
+            <td><span>no trouble, no grass, no scenery, no money, no furniture</span></td>
+        </tr>
+        <tr>
+            <td rowspan="2"><span><strong>a lot of</strong></span></td>
+            <td><em><span>countable</span></em></td>
+            <td><span>a lot of animals, a lot of coins, a lot of immigrants, a lot of babies</span>
+            </td>
+        </tr>
+        <tr>
+            <td><em><span>uncountable</span></em></td>
+            <td><span>a lot of help, a lot of aggravation, a lot of happiness, a lot of fun</span>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2"><span><strong>lots of</strong></span></td>
+            <td><em><span>countable</span></em></td>
+            <td><span>lots of computers, lots of buses, lots of parties, lots of colleges</span>
+            </td>
+        </tr>
+        <tr>
+            <td><em><span>uncountable</span></em></td>
+            <td><span>lots of cake, lots of ice cream, lots of energy, lots of laughter</span></td>
+        </tr>
+        <tr>
+            <td rowspan="2"><span><strong>enough</strong></span></td>
+            <td><em><span>countable</span></em></td>
+            <td><span>enough plates, enough onions, enough restaurants, enough worries</span></td>
+        </tr>
+        <tr>
+            <td><em><span>uncountable</span></em></td>
+            <td><span>enough courage, enough wisdom, enough spaghetti, enough time</span></td>
+        </tr>
+        <tr>
+            <td rowspan="2"><span><strong>plenty of</strong></span></td>
+            <td><em><span>countable</span></em></td>
+            <td><span>plenty of houses, plenty of concerts, plenty of guitars, plenty of</span></td>
+        </tr>
+        <tr>
+            <td><em><span>uncountable</span></em></td>
+            <td><span>plenty of oil, plenty of sugar, plenty of cheese, plenty of space</span></td>
+        </tr>
+        </tbody>
+    </table>
+    </p>
+    <p>
+        <b>Một số danh từ không đếm được điển hình mà bạn nên nhớ</b>
+        <br>
+
+    <table border="5">
+        <tbody>
+        <tr>
+            <td><span><strong>Đồ ăn</strong></span></td>
+            <td>
+                <span><strong>Môn học – Lĩnh vực</strong></span>
+            </td>
+            <td><span><strong>Trừu tượng</strong></span></td>
+            <td><span><strong>Hoạt động</strong></span></td>
+            <td><span><strong>Thời tiết</strong></span></td>
+        </tr>
+        <tr style="font-size:10px">
+            <td style=" background-color: #43e6cd;">
+
+                food
+                <span>flour</span>
+                <span>meat</span>
+                <span>rice</span>
+                <span>cake</span>
+                <span>bread</span>
+                <span>ice cream</span>
+                <span>cheese</span>
+                <span>toast</span>
+                <span>pasta</span>
+                <span>spaghetti</span>
+                <span>butter</span>
+                <span>oil</span>
+                <span>honey</span>
+                <span>soup</span>
+                <span>fish</span>
+                <span>fruit</span>
+                <span>salt</span>
+                <span>tea</span>
+                <span>coffee</span>
+
+            </td>
+            <td style=" background-color: #ceed53;">
+
+                <span>mathematics</span>
+                <span>economics</span>
+                <span>physics</span>
+                <span>ethics</span>
+                <span>civics</span>
+                <span>art</span>
+                <span>architecture</span>
+                <span>music</span>
+                <span>photography</span>
+                <span>grammar</span>
+                <span>chemistry</span>
+                <span>history</span>
+                <span>commerce</span>
+                <span>engineering</span>
+                <span>politics</span>
+                <span>sociology</span>
+                <span>psychology</span>
+                <span>vocabulary</span>
+                <span>archaeology</span>
+                <span>poetry</span>
+
+            </td>
+            <td style=" background-color: #e663f2;">
+
+                <span>advice</span>
+                <span>help</span>
+                <span>fun</span>
+                <span>recreation</span>
+                <span>enjoyment</span>
+                <span>information</span>
+                <span>knowledge</span>
+                <span>news</span>
+                <span>patience</span>
+                <span>happiness</span>
+                <span>progress</span>
+                <span>confidence</span>
+                <span>courage</span>
+                <span>education</span>
+                <span>intelligence</span>
+                <span>space</span>
+                <span>energy</span>
+                <span>laughter</span>
+                <span>peace</span>
+                <span>pride</span>
+
+            </td>
+            <td style=" background-color: #f2e888;">
+
+                <span>swimming</span>
+                <span>walking</span>
+                <span>driving</span>
+                <span>jogging</span>
+                <span>reading</span>
+                <span>writing</span>
+                <span>listening</span>
+                <span>speaking</span>
+                <span>cooking</span>
+                <span>sleeping</span>
+                <span>studying</span>
+                <span>working</span>
+
+            </td>
+            <td style=" background-color: #afa8f0;">
+
+                <span>thunder</span>
+                <span>lightning</span>
+                <span>snow</span>
+                <span>rain</span>
+                <span>sleet</span>
+                <span>ice</span>
+                <span>heat</span>
+                <span>humidity</span>
+                <span>hail</span>
+                <span>wind</span>
+                <span>light</span>
+                <span>darkness</span>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem-->
+    </div>
+    </div>
+    <b>Thì hiện tại tiếp diễn - Present Continuous</b>
+    <br>
+    <br>
+    1.<b>Công thức</b>
+    <ul>
+        <li>Khẳng định: S + be (am/ is/ are) + V_ing + O</li>
+        <li>Phủ định:S+ BE + NOT + V_ing + O</li>
+        <li>Nghi vấn: BE + S+ V_ing + O</li>
+    </ul>
+
+    <br>
+    2.<b>Cách dùng thì hiện tại tiếp diễn</b>
+    <ul>
+        <li>Thì hiện tại tiếp diễn tả một hành động đang diễn ra và kéo dài dài một thời gian ở hiện
+            tại.<br>
+            Ex: The children are playing football now.(Bọn trẻ đang đá bóng)
+        </li>
+        <li>Thì này cũng thường tiếp theo sau câu đề nghị, mệnh lệnh.<br>
+            Ex: Look! the child is crying.(Nhìn kìa! Đứa bé đang khóc)<br>
+            Be quiet! The baby is sleeping in the next room.(Im lặng! Đứa bé đang ngủ ở phòng bên
+            cạnh)
+        </li>
+        <li>Thì này còn diễn tả 1 hành động xảy ra lặp đi lặp lại dùng với phó từ ALWAYS :<br>
+            Ex : He is always borrowing our books and then he doesn't remember (Anh ấy luôn luôn
+            mượn sách của chúng tôi và sau đó anh quên mất)
+        </li>
+        <li>Thì này còn được dùng để diễn tả một hành động sắp xảy ra ( ở tương lai gần)<br>
+            Ex: He is coming tomrow(Ngày mai anh ấy sẽ đến)<br>
+        <li> Lưu ý : Không dùng thì này với các động từ chỉ nhận thức chi giác như : to be, see,
+            hear, understand, know, like , want , glance, feel, think, smell, love. hate, realize,
+            seem, remmber, forget,..........<br>
+            Ex: I am tired now.(Bây giờ tôi đang mệt)<br>
+            She wants to go for a walk at the moment.<br>
+            Do you understand your lesson?
+        </li>
+    </ul>
+    3.<b>Dấu hiệu nhận biết:</b><br> Now, right now, at present, at the moment, Look!, Listen!, Be
+    careful!, Hurry up!
+    <br>
+    <br>
+    <b>Dạng đuôi "ing" của động từ</b><br>
+    <br>
+
+    <li>Động từ kết thúc bởi e, ta <b>bỏ e</b> thêm <b>ing</b><br>
+        VD : Have - Having , Make - Making <br></li>
+    <li>Động từ kết thúc bởi <b>ee</b>, ta thêm <b>ing</b> mà không bỏ e<br>
+        VD : See - Seeing , Agree - Agreeing<br></li>
+    <li>Động từ kết thúc bởi ie, ta đổi <b>ie → y</b> rồi thêm <b>ing</b><br>
+        VD : Lie - Lying, Die - Dying <br></li>
+    <li>Động từ kết thúc bởi một trọng âm chứa 1 nguyên âm + 1 phụ âm, ta <b>gấp đôi phụ âm cuối</b>
+        rồi thêm <b>ing</b><br>
+        VD : Run - Running, Permit - Permitting<br></li>
+    <br>
+    <b>Một số động từ không có dạng tiếp diễn.</b><br>
+    <br>
+    Chúng ta không có dạng <b>V_ing</b> với các động từ chỉ nhận thức, tri giác hoặc sự sở hữu như:
+    <i>tobe, see, hear, understand, know, like, want, feel, smell, remember, forget,</i> …. Với các
+    động từ này, ta dùng thì hiện tại đơn giản
+    <br>
+    VD: I’m tired . (Tôi đang mệt)<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</head>

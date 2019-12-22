@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+<script src="jquery/jquery-1.11.3.min.js"></script>
+
+<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+</script>
+<style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+</style>
+<div class="float-ck" style="right: 0px">
+    <div type="hide_float_right">
+        <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+            kiếm [X]</a></div>
+    <div type="float_content_right" class="float_content_right">
+        <!-- Start tim kiem-->
+
+        <form type="f1" name="f1" action="javascript:void()"
+              onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+            <input type="text" type="t1" name="t1" value="" size="20">
+            <input type="submit" name="b1" value="Tìm kiếm">
+        </form>
+    </div>
+</div>
+<script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+</script>
+<!-- End tim kiem -->
+</div>
+</div><br>
+<br>
+<p><b>1. Trạng từ chỉ cách thức (manner)</b></p>
+- Diễn tả cách thức một hành động được thực hiện ra sao? (một cách nhanh chóng, chậm chạp, hay lười
+biếng …)dùng để trả lời các câu hỏi với How?</p>
+VD: He runs fast<br>
+She dances badly.
+<br>I can sing very well</p>
+<b>Chú ý:</b> Vị trí của trạng từ chỉ cách thức thường đứng sau động từ hoặc đứng sau tân ngữ (nếu
+như có tân ngữ).</p>
+VD: She speaks well English. [không đúng]
+<br>
+She speaks English well. [đúng]
+<br>
+I can play well the guitar. [không đúng]
+<br>
+I can play the guitar well. [đúng]<br>
+
+<p><b>2. Trạng từ chỉ thời gian (Time)</b>: </p>
+Diễn tả thời gian hành động được thực hiện (sáng nay, hôm nay, hôm qua, tuần trước …). Chúng có thể
+được dùng để trả lời với câu hỏi WHEN? When do you want to do it? (Khi nào?)
+</p>
+Các trạng từ chỉ thời gian thường được đặt ở cuối câu (vị trí thông thường) hoặc vị trí đầu câu (vị
+trí nhấn mạnh)
+</p>
+VD : I want to do the exercise now!<br>
+(Tôi muốn làm bài tập ngay bây giờ!)
+<br>
+She came yesterday.
+<br>
+(Hôm qua cô ấy đến)<br>
+Last Monday, we took the final exams.<br>
+(Thứ 2 trước,chúng tôi đã làm bài kiểm tra cuối cùng)
+<p><b>3. Trạng từ chỉ tần suất (Frequency):</b></p>
+Diễn tả mức độ thường xuyên của một hành động (thỉng thoảng, thường thường, luôn luôn, ít khi ..).
+<br>
+Chúng được dùng để trả lời câu hỏi HOW OFTEN? – How often do you visit your grandmother? (có thường
+…..?) và được đặt sau động từ “to be” hoặc trước động từ chính:
+</p>
+VD: John is always on time<br>
+(John thường xuyên đúng giờ)<br>
+He seldon works hard.<br>
+(Anh ấy ít khi làm việc chăm chỉ.)
+<p><b>4. Trạng từ chỉ nơi chốn (Place):</b></p>
+Diễn tả hành động diễn tả nơi nào , ở đâu hoặc gần xa thế nào. Chúng dùng để trả lời cho câu hỏi
+WHERE? <br>
+Các trạng từ nơi chốn thông dụng là herhere, there ,out, away, everywhere, somewhere... above (bên
+trên), below (bên dưới), along (dọc theo), around (xung quanh), away (đi xa, khỏi, mất), back (đi
+lại), somewhere (đâu đó), through (xuyên qua).
+</p>
+VD: I am standing here<br>
+(Tôi đang ngồi ở đây)<br>
+She went out<br>
+(Cô đi ra ngoài)
+<p><b>5. Trạng từ chỉ mức độ (Grade):</b></p>
+Diễn tả mức độ (khá, nhiều, ít, quá..) của một tính chất hoặc đặc tính; <br>
+chúng đi trước tính từ hoặc trạng từ mà chúng bổ nghĩa:
+</p>
+Một số trạng từ mức độ thường gặp: too (quá), absolutely (tuyệt đối), completely (hoàn toàn),
+entirely (hết thảy), greatly (rất là), exactly (quả thật), extremely (vô cùng), perfectly (hoàn
+toàn), slightly (hơi), quite (hoàn toàn), rather (có phần). </p>
+VD: This food is very bad.<br>
+(Món ăn này rất tệ)<br>
+She speaks English too quickly for me to follow.<br>
+(Cô ấy nói tiếng Anh rất nhanh để tôi có thể theo dõi)<br>
+She can dance very beautifully.<br>
+(Cô ấy có thể nhảy rất đẹp.)
+
+<p><b>6. Trạng từ chỉ số lượng (Quantity)</b>:</p>
+Diễn tả số lượng (ít hoặc nhiều, một, hai … lần…)
+</p>
+VD: My children study rather little<br>
+(Các con tôi học khá ít)<br>
+The champion has won the prize twice.<br>
+(Nhà vô địch đã giành được giải thưởng hai lần.)
+<p><b>7. Trạng từ nghi vấn (Questions):</b></p>
+là những trạng từ đứng đầu câu dùng để hỏi, gồm: When, where, why, how:<br>
+Các trạng từ khẳng định, phủ định, phỏng đoán: certainly (chắc chắn), perhaps (có lẽ), maybe (có
+lẽ), surely (chắc chắn), of course (dĩ nhiên), willingly (sẵn lòng), very well (được rồi).</p>
+</p>
+VD: When are you going to take it?<br>
+(Khi nào bạn sẽ lấy nó?)<br>
+Why didn’t you go to school yesterday?<br>
+(Tại sao hôm qua bạn k đến trường)
+<p><b>8. Trạng từ liên hệ (Relation</b>:</p>
+là những trạng từ dùng để nối hai mệnh đề với nhau. Chúng có thể diễn tả địa điểm (where), thời gian
+(when) hoặc lí do (why):
+</p>
+VD: I remember the day when I met her on the beach.<br>
+(Tôi nhớ ngày mà tôi đã gặp cô ấy trên bờ biển)<br>
+This is the room where I was born.<br>
+(Đây là căn phòng nơi tôi dc sinh ra)
+<p>-<b> Một số tính từ tận cùng bằng –ly nhưng là tính từ như:</b></p>
+friendly (thân thiện), lonely (cô đơn), silly (ngớ ngẩn), ugly (xấu xí).
+</p>
+VD: She gave me a friendly smile. (Cô ấy mỉm cười thân thiện với tôi)
+
+<p>- <b>Một số trạng từ có trạng từ trong tiếng anh cùng hình thức với tính từ:</b></p>
+hard (chăm chỉ), fast (nhanh), early (sớm), late (trễ), deep (sâu), right (đúng), wrong (sai), high
+(cao), near (gần)
+
+<p>- <b>Một số từ có thể có 2 trạng từ: một trạng từ có cùng hình thức với tính từ và một trạng từ
+    tận cùng bằng –ly có nghĩa khác nhau:</b></p>
+hardly (=almost not) : rất ít, hầu như không
+<br>
+lately (= recently): gần đây
+<br>
+nearly (= almost): gần như, suýt
+<br>
+highly (= very, very much): rất, rất nhiều
+<br>
+deeply (= very, very much): rất, rất nhiều
+<p><b>Trạng từ có chung cách viết với tính từ</b></p>
+Nhiều tính từ và trạng từ trong tiếng Anh có cách viết tương tự vì vậy phải dựa vào cấu trúc và vị
+trí của chúng để xác định xem đâu là tính từ và đâu là trạng từ.
+</p>VD: A hard worker works very hard. A late student arrived late.
+</p>
+Chú ý: Một số tính và trạng từ có cách viết và đọc giống nhau:<br>
+
+<table border="4">
+    <tbody>
+    <tr>
+        <td>
+            <p><span>Adjectives</span></p>
+        </td>
+        <td>
+            <p><span>Adverbs</span></p>
+        </td>
+        <td>
+            <p><span>Adjective</span></p>
+        </td>
+        <td>
+            <p><span>Adverbs</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><span>fast</span></p>
+        </td>
+        <td>
+            <p><span>fast</span></p>
+        </td>
+
+
+        <td>
+            <p><span>only </span></p>
+        </td>
+        <td>
+            <p><span>only</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><span>late </span></p>
+        </td>
+        <td>
+            <p><span>late</span></p>
+        </td>
+
+        <td>
+            <p><span>pretty</span></p>
+        </td>
+        <td>
+            <p><span>pretty</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><span>right</span></p>
+        </td>
+        <td>
+            <p><span>right</span></p>
+        </td>
+
+        <td>
+            <p><span>short </span></p>
+        </td>
+        <td>
+            <p><span>short</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><span>sound</span></p>
+        </td>
+        <td>
+            <p><span>sound</span></p>
+        </td>
+
+        <td>
+            <p><span>even</span></p>
+        </td>
+        <td>
+            <p><span>even</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><span>cheap</span></p>
+        </td>
+        <td>
+            <p><span>cheap</span></p>
+        </td>
+
+        <td>
+            <p><span>early</span></p>
+        </td>
+        <td>
+            <p><span>early</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><span>much </span></p>
+        </td>
+        <td>
+            <p><span>much </span></p>
+        </td>
+
+        <td>
+            <p><span>little</span></p>
+        </td>
+        <td>
+            <p><span>little</span></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem-->
+    </div>
+    </div>
+    <br><br>
+    <b>1. Tính từ về màu sắc (color), nguồn gốc (origin), chất liệu (material) và mục đích (purpose)
+        thường được qui định như sau:</b>
+
+    <p>Màu sắc (color) –>Nguồn gốc (origin) –>Chất liệu (material) –>Mục đích (purpose) –>Danh từ
+        (noun)
+    </p>
+    <p>Ví dụ: A red Spanish leather riding boots, A brown British beer mug</p>
+
+    <b>2. Tính từ tiếng Anh chỉ kích cỡ (size), chiều dài (length) và chiều cao (height)</b>
+
+    <p>Các tính từ khác ví dụ như tính từ chỉ kích cỡ (size), chiều dài (length) và chiều cao
+        (height) …thường đặt trước các tính từ chỉ màu sắc, nguồn gốc, chất liệu và mục đích .
+    </p>
+    Ví dụ:<br>
+
+    <p> A round glass table (NOT a glass round table) (Một chiếc bàn tròn bằng kính).</p>
+
+    <p>A big modern brick house (NOT a modern, big brick house) (Một ngôi nhà lớn hiện đại được xây
+        bằng gạch)
+    </p>
+    <b>3. Những tính từ diễn tả sự phê phán (judgements) hay thái độ (attitudes)</b>
+
+    <p>Những tính từ diễn tả sự phê phán (judgements) hay thái độ (attitudes) ví dụ như: lovely,
+        perfect, wonderful, silly…đặt trước các tính từ khác
+    </p>
+    Ví dụ:<br>
+
+    <p>A lovely small black dog. (Một chú chó đen, nhỏ, đáng yêu).</p>
+
+    <p>Beautiful big black eyes. (Một đôi mắt to, đen, đẹp tuyệt vời)</p>
+
+    <p> Nhưng để thuộc các qui tắc trên thì thật không dễ dàng, xin chia sẻ một bí quyết hữu ích
+        giúp các bạn có thể ghi nhớ tất cả những quy tắc phức tạp đó. Thay vì nhớ một loạt các qui
+        tắc, các bạn chỉ cần nhớ cụm viết tắt: <b>OpSACOMP (Ông Sáu Ăn Súp Cua Ông Mập Phì)</b>,
+        trong đó:</p>
+
+    <p><b>Opinion</b> – tính từ chỉ quan điểm, sự đánh giá.</p>
+    Ví dụ: beautiful, bad, wonderful, terrible, great…
+
+    <p><b>Size</b> – tính từ chỉ kích cỡ.</p>
+    Ví dụ: big, small, thin,thick, tall, slim…
+
+    <p><b>Age</b> – tính từ chỉ độ tuổi.</p>
+    Ví dụ : old, young, new,…
+
+    <p><b>Color</b> – tính từ chỉ màu sắc.</p>
+    Ví dụ: red,orange, yellow, green, dark brown ,pink….
+
+    <p><b>Origin</b> – tính từ chỉ nguồn gốc, xuất xứ.</p>
+    Ví dụ: Vietnamese, French, …
+
+    <p><b>Material</b> – tính từ chỉ chất liệu .</p>
+    Ví dụ: stone, plastic, leather, steel…
+
+    <p><b>Purpose</b> – tính từ chỉ mục đích, tác dụng.</p>
+
+    <p>Ví dụ: Italian/ a/ car/ new/ red / big/ luxurious/</p>
+
+    <p>Bạn sẽ sắp xếp trật tự các tính từ này như thế nào? Cùng phân tích:</p>
+
+    <p>Tính từ đỏ (red) chỉ màu sắc (Color)</p>
+
+    <p>Tính từ mới (new) chỉ độ tuổi (Age)</p>
+
+    <p>Tính từ sang trọng (luxurious) chỉ quan điểm, đánh giá (Opinion)</p>
+
+    <p>Tính từ Ý (Italian) chỉ nguồn gốc, xuất xứ (Origin).</p>
+
+    <p>Tính từ to (big) chỉ kích cỡ (Size) của xe ô tô.</p>
+
+    Sau khi các bạn xác định chức năng của các tính từ theo cách viết <b>OpSACOMP</b>, chúng ta sẽ
+    dễ dàng viết lại trật tự của câu này như sau: a luxurious big new red Japanese car.
+    <br> <br>
+    <b>4. Tom tắt thứ tự tính từ trong câu</b>
+
+    <p> Thứ tự tính từ trong câu như sau</p>
+
+    Opinion / Size / Age / Shape / Color / Country / Material / Purpose + Noun
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>

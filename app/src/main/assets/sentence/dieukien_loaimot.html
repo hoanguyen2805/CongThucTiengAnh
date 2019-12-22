@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem -->
+    </div>
+    </div>
+    <br>
+    <br>
+    <b>Câu điều kiện loại 1 Conditional sentence type 1)</b>
+    <br>
+    <br>
+    1.<b>Công thức</b>
+    <br>
+    <br>
+    <b> If+ S+V, S+will+V </b>
+    <br>
+    <br>
+    2.<b> Cách dùng </b>
+    <br>
+
+    <table border=2>
+        <tbody>
+        <tr>
+            <td>Công thức</td>
+            <td> Ví dụ</td>
+
+        <tr>
+            <td>
+                Chỉ một sự thật hiển nhiên, một quy luật tự nhiên hoặc một hành động xảy ra thường
+                xuyên
+
+            </td>
+            <td>If you heat ice, it turns to water. <br>
+                (Nếu bạn đun nóng nước đá nó sẽ tan thành nước) <br>
+
+                If you press this switch, the computer comes on.
+                <br>
+                (Nếu bạn nhấn vào nút này, máy tính sẽ bật)<br>
+            </td>
+        <tr>
+            <td>
+                Đặt ra một điều kiện có thể thực hiện
+
+                được trong hiện tại hoặc tương lai
+            </td>
+            <td>
+                If you come into my garden, my dog will bite you.<br>
+
+                (Nếu anh bước vào vườn của tôi, con chó của tôi sẽ cắn anh.)<br>
+
+                If it is sunny, I will go fishing.<br>
+
+                (Nếu trời nắng tốt, tôi sẽ đi câu cá.)<br></td>
+        <tr>
+            <td>
+                Ngoài ra, các động từ tình thái như <br>
+
+                <b>can, may, might, should, ought to, must</b>
+
+                có thể được dùng trong mệnh đề chính
+
+                để nói đến khả năng, sự chắc chắn, sự cho phép, sự bắt buộc hoặc cần thiết
+            </td>
+            <td>If you need a ticket, I can get you one <br>
+
+                (Nếu bạn cần vé, tôi có thể mua cho bạn một cái)<br></td>
+
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>
+</html>

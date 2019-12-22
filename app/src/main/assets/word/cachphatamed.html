@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+<script src="jquery/jquery-1.11.3.min.js"></script>
+
+<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+</script>
+<style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+</style>
+<div class="float-ck" style="right: 0px">
+    <div type="hide_float_right">
+        <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+            kiếm [X]</a></div>
+    <div type="float_content_right" class="float_content_right">
+        <!-- Start tim kiem-->
+
+        <form type="f1" name="f1" action="javascript:void()"
+              onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+            <input type="text" type="t1" name="t1" value="" size="20">
+            <input type="submit" name="b1" value="Tìm kiếm">
+        </form>
+    </div>
+</div>
+<script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+</script>
+<!-- End tim kiem -->
+</div>
+</div><br>
+<br>
+<b>1.Phát âm là /t/ nếu động từ kết thúc bằng: /p, k, f, s, ʃ, tʃ/</b>
+</p>
+
+- Stopped /stɑːpT/: Dừng lại<br>
+- Looked /lʊkT/: Nhìn<br>
+- Laughed /læfT/: Cười<br>
+- Sentenced /ˈsentənsT/: Tuyên án<br>
+- Washed /wɑːʃT/: Giặt giũ<br>
+- Watched /wɑːtʃT/: Xem</p>
+<b>2. Phát âm là /type/ nếu động từ kết thúc bằng /d/ hoặc /t/</b></p>
+
+- Wanted /ˈwɑːntID/: Muốn<br>
+- Needed /’niːdID/: Muốn, cần<br>
+- Lifted /’lɪftID/: Nâng đỡ vật gì đó<br>
+- Translated / trænsˈleɪtID/: Dịch<br>
+- Collected /kəˈlektID/: Sưu tầm<br>
+- Supported /səˈpɔːrtID/: Ủng hộ, đồng tình<br>
+- Landed /ˈlændID/: Đổ bộ (quân); định cư<br>
+- Punted /’pʌntID/: Đẩy thuyền (bằng sào)</p>
+<b>3. Phát âm là /d/ khi động từ kết thúc bằng: /b, g, v, đ/th/, z, j/, m, n, ng, l, r/ và tất cả
+    các âm hữu thanh.
+</b></p>
+- Robbed /rɑːbD/: Cướp<br>
+- Hugged /hʌgD/: Ôm<br>
+- Loved /lʌvD/: Yêu<br>
+- Closed /kloʊzD/: Đóng<br>
+- Rouged /ruːʒD/: Đánh phấn hồng<br>
+- Changed /tʃeɪndʒD/: Thay đổi<br>
+- Breathed /briːðD/: Thở<br>
+- Climbed /klaɪmD/: Leo trèo<br>
+- Mentioned /ˈmenʃnD/: Đề cập đến<br>
+- Banged /bæŋD/: Gõ, đập<br>
+- Travelled /ˈtrævlD/: Đi du lịch<br>
+- Entered /ˈentərD/: Vào, xâm nhập<br>
+- Cried /kraɪD/: Khóc</p>
+<b>Chú ý: ở đây âm cuối cùng mới là quan trọng chứ không phải là chữ cái kết thúc.</b>
+</p>
+Ví dụ: “fax” kết thúc bằng chữ “x” nhưng đó là âm /s/, ”like” kết thúc bằng chữ “e” nhưng đó là âm
+/k/. <br>
+1 số từ kết thúc bằng -ed được dùng làm tính từ phát âm là /Id/: aged, blessed, crooked, dogged ,
+learned, naked, ragged, wicked, wretched.
+</body>

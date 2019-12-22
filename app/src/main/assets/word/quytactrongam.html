@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem-->
+    </div>
+    </div>
+    <br>
+    <br>
+    <b>QUY TẮC 1: Động từ có 2 âm tiết -> trọng âm rơi vào âm tiết thứ 2</b>
+    </p>
+    Ex: be’gin, be’come, for’get, en’joy, dis’cover, re’lax, de’ny, re’veal,…</p>
+    Ngoại lệ:<b> ‘answer, ‘enter, ‘happen, ‘offer, ‘open…</b></p>
+    Đối với động từ 3 âm tiết quy tắc sẽ như sau: Nếu âm tiết cuối chứa nguyên âm ngắn hoặc kết thúc
+    không nhiều hơn một nguyên âm thì âm tiết thứ 2 sẽ nhận trọng âm.<br>
+    Ex: deTERmine, reMEMber, enCOUNter…</b></p>
+
+    <b>QUY TẮC 2: Danh từ có 2 âm tiết -> trọng âm rơi vào âm tiết thứ 1</b>
+    </p>
+    Ex: ‘children, ‘hobby, ‘habit, ‘labour, ‘trouble, ‘standard…</p>
+    Ngoại lệ: <b>ad’vice, ma’chine, mis’take…</b></p>
+
+    <b>QUY TẮC 3: Tính từ có 2 âm tiết -> trọng âm rơi vào âm tiết thứ 1</b></p>
+
+    Ex: ‘basic, ‘busy, ‘handsome, ‘lucky, ‘pretty, ‘silly…</p>
+    Ngoại lệ: <b>a’lone, a’mazed, …</b></p>
+
+    <b>QUY TẮC 4: Động từ ghép -> trọng âm rơi vào âm tiết thứ 2</b></p>
+
+    Ex: be’come, under’stand</p>
+
+    <b>QUY TẮC 5: Trọng âm rơi vào chính các vần sau: sist, cur, vert, test, tain, tract, vent,
+        self.</b></p>
+
+    Ex: e’vent, sub’tract, pro’test, in’sist, main’tain, my’self, him’self …</p>
+
+    <b>QUY TẮC 6: Với những hậu tố sau thì trọng âm rơi vào chính âm tiết chứa nó: -ee, – eer, -ese,
+        -ique, -esque, -ain.</b></p>
+
+    Ex: ag’ree, volun’teer, Vietna’mese, re’tain, main’tain, u’nique, pictu’resque, engi’neer…</p>
+    Ngoại lệ: <b>com’mittee, ‘coffee, em’ployee…</b>
+    </p>
+    <b>QUY TẮC 7: Các từ có hậu tố là –ic, -ish, -ical, -sion, -tion, -ance, -ence, -idle, -ious,
+        -iar, ience, -type, -eous, -acy, -ian, -ity -> trọng âm rơi vào âm tiết liền trước.</b></p>
+
+    Ex: eco’nomic, ‘foolish, ‘entrance, e’normous …
+    </p>
+    <b>QUY TẮC 8: Hầu như các tiền tố không nhận trọng âm.</b></p>
+    Ex: dis’cover, re’ly, re’ply, re’move, des’troy, re’write, im’possible, ex’pert, re’cord</p>
+    Ngoại lệ: <b>‘underpass, ‘underlay…</b>
+    </p>
+    <b>QUY TẮC 9: Danh từ ghép -> trọng âm rơi vào âm tiết thứ 1</b></p>
+
+    Ex: ‘birthday, ‘airport, ‘bookshop, ‘gateway, ‘guidebook, ‘filmmaker,…
+    </p>
+    <b>QUY TẮC 10: Tính từ ghép -> trọng âm rơi vào âm tiết thứ 1</b></p>
+
+    Ex: ‘airsick, ‘homesick, ‘carsick, ‘airtight, ‘praiseworthy, ‘trustworth, ‘waterproof, …</p>
+    Ngoại lệ: <b>duty-‘free, snow-‘white …</b>
+    </p>
+    <b>QUY TẮC 11: Các tính từ ghép có thành phần đầu tiên là tính từ hoặc trạng từ, thành phần thứ
+        hai tận cùng là –ed -> trọng âm chính rơi vào thành phần thứ 2.</b>
+    </p>
+    Ex: ,bad-‘tempered, ,short-‘sighted, ,ill-‘treated, ,well-‘done, well-‘known…
+    </p>
+    <b>QUY TẮC 12: Khi thêm các hậu tố sau thì trọng âm chính của từ không thay đổi.
+        -ment, -ship, -ness, -er/or, -hood, -ing, -en, -ful, -able, -ous, -less</b></p>
+    Ex:
+    ag’ree – ag’reement<br>
+    · ‘meaning – ‘meaningless<br>
+    · re’ly – re’liable<br>
+    · ‘poison – ‘poisonous<br>
+    · ‘happy – ‘happiness<br>
+    · re’lation – re’lationship<br>
+    · ‘neighbour – ‘neighbourhood<br>
+    · ex’cite – ex’citing
+    </p>
+    <b>QUY TẮC 13: Những từ có tận cùng là: –graphy, -ate, –gy, -cy, -ity, -phy, -al <br>
+        -> trọng âm rơi vào âm tiết thứ 3 từ dưới lên.</b></p>
+
+    Ex: eco’nomical, de’moracy, tech’nology, ge’ography, pho’tography, in’vestigate,
+    im’mediate,…</b>
+    </p>
+    Lưu ý:<br>
+    1. <b>Các phụ tố không làm ảnh hưởng đến trọng âm câu:</b><br>
+    –able, -age, -al, -en, -ful, –ing, -ish, -less, -ment, -ous.</p>
+    2. <b>Các phụ tố bản thân nó nhận trọng âm câu:</b><br>
+    -ain(entertain), –ee(refugee,trainee), –ese(Portugese, Japanese), -ique(unique),
+    –ette(cigarette, laundrette), –esque(picturesque), -eer(mountaineer), -ality (personality), –oo
+    (bamboo), –oon (balloon), –mental (fundamental)
+    Ngoại lệ: COffe, comMITtee, ENgine</p>
+    3.<b> Trong các từ có các hậu tố dưới đây, trọng âm được đặt ở âm tiết ngay trước hậu
+    tố:</b><br>
+    -ian(musician), – type (stupid), -ible (possible), -ish (foolish), -ive (native), -ous
+    (advantageous), -ial(proverbial, equatorial), -ic (climatic), -ity (ability, tranquility).
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem -->
+    </div>
+    </div><br><br>
+    <h3>1. Cấu trúc ngữ pháp câu bị động:</h3>
+    <center>
+        <table border=3>
+            <tbody>
+            <tr>
+                <td style="text-align: center">Thì</td>
+                <td style="text-align: center">Cấu trúc</td>
+                <td style="text-align: center">Ví dụ câu bị động</td>
+            </tr>
+            <tr>
+                <td>Thì hiện tại đơn (Simple Present):</td>
+                <td>S + be (am/is/are) + PP +…</td>
+                <td>Ex: He likes chickens. -&gt; Chickens are liked</td>
+            </tr>
+            <tr>
+                <td>Thì quá khứ đơn (Past Simple):</td>
+                <td>S + was/were + PP +…</td>
+                <td>Ex: The storm destroyed the city last night. -&gt; The city was destroyed by the
+                    storm last night.
+                </td>
+            </tr>
+            <tr>
+                <td>Thì hiện tại tiếp diễn (Present Continuous):</td>
+                <td>S + be (am/is/are) + being + PP +…</td>
+                <td>Ex: He is reading a book. -&gt; A book is being read (by him).</td>
+            </tr>
+            <tr>
+                <td>Thì quá khứ tiếp diễn (Past Continuous):</td>
+                <td>S + was/were + being + PP +…</td>
+                <td>Ex: They were listening to music. -&gt; Music was being listened to (by them).
+                </td>
+            </tr>
+            <tr>
+                <td>Thì hiện tại hoàn thành (Present Perfect):</td>
+                <td>S + have/has + been + PP +…</td>
+                <td>Ex: They have studied English for two months. -&gt; English has been studied (by
+                    them) for two months
+                </td>
+            </tr>
+            <tr>
+                <td>Thì quá khứ hoàn thành (Past Perfect):</td>
+                <td>S + had + been + PP +…</td>
+                <td>Ex: They had done the exercises. &gt; The exercises had been done (by them).
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;Thì tương lai đơn (Simple Future):</td>
+                <td>S + will/shall + be + PP +…</td>
+                <td>Ex: They will cut the grass tomorrow. -&gt; The grass will be cut (by them)
+                    tomorrow.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Thì tương lai tiếp diễn (Future Continuous):</p>
+
+                </td>
+                <td>S + will/shall + be + being + PP +…</td>
+                <td>Ex: She will be helping you when you come here tomorrow. -&gt; You will be being
+                    helped (by her) when you come here tomorrow
+                </td>
+            </tr>
+            <tr>
+                <td>Thì tương lai hoàn thành (Future Perfect):</td>
+                <td>S + will/shall + have + been + PP +…</td>
+                <td>Ex: They will have finished the course by the end of this month. -&gt; The
+                    course will have been finished by the end of this month
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </center>
+    <h3>Ngoài ra còn một số những cấu trúc câu bị động thường dùng sau:</h3>
+
+    <li>Active: S + should/could + have + PP + O.</li>
+
+    <li>Passive: S + should/could + have +been + PP +…</li>
+
+    Ex: You should have bought this book. -&gt; This book should have been bought.
+    <br>
+    <br>
+    <li>Dùng “It” làm chủ ngữ (mệnh đề làm tân ngữ vẫn được giữ nguyên)</li>
+
+    Ex: They said that he is kind to you.
+    -&gt; It is said that he is kind to you.
+    <br><br>
+    <li>Dùng cấu trúc câu bị động với động từ nguyên mẫu:</li>
+
+    -Nếu hành động trong mệnh đề làm tân ngữ xảy ra trước hành động của mệnh đề chính, chúng ta
+    dùng: perfect infinitive (to have + PP)
+    <br> Ex: They said that he had killed the woman.<br>
+    -&gt; He was said to have killed the woman.<br>
+    <br>
+    <li>Nếu hành động trong mệnh đề làm tân ngữ xảy ra sau hành động trong mệnh đề chính, chúng ta
+        sử dụng: simple infinitive (to + Vo)
+    </li>
+
+    Ex: They expect that you will come. -&gt; You are expected to come.<br>
+    <br>
+    <li>Nếu hành động trong mệnh đề làm tận ngữ xảy ra đồng thời với hành động trong mệnh đề chính,
+        ta dùng: present infinitive (to be + V-ing)
+    </li>
+
+    Ex: They said that he was doing homework. -&gt; He was said to be doing homework.
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>

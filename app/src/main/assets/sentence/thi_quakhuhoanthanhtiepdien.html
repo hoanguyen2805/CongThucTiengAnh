@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem-->
+    </div>
+    </div>
+    <br><br>
+    <b>1.Công thức</b>
+    <p>- Khẳng định: <b>S + had + V3/-ed</b></p>
+    VD:They had finished before I arrived<br>
+    (Họ đã hoàn thành trước khi tôi đến)
+    </p>
+    I fell in love after we had met in the first<br>
+    (Tôi đã yêu anh ta ngay từ lần đầu tiên gặp nhau)
+    <p>- Phủ định: <b>S + had not / hadn’t + V3/-ed</b></p>
+    VD: I hadn’t completed homework before my teacher came<br>
+    (Tôi đã không hoàn thành bài tập về nhà trước khi cô giáo đến)
+    </p>
+    After she had fell in love with him, she didn’t love another person<br>
+    (Sau khi yêu anh, cô chẳng yêu một ai khác nữa)
+    <p>- Nghi vấn: <b>Từ để hỏi + had + S + V3/-ed…?</b></p>
+    VD: Had you completed all homework before your teacher came?
+    (Bạn đã hoàn thành hết bài tập trước khi cô giáo đến à?)<br>
+    </p>
+    What had you thought before I asked the question?<br>
+    (Bạn đã nghĩ gì trước khi tôi hỏi)
+    <p><b>2.Cách dùng</b></p>
+    <b>a) Khi có một hành động xảy ra và hoàn thành trước một hành động khác trong quá khứ</b></p>
+
+    - Trong câu thường có 2 vế, hành động nào xảy ra trước thì dùng quá khứ hoàn thành, hành động
+    nào xảy ra sau thì dùng quá khứ đơn
+    </p>
+    - Chúng ta thường sử dụng các từ nối như <b>before, after, just, when, as soon as, by the time,
+    until,…</b></p>
+    VD: He had gone to school before Sarah came<br>
+    (Cậu ấy đã tới trường trước khi Sarah đến)
+    </p>
+    After I had cleaned the room, my mom called<br>
+    (Sau khi tôi dọn xong phòng thì mẹ gọi)
+    </p>
+    The police came when the robber had gone away
+    (Cảnh sát tới sau khi tên trộm kịp bỏ trốn)
+    </p>
+    By the time I met you, I had worked for Google for 10 years<br>
+    (Vào thời gian tôi gặp bạn, tôi đã làm việc cho Google khoảng 10 năm.)
+
+    <p><b>b) Hành động xảy ra một khoảng thời gian trong quá khứ, trước một mốc thời gian khác</b>
+    </p>
+    VD: I had lived abroad for two years when I received the letter from my best friend<br>
+    (Tôi đã sống ở nước ngoài được hai năm trước khi nhận được thư từ bạn thân)
+    </p>
+    Jane had studied in Japan before she did her master’s at Oxford.<br>
+    (Jane đã học ở Nhật trước khi cô ấy tốt nghiệp trường Oxford)
+    </p>
+    We had had dinner when she arrived<br>
+    (Chúng tôi đã ăn tối khi cô ấy đến)
+
+    <p><b>c) Hành động xảy ra như là điều kiện tiên quyết cho hành động khác</b></p>
+    VD: I had prepared for the exams and was ready to do well.<br>
+    (Tôi đã chuẩn bị kĩ càng cho bài kiểm tra và sẵn sàng để làm tốt)
+    </p>
+    Henry had lost fifty pounds and could begin anew.<br>
+    (Henry đã mất 50 bảng Anh và có thể phải bắt đầu lại từ đầu)
+
+    <p><b>3. Dấu hiện nhận biết thì quá khứ hoàn thành (Identification)</b></p>
+    Từ nhận biết: <b>until then, by the time, prior to that time, before, after, for, as soon as,
+    by, ...</b></p>
+    Trong câu thường có các từ: before, after, when by, by the time, by the end of + time in the
+    past …<br>
+    VD:<br>
+    When I got up this morning, my father <b>had already left.</b><br>
+    (Khi tôi thức dậy vào buổi sáng,bố tôi đã rời đi)</p>
+    By the time I met you, I <b>had worked</b> in that company for five
+
+    <p><b>4. Một số cấu trúc câu sử dụng thì quá khứ hoàn thành</b></p>
+
+    <b>- Câu điều kiện loại 3:</b> nhằm diễn tả điều kiện không có thực</p>
+    VD: If I had known that, I would have acted differently.<br>
+    (Nếu biết trước tôi sẽ không làm vậy)
+    </p>
+    She would have come to the party if she had been invited.<br>
+    (Cô ấy sẽ đến buổi tiệc nếu như được mời)
+    </p>
+    If Lannie had had a rich husband, she would have by everything<br>
+    (Nếu Lannie có một người chồng giàu có, cô ta sẽ mua hết tất cả mọi thứ)
+    </p>
+    <b>- Câu Wish:</b> nhằm diễn tả ước muốn trong quá khứ</p>
+    VD: I wish I had told her about the accident<br>
+    (Ước gì tôi đã nói với cô ta về vụ tai nạn)
+    </p>
+    She wishes she had know about his problem<br>
+    (Cô ta ước mình được biết về rắc rối của anh)
+    </p>
+    They wishes they had studied hard<br>
+    (Họ ước mình đã học hành chăm chỉ)</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>
+</html>

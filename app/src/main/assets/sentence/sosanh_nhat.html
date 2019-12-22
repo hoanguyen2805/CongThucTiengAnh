@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem-->
+    </div>
+    </div>
+    <br><br>
+    I.<b>So sánh nhất</b>
+    <br> <br>
+    Dùng trong các trường hợp so sánh 3 trở lên
+    <br> <br>
+    1.<b> Tính từ và phó từ ngắn</b>
+    <br> <br>
+    <b>S + V + the adj/adv_est + noun/ pronoun</b>
+    <br>
+    VD:<br>
+    Nam is the tallest in my class
+    <br>
+    Hoa speaks English the best in my club
+    <br> <br>
+    2. <b>Tính từ và phó từ dài</b>
+    <br> <br>
+    <b>S + V + the most adj/adv + noun/ pronoun</b>
+    <br>
+    VD: <br>
+    This jacket is the most expensive in our shop
+    <br>
+    She look the most beautiful in my school
+    <br>
+    Note:
+    <br>
+    – Dùng in với danh từ số ít
+    <br>
+    – Dùng of với danh từ số nhiều
+    <br>
+    VD: This dress is the most beautiful of the dresses
+
+    <p><b>3.So sánh bậc nhất (từ 3 đối tượng trở lên)</b></p>
+    Dùng khi so sánh 3 người hoặc 3 vật trở lên, một trong số đó là ưu việt nhất so
+    với các đối tượng còn lại về một mặt nào đó. Để biến tính từ và phó từ thành
+    dạng so sánh bậc nhất, áp dụng quy tắc sau: </p>
+    <ul>
+        <li>
+            Đối với tính từ và phó từ ngắn: thêm đuôi <i>-est</i>.    </p></li>
+        <li>Đối với tính từ và phó từ dài: dùng <i> most</i> hoặc <i>least</i>.    </p></li>
+        <li>Trước tính từ hoặc phó từ so sánh phải có <i>the</i>.    </p></li>
+        <li>Dùng giới từ <i> in</i> với danh từ số ít đếm được.    </p></li>
+        <li>Dùng giới từ <i> of</i> với danh từ số nhiều đếm được.  </p></li>
+    </ul>
+    John is <u> the tallest</u> boy <u> in</u> the family.<br/>
+    Deana is <u> the shortest</u> <u> of</u> the three sisters.<br/>
+    These shoes are <u> the least expensive</u> <u> of all</u>.<br/>
+    <u> Of the three shirts</u>, this one is <u> the prettiest</u>. </p>
+    Sau cụm từ <i>One of the + so sánh bậc nhất + noun</i> phải đảm bảo chắc chắn
+    rằng <i> noun</i> phải là số nhiều, và động từ phải chia ở số ít. </p>    <u>
+    One of the greatest tennis players</u> in the world <u> is</u> Johnson.<br/>
+    Kuwait <u> is</u> <u> one of the biggest oil producers</u> in the world. </p>
+    Các phó từ thường không có các hậu tố -<i>er</i> hoặc –<i>est</i>. Chúng được
+    chuyển sang dạng so sánh tương đối bằng cách thêm <i> more</i> hoặc <i>less</i>;
+    sang dạng so sánh tuyệt đối bằng cách thêm <i> most</i> hoặc <i> least</i> phía
+    trước chúng.  </p>  Sal drove <u>
+    more cautiously</u> <u> than</u> Bob.<br/>Joe dances <u> more gracefully</u> <u>
+    than</u> his partner.<br/>That child behaves <u> most carelessly</u> of
+    all. </p>  Một số các tính từ
+    hoặc phó từ mang tính tuyệt đối thì không được dùng so sánh bậc nhất, hạn chế
+    dùng so sánh hơn kém, nếu buộc phải dùng thì bỏ more, chúng gồm: <i> unique/
+    extreme/ perfect/ supreme/ top/ absolute/prime/ primary</i>  </p>
+    His drawings are <u> perfect</u> than mine. </p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+</head>

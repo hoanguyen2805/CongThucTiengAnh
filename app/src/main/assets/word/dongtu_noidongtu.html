@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+<script src="jquery/jquery-1.11.3.min.js"></script>
+
+<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+</script>
+<style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+</style>
+<div class="float-ck" style="right: 0px">
+    <div type="hide_float_right">
+        <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+            kiếm [X]</a></div>
+    <div type="float_content_right" class="float_content_right">
+        <!-- Start tim kiem-->
+
+        <form type="f1" name="f1" action="javascript:void()"
+              onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+            <input type="text" type="t1" name="t1" value="" size="20">
+            <input type="submit" name="b1" value="Tìm kiếm">
+        </form>
+    </div>
+</div>
+<script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+</script>
+<!-- End tim kiem-->
+</div>
+</div>
+<br><br>
+<b>Nội Động Từ – Intransitive Verb</b></p>
+Về lí thuyết thì Nội động từ diễn tả hành động nội tại của người nói hay người, chủ thể thực hiện
+hành động. Hành động của người hay chủ thể (Subject) đó không tác động trực tiếp lên bất kỳ Đối
+tượng (Object) nào.
+Nội động từ thường là những Động từ chỉ hành động như: Arrive, Go, Lie, Sneeze, Sit, Die, Run, etc.
+</p>
+VD:<br>
+
+Huffing and puffing, we arrived at the classroom door with only seven seconds to spare.<br>
+Arrived = nội động từ</p>
+James went to the campus cafe for a steaming bowl of squid eyeball stew.<br>
+Went = nội động từ</p>
+To escape the midday sun, the cats lie in the shade under our cars.<br>
+Lie = nội động từ.
+<p><b>Một số động từ luôn là ngoại động từ :</b></p>
+
+Faint(ngất )<br>
+Hesitate (do dự)<br>
+Lie (nối dối )<br>
+Occur (xãy ra )<br>
+Pause (dừng lại )<br>
+Rain (mưa )<br>
+Remain (còn lại )<br>
+Sleep (ngủ )
+
+<p><b>Ngoại Động Từ – Transitive Verb</b></p>
+Ngược lại với Nội động từ, nội động từ là các động từ được hành động và gây ra hoặc tác động đến chủ
+thể khác.
+Trong câu Ngoại động từ không đi một mình mà phải đi kèm theo một bổ ngữ trực tiếp để thành một câu
+có nghĩa.
+
+VD:<br>
+
+She was saving to buy a car<br>
+Buy = ngoại động từ.</p>
+He made us some coffee.<br>
+Made = ngoại động từ.
+<p><b>Một số động từ luôn là ngoại động từ :</b></p>
+Allow (cho phép )<br>
+Blame (trách cứ ,đổ lổi )<br>
+Enjoy (thích thú )<br>
+Have (có )<br>
+Like (thích)<br>
+Need (cần )<br>
+Name (đặt tên )<br>
+Prove (chứng tỏ )<br>
+Remind (nhắc nhỡ )<br>
+Rent (cho thuê )<br>
+Select (lựa chọn )<br>
+Wrap (bao bọc )<br>
+Rob (cướp )<br>
+Own (nợ )<br>
+Greet (chào )
+
+<p><b>Sự phân biệt giữa hai loại động từ</b></p>
+Một số động từ có thể làm nội động từ trong câu này và làm ngoại động từ trong câu khác,
+nghĩa của chúng có thể thay đổi. Hãy xem các ví dụ sau:
+<br>
+The door openned. (Cửa đã mở) – nội động từ<br>
+She opened the door. (Cô ấy đã mở cửa) – ngoại động từ
+</p>
+The bus stopped. (Chiếc xe buýt dừng lại) – nội động từ<br>
+The driver stopped the bus. (Tài xế dừng xe buýt lại) – ngoại động từ
+</p>
+The bell rings. (Chuông kêu) – nội động từ<br>
+He rings the bells. (Ông ấy rung chuông) – ngoại động từ
+</p>
+The glass broke. (Cốc vỡ) – nội động từ<br>
+The boy broke the glass. (Cậu bé làm vỡ cốc) – ngoại động từ</p>
+Một số động từ :<br>
+Answer (trả lời )<br>
+Ask (hỏi )<br>
+Help (giúp đỡ )<br>
+Read (đọc )<br>
+Touch (sờ )<br>
+Wash (rửa )<br>
+Write (viết )
+</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>

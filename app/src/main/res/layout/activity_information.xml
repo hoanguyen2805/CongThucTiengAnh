@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@android:color/holo_blue_dark">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:src="@drawable/ic_back"
+            tools:ignore="ContentDescription" />
+
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:paddingStart="50dp"
+            android:paddingLeft="50dp"
+            android:paddingEnd="50dp"
+            android:paddingRight="50dp"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="@string/formula_english"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvCreate"
+        android:layout_below="@+id/rlHeader"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="@string/app_information"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/_14sdp" />
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/tvCreate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="@string/create_by"
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="@dimen/_12sdp" />
+</RelativeLayout>

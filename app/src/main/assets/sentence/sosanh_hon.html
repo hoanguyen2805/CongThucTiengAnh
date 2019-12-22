@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem-->
+    </div>
+    </div>
+    <br><br>
+    I. <b>So sánh hơn kém</b>
+    <br> <br>
+    So sánh hơn, kém thường được dùng khi so sánh 2 chủ thể với nhau, không mang tính tuyệt đối
+    <br> <br>
+    1 .<b>So sánh kém</b>
+    <br> <br>
+    <b>S + V + less + adj/adv + than + noun/ pronoun </b>
+    <br>
+    VD: <br>
+    Nga is less young than I
+    <br>
+    My brother runs less fast than I
+    <br> <br>
+    2.<b>So sánh hơn với tính từ và phó từ ngắn </b>
+    <br> <br>
+    <b>S + V + adj/adv_er+ than + noun/ pronoun </b>
+    <br>
+    VD: <br>
+    Nga is younger than I
+    <br>
+    My brother runs faster than I
+    <br> <br>
+    3.<b> So sánh hơn với tính từ và phó từ dài</b>
+    <br> <br>
+    <b>S + V + more + adj/adv + than + noun/ pronoun </b>
+    <br>
+    VD: <br>
+    Nga’s dress is more beautiul than mine
+    <br>
+    She cook more delicious than I do
+    <br>
+    Note: <br>
+
+    – Sau THAN phải là đại từ nhân xưng chủ ngữ, không được là tân ngữ
+    <br>
+    – Cũng tương tự như so sánh bằng, danh từ cũng được dùng để so sánh, nhưng trước khi so sánh cần
+    xác định trước danh từ đó là đếm được hay không đếm được và dùng với công thức sau:
+    <br>
+    <b>S + V + more/fewer/less + noun + than + noun/pronoun</b>
+    <br>
+    – Nếu chủ ngữ sau THAN trùng với chủ ngữ thứ nhất, đặc biệt khi động từ sau THAN ở dạng bị động
+    thì có thể loại bỏ danh từ đó
+    <br>
+    VD: <br> February has fewer day than March
+    <br>
+    He worries more than was good for him (Incorrect: than it/what is good for him) <br>
+    <p><b>II.So sánh hơn kém không dùng <i> than</i> (giữa 2 đối tượng)</b></p>
+    Khi so sánh hơn kém giữa 2 người hoặc 2 vật mà không dùng <i>than</i>, muốn nói
+    đối tượng nào đó là tốt hơn, giỏi hơn, đẹp hơn,... thì trước adj và adv so sánh
+    phải có <i>the</i>.<br>
+    Chú ý phân biệt trường hợp này với trường hợp so sánh bậc
+    nhất dưới đây (khi có 3 đối tượng trở lên). Trong câu thường có cụm từ <i> of
+    the two + noun</i>, nó có thể đứng đầu hoặc cuối câu.  </p>
+    Harvey is <u> the smarter</u> <u> of the two boys</u>.<br/><u> Of the two
+    shirts</u>, this one is <u> the prettier</u>.<br/>Pealse give me <u> the
+    smaller</u> <u> of the two cakes</u>.<br/><u> Of the two books</u>, this
+    one is <u> the more interesting</u>. </p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>

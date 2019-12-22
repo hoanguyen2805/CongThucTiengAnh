@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+<script src="jquery/jquery-1.11.3.min.js"></script>
+
+<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+</script>
+<style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+</style>
+<div class="float-ck" style="right: 0px">
+    <div type="hide_float_right">
+        <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+            kiếm [X]</a></div>
+    <div type="float_content_right" class="float_content_right">
+        <!-- Start tim kiem-->
+
+        <form type="f1" name="f1" action="javascript:void()"
+              onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+            <input type="text" type="t1" name="t1" value="" size="20">
+            <input type="submit" name="b1" value="Tìm kiếm">
+        </form>
+    </div>
+</div>
+<script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+</script>
+<!-- End tim kiem -->
+</div>
+</div><br>
+<br>
+<p><b>Vì tính đa nghĩa của từ vựng, cho nên vị trí của từ được sắp xếp theo thứ tự như sau</b></p>
+1) tần suất xuất hiện của những từ chỉ là trạng từ, sau đó là<br>
+2) tần suất xuất hiện của những từ chủ yếu là trạng từ, ngoài ra còn có thể là những loại từ
+khác.<br>
+3) tần suất xuất hiện của những từ chủ yếu là các loại từ khác, nhưng còn có thể là trạng từ.<br>
+<table border="3">
+    <tbody>
+    <tr>
+        <td><span>Từ vựng</span></td>
+        <td><span>Tần suất</span></td>
+        <td><span>Loại từ</span></td>
+    </tr>
+    <tr>
+        <td><span>not</span></td>
+        <td><span>658</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>also</span></td>
+        <td><span>419</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>very</span></td>
+        <td><span>191</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>often</span></td>
+        <td><span>187</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>then</span></td>
+        <td><span>179</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>however</span></td>
+        <td><span>128</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>too</span></td>
+        <td><span>114</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>usually</span></td>
+        <td><span>101</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>early</span></td>
+        <td><span>77</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>never</span></td>
+        <td><span>76</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>always</span></td>
+        <td><span>69</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>sometimes</span></td>
+        <td><span>67</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>together</span></td>
+        <td><span>63</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>likely</span></td>
+        <td><span>57</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>simply</span></td>
+        <td><span>54</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>generally</span></td>
+        <td><span>52</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>instead</span></td>
+        <td><span>50</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>actually</span></td>
+        <td><span>46</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>again</span></td>
+        <td><span>44</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>rather</span></td>
+        <td><span>42</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>almost</span></td>
+        <td><span>41</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>especially</span></td>
+        <td><span>41</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>ever</span></td>
+        <td><span>39</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>quickly</span></td>
+        <td><span>39</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>probably</span></td>
+        <td><span>38</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>already</span></td>
+        <td><span>36</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>below</span></td>
+        <td><span>36</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>directly</span></td>
+        <td><span>34</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>therefore</span></td>
+        <td><span>34</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>else</span></td>
+        <td><span>30</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>thus</span></td>
+        <td><span>28</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>easily</span></td>
+        <td><span>26</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>eventually</span></td>
+        <td><span>26</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>exactly</span></td>
+        <td><span>26</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>certainly</span></td>
+        <td><span>22</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>normally</span></td>
+        <td><span>22</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>currently</span></td>
+        <td><span>19</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>extremely</span></td>
+        <td><span>18</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>finally</span></td>
+        <td><span>18</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>constantly</span></td>
+        <td><span>17</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>properly</span></td>
+        <td><span>17</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>soon</span></td>
+        <td><span>17</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>specifically</span></td>
+        <td><span>17</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>ahead</span></td>
+        <td><span>16</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>daily</span></td>
+        <td><span>16</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>highly</span></td>
+        <td><span>16</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>immediately</span></td>
+        <td><span>16</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>relatively</span></td>
+        <td><span>16</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>slowly</span></td>
+        <td><span>16</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>fairly</span></td>
+        <td><span>15</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>primarily</span></td>
+        <td><span>15</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>completely</span></td>
+        <td><span>14</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>ultimately</span></td>
+        <td><span>14</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>widely</span></td>
+        <td><span>14</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>recently</span></td>
+        <td><span>13</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>seriously</span></td>
+        <td><span>13</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>frequently</span></td>
+        <td><span>12</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>fully</span></td>
+        <td><span>12</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>mostly</span></td>
+        <td><span>12</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>naturally</span></td>
+        <td><span>12</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>nearly</span></td>
+        <td><span>12</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>occasionally</span></td>
+        <td><span>12</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>carefully</span></td>
+        <td><span>11</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>clearly</span></td>
+        <td><span>11</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>essentially</span></td>
+        <td><span>11</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>possibly</span></td>
+        <td><span>11</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>slightly</span></td>
+        <td><span>11</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>somewhat</span></td>
+        <td><span>11</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>equally</span></td>
+        <td><span>10</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>greatly</span></td>
+        <td><span>10</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>necessarily</span></td>
+        <td><span>10</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>personally</span></td>
+        <td><span>10</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>rarely</span></td>
+        <td><span>10</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>regularly</span></td>
+        <td><span>10</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>similarly</span></td>
+        <td><span>10</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>basically</span></td>
+        <td><span>9</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>closely</span></td>
+        <td><span>9</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>effectively</span></td>
+        <td><span>9</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>initially</span></td>
+        <td><span>9</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>literally</span></td>
+        <td><span>9</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>mainly</span></td>
+        <td><span>9</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>merely</span></td>
+        <td><span>9</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>gently</span></td>
+        <td><span>8</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>hopefully</span></td>
+        <td><span>8</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>originally - <a href="http://kenhtuyensinh.vn/hoc-tieng-anh"
+                                  title="hoc tieng anh"><span
+                style="color: #000000;">hoc tieng anh</span></a><br></span></td>
+        <td><span>8</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>roughly</span></td>
+        <td><span>8</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>significantly</span></td>
+        <td><span>8</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>totally</span></td>
+        <td><span>7</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>twice</span></td>
+        <td><span>7</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>elsewhere</span></td>
+        <td><span>6</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>everywhere</span></td>
+        <td><span>6</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>perfectly</span></td>
+        <td><span>6</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>physically</span></td>
+        <td><span>6</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>suddenly</span></td>
+        <td><span>5</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>truly</span></td>
+        <td><span>5</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>virtually</span></td>
+        <td><span>5</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>altogether</span></td>
+        <td><span>4</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>anyway</span></td>
+        <td><span>4</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>automatically</span></td>
+        <td><span>4</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>deeply</span></td>
+        <td><span>4</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>definitely</span></td>
+        <td><span>4</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>deliberately</span></td>
+        <td><span>4</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>hardly</span></td>
+        <td><span>4</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>readily</span></td>
+        <td><span>4</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>terribly</span></td>
+        <td><span>4</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>unfortunately</span></td>
+        <td><span>4</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>forth</span></td>
+        <td><span>3</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>briefly</span></td>
+        <td><span>2</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>moreover</span></td>
+        <td><span>2</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>bly</span></td>
+        <td><span>2</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>honestly</span></td>
+        <td><span>1</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>previously</span></td>
+        <td><span>1</span></td>
+        <td><span>(adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>as</span></td>
+        <td><span>1363</span></td>
+        <td><span>(adverb, conjunction, pronoun)</span></td>
+    </tr>
+    <tr>
+        <td><span>there</span></td>
+        <td><span>470</span></td>
+        <td><span>(adverb, pronoun, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>when</span></td>
+        <td><span>442</span></td>
+        <td><span>(adverb, conjunction)</span></td>
+    </tr>
+    <tr>
+        <td><span>how</span></td>
+        <td><span>412</span></td>
+        <td><span>(adverb, conjunction)</span></td>
+    </tr>
+    <tr>
+        <td><span>so</span></td>
+        <td><span>352</span></td>
+        <td><span>(adverb, conjunction, pronoun)</span></td>
+    </tr>
+    <tr>
+        <td><span>up</span></td>
+        <td><span>296</span></td>
+        <td><span>(adverb, preposition, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>out</span></td>
+        <td><span>294</span></td>
+        <td><span>(adverb, preposition, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>no</span></td>
+        <td><span>213</span></td>
+        <td><span>(adverb, adjective, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>only</span></td>
+        <td><span>208</span></td>
+        <td><span>(adverb, adjective, conjunction)</span></td>
+    </tr>
+    <tr>
+        <td><span>well</span></td>
+        <td><span>184</span></td>
+        <td><span>(adverb, verb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>first</span></td>
+        <td><span>176</span></td>
+        <td><span>(adverb, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>where</span></td>
+        <td><span>166</span></td>
+        <td><span>(adverb, pronoun)</span></td>
+    </tr>
+    <tr>
+        <td><span>why</span></td>
+        <td><span>118</span></td>
+        <td><span>(adverb, conjunction, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>now</span></td>
+        <td><span>104</span></td>
+        <td><span>(adverb, conjunction, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>around</span></td>
+        <td><span>101</span></td>
+        <td><span>(adverb, preposition)</span></td>
+    </tr>
+    <tr>
+        <td><span>once</span></td>
+        <td><span>95</span></td>
+        <td><span>(adverb, conjunction)</span></td>
+    </tr>
+    <tr>
+        <td><span>down</span></td>
+        <td><span>94</span></td>
+        <td><span>(adverb, preposition, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>off</span></td>
+        <td><span>74</span></td>
+        <td><span>(adverb, preposition, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>here</span></td>
+        <td><span>72</span></td>
+        <td><span>(adverb, interjection)</span></td>
+    </tr>
+    <tr>
+        <td><span>tonight</span></td>
+        <td><span>71</span></td>
+        <td><span>(adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>away</span></td>
+        <td><span>59</span></td>
+        <td><span>(adverb, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>today</span></td>
+        <td><span>54</span></td>
+        <td><span>(adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>far</span></td>
+        <td><span>46</span></td>
+        <td><span>(adverb, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>quite</span></td>
+        <td><span>45</span></td>
+        <td><span>(adverb, interjection)</span></td>
+    </tr>
+    <tr>
+        <td><span>later</span></td>
+        <td><span>42</span></td>
+        <td><span>(adverb, interjection)</span></td>
+    </tr>
+    <tr>
+        <td><span>above</span></td>
+        <td><span>40</span></td>
+        <td><span>(adverb, preposition, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>yet</span></td>
+        <td><span>32</span></td>
+        <td><span>(adverb, conjunction)</span></td>
+    </tr>
+    <tr>
+        <td><span>maybe</span></td>
+        <td><span>17</span></td>
+        <td><span>(adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>otherwise</span></td>
+        <td><span>14</span></td>
+        <td><span>(adverb, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>near</span></td>
+        <td><span>13</span></td>
+        <td><span>(adverb, preposition, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>forward</span></td>
+        <td><span>11</span></td>
+        <td><span>(adverb, adjective, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>somewhere</span></td>
+        <td><span>10</span></td>
+        <td><span>(adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>anywhere</span></td>
+        <td><span>9</span></td>
+        <td><span>(adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>please</span></td>
+        <td><span>8</span></td>
+        <td><span>(adverb, verb, idiom)</span></td>
+    </tr>
+    <tr>
+        <td><span>forever</span></td>
+        <td><span>7</span></td>
+        <td><span>(adverb, noun, idiom)</span></td>
+    </tr>
+    <tr>
+        <td><span>somehow</span></td>
+        <td><span>6</span></td>
+        <td><span>(adverb, idiom)</span></td>
+    </tr>
+    <tr>
+        <td><span>absolutely</span></td>
+        <td><span>5</span></td>
+        <td><span>(adverb, interjection)</span></td>
+    </tr>
+    <tr>
+        <td><span>abroad</span></td>
+        <td><span>2</span></td>
+        <td><span>(adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>yeah</span></td>
+        <td><span>2</span></td>
+        <td><span>(adverb, interjection)</span></td>
+    </tr>
+    <tr>
+        <td><span>nowhere</span></td>
+        <td><span>1</span></td>
+        <td><span>(adverb, pronoun, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>tomorrow</span></td>
+        <td><span>1</span></td>
+        <td><span>(adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>yesterday</span></td>
+        <td><span>1</span></td>
+        <td><span>(adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>the</span></td>
+        <td><span>9243</span></td>
+        <td><span>(definite article, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>to</span></td>
+        <td><span>4951</span></td>
+        <td><span>(preposition, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>in</span></td>
+        <td><span>2822</span></td>
+        <td><span>(preposition, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>on</span></td>
+        <td><span>1087</span></td>
+        <td><span>(preposition, adverb, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>by</span></td>
+        <td><span>706</span></td>
+        <td><span>(preposition, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>more</span></td>
+        <td><span>597</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>about</span></td>
+        <td><span>451</span></td>
+        <td><span>(preposition, adverb, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>such</span></td>
+        <td><span>236</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>through</span></td>
+        <td><span>235</span></td>
+        <td><span>(preposition, adverb, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>new</span></td>
+        <td><span>210</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>just</span></td>
+        <td><span>208</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>any</span></td>
+        <td><span>190</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>each</span></td>
+        <td><span>173</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>much</span></td>
+        <td><span>165</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>before</span></td>
+        <td><span>141</span></td>
+        <td><span>(preposition, adverb, conjunction)</span></td>
+    </tr>
+    <tr>
+        <td><span>between</span></td>
+        <td><span>137</span></td>
+        <td><span>(preposition, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>free</span></td>
+        <td><span>115</span></td>
+        <td><span>(adjective, adverb, verb)</span></td>
+    </tr>
+    <tr>
+        <td><span>right</span></td>
+        <td><span>113</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>best</span></td>
+        <td><span>108</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>since</span></td>
+        <td><span>107</span></td>
+        <td><span>(preposition, adverb, conjunction)</span></td>
+    </tr>
+    <tr>
+        <td><span>both</span></td>
+        <td><span>91</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>sure</span></td>
+        <td><span>90</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>without</span></td>
+        <td><span>89</span></td>
+        <td><span>(preposition, adverb, conjunction)</span></td>
+    </tr>
+    <tr>
+        <td><span>back</span></td>
+        <td><span>86</span></td>
+        <td><span>(noun, adverb, verb)</span></td>
+    </tr>
+    <tr>
+        <td><span>better</span></td>
+        <td><span>86</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>enough</span></td>
+        <td><span>82</span></td>
+        <td><span>(adjective, adverb, interjection)</span></td>
+    </tr>
+    <tr>
+        <td><span>lot</span></td>
+        <td><span>82</span></td>
+        <td><span>(pronoun, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>small</span></td>
+        <td><span>81</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>though</span></td>
+        <td><span>81</span></td>
+        <td><span>(conjunction, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>less</span></td>
+        <td><span>75</span></td>
+        <td><span>(adjective, adverb, preposition)</span></td>
+    </tr>
+    <tr>
+        <td><span>little</span></td>
+        <td><span>71</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>under</span></td>
+        <td><span>70</span></td>
+        <td><span>(preposition, adverb, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>next</span></td>
+        <td><span>64</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>hard</span></td>
+        <td><span>61</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>real</span></td>
+        <td><span>58</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>left</span></td>
+        <td><span>52</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>least</span></td>
+        <td><span>50</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>short</span></td>
+        <td><span>48</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>last</span></td>
+        <td><span>47</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>within</span></td>
+        <td><span>46</span></td>
+        <td><span>(preposition, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>along</span></td>
+        <td><span>45</span></td>
+        <td><span>(preposition, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>lower</span></td>
+        <td><span>41</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>true</span></td>
+        <td><span>38</span></td>
+        <td><span>(adjective, adverb, verb)</span></td>
+    </tr>
+    <tr>
+        <td><span>bad</span></td>
+        <td><span>37</span></td>
+        <td><span>(noun, adverb, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>across</span></td>
+        <td><span>36</span></td>
+        <td><span>(preposition, adverb, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>clear</span></td>
+        <td><span>35</span></td>
+        <td><span>(adjective, adverb, verb)</span></td>
+    </tr>
+    <tr>
+        <td><span>easy</span></td>
+        <td><span>35</span></td>
+        <td><span>(adjective, adverb, interjection)</span></td>
+    </tr>
+    <tr>
+        <td><span>full</span></td>
+        <td><span>34</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>close</span></td>
+        <td><span>29</span></td>
+        <td><span>(adjective, adverb, verb)</span></td>
+    </tr>
+    <tr>
+        <td><span>late</span></td>
+        <td><span>28</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>proper</span></td>
+        <td><span>27</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>fast</span></td>
+        <td><span>25</span></td>
+        <td><span>(adjective, adverb, verb)</span></td>
+    </tr>
+    <tr>
+        <td><span>wide</span></td>
+        <td><span>25</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>item</span></td>
+        <td><span>23</span></td>
+        <td><span>(noun, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>wrong</span></td>
+        <td><span>23</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>ago</span></td>
+        <td><span>22</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>behind</span></td>
+        <td><span>22</span></td>
+        <td><span>(preposition, adverb, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>quick</span></td>
+        <td><span>22</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>straight</span></td>
+        <td><span>21</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>direct</span></td>
+        <td><span>20</span></td>
+        <td><span>(adjective, adverb, verb)</span></td>
+    </tr>
+    <tr>
+        <td><span>extra</span></td>
+        <td><span>20</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>morning</span></td>
+        <td><span>20</span></td>
+        <td><span>(noun, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>pretty</span></td>
+        <td><span>20</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>overall</span></td>
+        <td><span>19</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>alone</span></td>
+        <td><span>18</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>bright</span></td>
+        <td><span>17</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>flat</span></td>
+        <td><span>17</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>whatever</span></td>
+        <td><span>16</span></td>
+        <td><span>(pronoun, adverb, interjection)</span></td>
+    </tr>
+    <tr>
+        <td><span>slow</span></td>
+        <td><span>15</span></td>
+        <td><span>(adjective, adverb, verb)</span></td>
+    </tr>
+    <tr>
+        <td><span>clean</span></td>
+        <td><span>14</span></td>
+        <td><span>(adjective, adverb, verb)</span></td>
+    </tr>
+    <tr>
+        <td><span>fresh</span></td>
+        <td><span>14</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>whenever</span></td>
+        <td><span>14</span></td>
+        <td><span>(conjunction, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>cheap</span></td>
+        <td><span>13</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>thin</span></td>
+        <td><span>13</span></td>
+        <td><span>(adjective, adverb, verb)</span></td>
+    </tr>
+    <tr>
+        <td><span>cool</span></td>
+        <td><span>12</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>fair</span></td>
+        <td><span>11</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>fine</span></td>
+        <td><span>11</span></td>
+        <td><span>(adjective, adverb, verb)</span></td>
+    </tr>
+    <tr>
+        <td><span>smooth</span></td>
+        <td><span>10</span></td>
+        <td><span>(adjective, adverb, verb)</span></td>
+    </tr>
+    <tr>
+        <td><span>false</span></td>
+        <td><span>7</span></td>
+        <td><span>(adjective, adverb, idiom)</span></td>
+    </tr>
+    <tr>
+        <td><span>thick</span></td>
+        <td><span>7</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>collect</span></td>
+        <td><span>6</span></td>
+        <td><span>(verb, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>nearby</span></td>
+        <td><span>6</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>wild</span></td>
+        <td><span>6</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>apart</span></td>
+        <td><span>5</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>none</span></td>
+        <td><span>5</span></td>
+        <td><span>(pronoun, adverb, adjective)</span></td>
+    </tr>
+    <tr>
+        <td><span>strange</span></td>
+        <td><span>5</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>tourist</span></td>
+        <td><span>5</span></td>
+        <td><span>(noun, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>aside</span></td>
+        <td><span>4</span></td>
+        <td><span>(noun, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>loud</span></td>
+        <td><span>4</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>super</span></td>
+        <td><span>4</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>tight</span></td>
+        <td><span>4</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>gross</span></td>
+        <td><span>3</span></td>
+        <td><span>(adjective, adverb, verb)</span></td>
+    </tr>
+    <tr>
+        <td><span>ill</span></td>
+        <td><span>3</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>downtown</span></td>
+        <td><span>2</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>honest</span></td>
+        <td><span>2</span></td>
+        <td><span>(adjective, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>ok</span></td>
+        <td><span>1</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    <tr>
+        <td><span>pray</span></td>
+        <td><span>1</span></td>
+        <td><span>(verb, adverb)</span></td>
+    </tr>
+    <tr>
+        <td><span>weekly</span></td>
+        <td><span>1</span></td>
+        <td><span>(adjective, adverb, noun)</span></td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>

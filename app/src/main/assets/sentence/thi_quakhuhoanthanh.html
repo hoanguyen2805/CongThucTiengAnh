@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem-->
+    </div>
+    </div><br>
+    <br>
+    <b> Thì quá khứ hoàn thành tiếp diễn - Pas Perfect Continuous</b><br>
+    <br>
+    1.<b>Công thức:</b>
+    <ul>
+        <li>Khẳng định:S+ had + been + V_ing + O</li>
+        <li>Phủ định: S+ hadn’t+ been+ V-ing + O</li>
+        <li>Nghi vấn: Had+S+been+V-ing + O?</li>
+    </ul>
+    <br>
+    2.<b>Cách dùng:</b>
+    <br>
+    <li>Diễn tả một hành động xảy ra kéo dài liên tục trước một hành động khác trong quá khứ.
+        <br>
+        VD: He had been typing for 3 hours before he finshed his work. (Cậu ta đã đánh máy suốt 3
+        tiếng đồng hồ trước khi hoàn thành xong công việc.)
+        <br>
+        Ta thấy có hai sự việc xảy ra trong quá khứ đó là “đánh máy” và “hoàn thành công việc”. Ta
+        có thể hiểu rằng trước đó việc đánh máy đã diễn ra liên tục không ngừng nghỉ cho đến khi
+        công việc được hoàn thành.
+    </li>
+    <li>Diễn tả một hành động xảy ra kéo dài liên tục trước một thời điểm xác định trong quá khứ.
+        <br>
+        VD: My father had been driving for 2 hours before 11pm last night. (Bố tôi đã lái xe liên
+        tục 2 tiếng đồng hồ trước thời điểm 11h tối hôm qua.)<br>
+
+        Ta thấy “11h tối hôm qua” là một thời điểm xác định trong quá khứ. Việc “lái xe” đã diễn ra
+        một cách liên tục không ngừng nghỉ trước thời điểm đó nên ta sẽ sử dụng thì quá khứ hoàn
+        thành tiếp diễn để diễn đạt.
+    </li>
+    <li>Nhấn mạnh hành động để lại kết quả trong quá khứ.<br>
+        VD: This morning he was very tired because he had been working very hard all night. (Sáng
+        nay anh ấy rất mệt bởi vì anh ấy đã làm việc vất vả cả đêm.)<br>
+
+        Ta thấy việc “mệt mỏi” đã xảy ra trong quá khứ và là kết quả của việc “làm việc vất vả cả
+        đêm” đã được diễn ra trước đó nên ta sẽ sử dụng thì quá khứ hoàn thành để diễn đạt.
+    </li>
+    <br>
+    3.<b>Dấu hiệu nhận biết:</b><br>
+    Từ nhận biết: until then, by the time, prior to that time, before, after.<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>
+</html>

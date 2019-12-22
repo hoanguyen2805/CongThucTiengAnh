@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+<script src="jquery/jquery-1.11.3.min.js"></script>
+
+<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+</script>
+<style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+</style>
+<div class="float-ck" style="right: 0px">
+    <div type="hide_float_right">
+        <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+            kiếm [X]</a></div>
+    <div type="float_content_right" class="float_content_right">
+        <!-- Start tim kiem-->
+
+        <form type="f1" name="f1" action="javascript:void()"
+              onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+            <input type="text" type="t1" name="t1" value="" size="20">
+            <input type="submit" name="b1" value="Tìm kiếm">
+        </form>
+    </div>
+</div>
+<script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+</script>
+<!-- End tim kiem-->
+</div>
+</div>
+<br><br>
+<b>1. S + V + too + adj/adv + (for someone) + to do something: (quá....để cho ai làm gì...)</b> </p>
+
+VD:
+He ran too fast for me to follow (Anh ấy chạy quá nhanh để tôi đuổi theo</p>
+<b>2. S + V + so + adj/ adv + that + S + V: (quá... đến nỗi mà...)
+</b> </p>
+VD: This box is so heavy that I cannot take it.(Cái hộp này quá nặng nên tôi k thẻ nhấc nó)<br>
+He speaks so soft that we can’t hear anything.(Anh ấy nó quá bé nên chúng tôi k nghe dc gì)</p>
+<b>3. It + V + such + (a/an) + N(s) + that + S + V: (quá... đến nỗi mà...) </b></p>
+VD: It is such a heavy box that I cannot take it.(Cái hộp này quá nặng nên tôi k thẻ nhấc nó) <br>
+It is such interesting books that I cannot ignore them at all.(Đó là một cuốn sách thú vị nên tôi k
+thể bỏ lỡ nó)</p>
+
+<b>4. S + V + adj/ adv + enough + (for someone) + to something : (Đủ... cho ai đó làm
+    gì...) </b></p>
+VD: She is old enough to get married.(Cô ấy quá già để làm đám cưới) <br>
+They are intelligent enough for me to teach them English.(Họ đủ thông minh để tôi dạy cho họ tiềng
+Anh)</p>
+<b>5. S + get + sb + to do sth = S + have + sb + do sth: nhờ, bảo ai đó làm gì
+</b>  </p>
+VD: She gets him to spend more time with her = She have him spend more time with her (Cô ấy bảo anh
+ấy dành nhiều thời gian hơn cho cô ấy) </p>
+<b>6. It + be + time + S + V (-ed, cột 2) / It’s +time +for someone +to do something : (đã đến lúc
+    ai đó phải làm gì...) </b></p>
+VD: It is time you had a shower.(Đã đến lúc bạn nên đi tắm) <br>
+It’s time for me to ask all of you for this question.(Đã đén lúc để tôi hỏi bạn câu hỏi đó?) </p>
+
+<b>7. It + takes/took+ someone + amount of time + to something: (làm gì... mất bao nhiêu thời
+    gian... hoc tieng anh) </b></p>
+VD: It takes me 5 minutes to get to school.(Tôi mất 5 phút để đến trường) <br>
+It took him 10 minutes to do this exercise yesterday.(Anh ấy mấy 10 phút cho bài tập đó vào ngày hôm
+qua)<p>
+    <b>8. To prevent/stop + someone/something + From + V-ing: (ngăn cản ai/ cái gì... làm gì..) </b>
+</p>
+VD: He prevented us from parking our car here.(Anh ấy ngăn họ đậu xe ở đây)(</p>
+<b>9. S + find+ it+ adj to do something: (thấy ... để làm gì...) </b></p>
+VD: I find it very difficult to learn about English. (Tôi gặp rất nhiều khó khăn khi học tiếng
+anh)<br>
+They found it easy to overcome that problem.(Họ thấy nó dễ dàng vượt qua vấn đề đó)</p>
+<b>10. To prefer + Noun/ V-ing + to + N/ V-ing. (Thích cái gì/ làm gì hơn cái gì/ làm gì)
+</b>  </p>   VD: I prefer dog to cat.
+<br> I prefer reading books to watching TV.</p>
+<b>11. Would rather ('d rather) + V (infinitive) + than + V (infinitive: (thích làm gì hơn làm
+    gì) </b></p>
+VD: She would play games than read books.(Cô ấy thích chơi game hơn đọc sách) <br>
+I’d rather learn English than learn Biology.(Tôi thích học tiếng anh hơn sinh học</p>
+<b>12. S + be/get Used to + V-ing: (quen làm gì) =S + be accustomed to + Ving</b></p>
+VD: I am used to eating with chopsticks.(Tôi quen sử đụng đũa khi ăn)</p>
+<b>13. Used to + V (infinitive): (Thường làm gì trong quá khứ và bây giờ không làm nữa) </b></p>
+VD: I used to go fishing with my friend when I was young.(Tôi thường đi câu cá với bạn tôi khi tôi
+còn trẻ) <br>
+She used to smoke 10 cigarettes a day.(Cô ấy thường hút 10 điếu xì gà trong 1 ngày)</p>
+
+<b>14. To be amazed at = to be surprised at + N/V-ing: ngạc nhiên về.... </b></p>
+VD: I was amazed at his big beautiful villa.(Tôi ngạc nhiên về căn hộ to và đẹp của anh ấy)</p>
+
+<b>15. To be angry at + N/V-ing: tức giận về</b></p>
+VD: Her mother was very angry at her bad marks.(Mẹ cô ấy tức giận vì điểm xấu môn toán của cô
+ấy)</p>
+
+<b>16. To be good at/ bad at + N/ V-ing: giỏi về.../ kém về... </b></p>
+VD: I am good at swimming.(Tôi giỏi vè môn bơi) <br>
+He is very bad at English.(Anh ấy kém về môn tiếng Anh)</p>
+
+<b>17. By chance = by accident (adv): tình cờ</b></p>
+VD: I met her in Paris by chance last week.(Tôi tình cò gặp cô ấy ở Pari tuần trước)</p>
+
+<b>18. To be/get tired of + N/V-ing: mệt mỏi về... </b></p>
+VD: My mother was tired of doing too much housework everyday.(Mẹ tôi mệt mỏi vì phải làm việc nhà
+mỗi ngày)</p>
+
+<b>19. Can’t stand/ help/ bear/ resist + V-ing: Không chịu nỗi/không nhịn được làm gì... </b></p>
+VD: She can't stand laughing at her little dog.</p>
+
+<b>20. To be keen on/ to be fond of + N/V-ing : thích làm gì đó... </b></p>
+VD: My younger sister is fond of playing with her dolls.(Em gái tôi thích chơi với búp bê của cô
+ấy)</p>
+
+<b>21. To be interested in + N/V-ing: quan tâm đến... </b></p>
+VD: Mrs Brown is interested in going shopping on Sundays.(Cô Brown quan tâm đến mua sắm vào ngày chủ
+nhật)</p>
+
+<b>22. To waste + time/ money + V-ing: tốn tiền hoặc thời gian làm gì</b></p>
+VD: He always wastes time playing computer games each day.(Anh ấy thường tốn tiền chơi điện tử mỗi
+ngày)
+<br> Sometimes, I waste a lot of money buying clothes.(Thỉnh thoảng,tôi tốn rất nhiền tiền để mua
+quần áo)</p>
+
+<b>23. To spend + amount of time/ money + V-ing: dành bao nhiêu thời gian làm gì.. </b></p>
+VD: I spend 2 hours reading books a day. (Tôi dành 2 tiếng để đọc sách mỗi ngày)<br>
+Mr Jim spent a lot of money traveling around the world last year.(Jim dành rất nhiều tiền để đi vòng
+quanh thế giới vào năm ngoái)</p>
+
+<b>24. To spend + amount of time/ money + on + something: dành thời gian vào việc gì... </b></p>
+VD: My mother often spends 2 hours on housework everyday.(Mẹ tôi thường dành 2 tiếng làm việc nhà
+mỗi ngày) <br>
+She spent all of her money on clothes.(Cô ấy tiêu tất cả tiền của mình vào quần áo)</p>
+
+<b>25. To give up + V-ing/ N: từ bỏ làm gì/ cái gì... </b></p>
+VD: You should give up smoking as soon as possible.(Bạn phải bỏ hút thuốc càng sớm càng tốt)</p>
+
+<b>26. Would like/ want/wish + to do something: thích làm gì... </b></p>
+VD: I would like to go to the cinema with you tonight.(Tôi muốnđi xem phim với bạn vào tối nay)</p>
+
+<b>27. Have + (something) to + Verb: có cái gì đó để làm gì</b></p>
+VD: I have many things to do this week.(Tôi có rất nhiều thứ để làm trong tuần này)</p>
+
+<b>28. It + be + something/ someone + that/ who: chính...mà...</b></p>
+
+VD: It is Tom who got the best marks in my class.(Chính là Tom là người có điểm toán cao nhất trong
+lớp tôi) <br>
+It is the villa that he had to spend a lot of money last year.(Chính là căn hộ mà anh ấy đã tiêu rất
+nhiều tiền vào năm ngoái)</p>
+
+<b>29. Had better + V(infinitive): nên làm gì.... </b></p>
+VD: You had better go to see the doctor.(Bạn nên đi đến bác sĩ)</p>
+
+<b>30.Hate/ like/ dislike/ enjoy/ avoid/ finish/ mind/ postpone/ practise/ consider/ delay/ deny/
+    suggest/ risk/ keep/ imagine/ fancy + V-ing
+</b></p>
+VD: I always practise speaking English everyday.(Tôi thường thực hành nói tiếng anh hằng ngày</p>
+
+<b>31. It is + tính từ + ( for smb ) + to do sth</b></p>
+VD: It is difficult for old people to learn English.( Người có tuổi học tiếng Anh thì khó )</p>
+
+<b>32. To be interested in + N / V_ing ( Thích cái gì / làm cái gì ) </b></p>
+VD: We are interested in reading books on history.( Chúng tôi thích đọc sách về lịch sử )</p>
+
+<b>33. To be bored with ( Chán làm cái gì ) </b></p>
+VD: We are bored with doing the same things everyday.( Chúng tôi chán ngày nào cũng làm những công
+việc lặp đi lặp lại ) - học tiếng anh giao tiếp</p>
+
+<b>34. This is/It’s the first time smb have ( has ) + PII sth ( Đây là lần đầu tiên ai làm cái gì
+    ) </b><br>
+= S + have never + PP+..... + before </p>
+VD: It’s the first time we have visited this place.( Đây là lần đầu tiên chúng tôi tới thăm nơi này
+)</p>
+
+<b>35. Enough + danh từ ( đủ cái gì ) + ( to do sth ) </b></p>
+VD: I don’t have enough time to study.( Tôi không có đủ thời gian để học )</p>
+
+<b>36. Tính từ + enough (đủ làm sao ) + ( to do sth ) </b></p>
+VD: I’m not rich enough to buy a car.( Tôi không đủ giàu để mua ôtô )</p>
+
+<b>37. Too + tính từ + to do sth ( Quá làm sao để làm cái gì ) </b></p>
+VD: I’m to young to get married.( Tôi còn quá trẻ để kết hôn )</p>
+
+<b>38. To want smb to do sth = To want to have sth + PII( Muốn ai làm gì = muốn có cái gì được làm
+    ) </b></p>
+VD: She wants someone to make her a dress.( Cô ấy muốn ai đó may cho cô ấy một chiếc váy )= She
+wants to have a dress made.( Cô ấy muốn có một chiếc váy được may )</p>
+
+<b>39. It’s time smb did sth ( Đã đến lúc ai phải làm gì ) </b></p>
+VD: It’s time we went home.( Đã đến lúc tôi phải về nhà )</p>
+
+<b>40. It’s not necessary for smb to do sth = Smb don’t need to do sth( Ai không cần thiết phải làm
+    gì )</b> </p>
+VD: It is not necessary for you to do this exercise.( Bạn không cần phải làm bài tập này )</p>
+
+<b>41. To look forward to V_ing ( Mong chờ, mong đợi làm gì ) </b></p>
+VD: We are looking forward to going on holiday.( Chúng tôi đang mong được đi nghỉ )</p>
+
+<b>42. To provide smb from V_ing ( Cung cấp cho ai cái gì ) </b></p>
+VD: Can you provide us with some books in history?( Bạn có thể cung cấp cho chúng tôi một số sách về
+lịch sử không?)</p>
+
+<b>43. To prevent smb from V_ing (Cản trở ai làm gì )</b></p>
+VD: The rain stopped us from going for a walk.( Cơn mưa đã ngăn cản chúng tôi đi dạo )</p>
+
+<b>44. To fail to do sth (Không làm được cái gì / Thất bại trong việc làm cái gì) </b></p>
+VD: We failed to do this exercise.(Chúng tôi không thể làm bài tập này )</p>
+
+<b>45. To be succeed in V_ing (Thành công trong việc làm cái gì) </b></p>
+VD: We were succeed in passing the exam.(Chúng tôi đã thi đỗ )</p>
+
+<b>46. To borrow sth from smb (Mượn cái gì của ai) </b></p>
+VD: She borrowed this book from the liblary.( Cô ấy đã mượn cuốn sách này ở thư viện )</p>
+
+<b>47. To lend smb sth (Cho ai mượn cái gì) </b></p>
+VD: Can you lend me some money?( Bạn có thể cho tôi vay ít tiền không? )</p>
+
+<b>48. To make smb do sth (Bắt ai làm gì) </b></p>
+VD: The teacher made us do a lot of homework.( Giáo viên bắt chúng tôi làm rất nhiều bài tập ở nhà
+)</p>
+
+<b>49. CN + be + so + tính từ + that + S + động từ.( Đến mức mà )CN + động từ + so + trạng
+    từ </b></p>
+VD1: The exercise is so difficult that noone can do it.( Bài tập khó đến mức không ai làm được )<br>
+He spoke so quickly that I couldn’t understand him.( Anh ta nói nhanh đến mức mà tôi không thể hiểu
+được anh ta )</p>
+
+<b>50. CN + be + such + ( tính từ ) + danh từ + that + CN + động từ. </b></p>
+VD: It is such a difficult exercise that noone can do it.( Đó là một bài tập quá khó đến nỗi không
+ai có thể làm được )</p>
+
+<b>51. It is ( very ) kind of smb to do sth ( Ai thật tốt bụng / tử tế khi làm gì) </b></p>
+VD: It is very kind of you to help me.( Bạn thật tốt vì đã giúp tôi )</p>
+<b>52. To find it + tính từ + to do sth</b></p>
+VD: We find it difficult to learn English. ( Chúng tôi thấy học tiếng Anh khó )</p>
+<b>53. To make sure of sth ( Bảo đảm điều gì )that + CN + động từ</b></p>
+VD: I have to make sure of that information.( Tôi phải bảo đảm chắc chắn về thông tin đó )<br>
+You have to make sure that you’ll pass the exam.( Bạn phải bảo đảm là bạn sẽ thi đỗ )</p>
+<b>54. It takes ( smb ) + thời gian + to do sth ( Mất ( của ai ) bao nhiêu thời gian để làm
+    gì) </b></p>
+VD: It took me an hour to do this exercise.( Tôi mất một tiếng để làm bài này )</p>
+
+<b>55. To spend + time / money + on sth ( Dành thời gian / tiền bạc vào cái gìdoing sth làm gì
+    ) </b></p>
+VD: We spend a lot of time on TV.watching TV.( Chúng tôi dành nhiều thời gian xem TV )</p>
+<b>56. To have no idea of sth = don’t know about sth ( Không biết về cái gì ) </b></p>
+VD: I have no idea of this word = I don’t know this word.( TÔI không biết từ này )</p>
+<b>57. To advise smb to do sth ( Khuyên ai làm gìnot to do sth không làm gì ) </b></p>
+VD: Our teacher advises us to study hard.( Cô giáo khuyên chúng tôi học chăm chỉ )</p>
+<b>58. To plan to do sth ( Dự định / có kế hoạch làm gì )</b></p>
+VD: We planed to go for a picnic( Chúng tôi dự định đi dã ngoại )</p>
+<b>59. To invite smb to do sth ( Mời ai làm gì ) </b></p>
+VD: They invited me to go to the cinema.( Họ mời tôi đi xem phim )</p>
+<b>60. To offer smb sth ( Mời / đề nghị ai cái gì ) </b></p>
+VD: He offered me a job in his company.( Anh ta mời tôi làm việc cho công ty anh ta )</p>
+<b>61. To rely on smb ( tin cậy, dựa dẫm vào ai ) </b></p>
+VD: You can rely on him.( Bạn có thể tin anh ấy )</p>
+<b>62. To keep promise ( Gĩư lời hứa ) </b></p>
+VD: He always keeps promises.</p>
+<b>63. To be able to do sth = To be capable of + V_ing ( Có khả năng làm gì ) </b></p>
+VD: I’m able to speak English = I am capable of speaking English.( Tôi có thể nói tiếng Anh )</p>
+<b>64. To be good at ( + V_ing ) sth ( Giỏi ( làm ) cái gì ) </b></p>
+VD: I’m good at ( playing ) tennis.( Tôi chơi quần vợt giỏi )</p>
+<b>65. Prefer sth to sth ( Thích cái gì hơn cái gì )doing sth to doing sth: làm gì hơn làm
+    gì</b></p>
+VD: We prefer spending money than earning money.( Chúng tôi thích tiêu tiền hơn kiếm tiền )</p>
+<b>66. To apologize for doing sth ( Xin lỗi ai vì đã làm gì ) </b></p>
+VD: I want to apologize for being rude to you. ( Tôi muốn xin lỗi vì đã bất lịch sự với bạn )</p>
+<b>67. Had ( ‘d ) better do sth ( Nên làm gì )not do sth ( Không nên làm gì ) </b></p>
+VD: You’d better learn hard.( Bạn nên học chăm chỉ )<br>
+You’d better not go out.( Bạn không nên đi ra ngoài ) </p>
+<b>68. Would ( ‘d ) rather (not)do sth: Thà làm gì( đừng làm gì)</b></p>
+VD: I’d rather stay at home.I’d rather not say at home.</p>
+<b>69. Would ( ‘d ) rather smb did sth ( Muốn ai làm gì ) </b></p>
+VD: I’d rather you ( he / she ) stayed at home today.( Tôi muốn bạn / anh ấy / cô ấy ở nhà tối nay
+)</p>
+<b>70. Suggest smb ( should ) do sth ( Gợi ý ai làm gì ) </b></p>
+VD: I suggested she ( should ) buy this house.</p>
+<b>71. Suggest doing sth ( Gợi ý làm gì ) </b></p>
+VD: I suggested going for a walk.</p>
+<b>72. Try to do ( Cố làm gì ) </b></p>
+VD: We tried to learn hard.( Chúng tôi đã cố học chăm chỉ )</p>
+<b>73. Try doing sth ( Thử làm gì ) </b></p>
+VD: We tried cooking this food.( Chúng tôi đã thử nấu món ăn này )</p>
+<b>74. Need to do sth ( Cần làm gì ) </b></p>
+VD: You need to work harder.( Bạn cần làm việc tích cực hơn )</p>
+<b>75. Need doing ( Cần được làm ) </b></p>
+VD: This car needs repairing.( Chiếc ôtô này cần được sửa )</p>
+<b>76. Remember doing ( Nhớ đã làm gì ) </b></p>
+VD: I remember seeing this film.( Tôi nhớ là đã xem bộ phim này )</p>
+<b>77. Remember to do ( Nhớ làm gì ) ( chưa làm cái này ) </b></p>
+VD: Remember to do your homework.( Hãy nhớ làm bài tập về nhà )</p>
+<b>78. To have sth + PII ( Có cái gì được làm ) </b></p>
+VD: I’m going to have my house repainted.( Tôi sẽ sơn lại nhà người khác sơn, không phải mình sơn
+lấy )
+= <b>To have smb do sth ( Thuê ai làm gì ) </b></p>
+<br>I’m going to have the garage repair my car.= I’m going to have my car repaired.</p>
+<b>79. To be busy doing sth ( Bận rộn làm gì ) </b></p>
+VD: We are busy preparing for our exam.( Chúng tôi đang bận rộn chuẩn bị cho kỳ thi )</p>
+<b>80. Mind doing sth ( Phiền làm gì ) </b></p>
+VD: Do / Would you mind closing the door for me?( Bạn có thể đóng cửa giúp tôi không? )</p>
+<b>81. S + would prefer + to + V(bare inf) + O (muốn làm gì)</b></p>
+VD: I would prefer to study English.(Tôi muốn học tiếng anh)<br>
+He’d prefer to play internet game.(Anh ấy muốn chơi điện tử)
+</p>
+
+<b>82. To stop to do sth ( Dừng lại để làm gì ) </b></p>
+VD: We stopped to buy some petrol.( Chúng tôi đã dừng lại để mua xăng )</p>
+<b>83. To stop doing sth ( Thôi không làm gì nữa ) </b></p>
+VD: We stopped going out late.( Chúng tôi thôi không đi chơi khuya nữa )</p>
+<b>84. Let smb do sth ( Để ai làm gì )</b> </p>
+VD: Let him come in.( Để anh ta vào )</p>
+<b>85.Understand = tobe aware of</b></p>
+VD: do you understand the grammar structure?= are you aware of the grammar structure?(Bạn có hiểu
+cấu trúc
+ngữ pháp này k? )</p>
+<b> 86.Because + clause = because of + N</b></p>
+VD: he can’t move because his leg was broken= he can’t move because of his broken leg(Anh ấy k thể
+di chuyển
+vì chân anh ấy bị gãy)</p>
+<b>87. Although + clause = despite + N = in spite of + N</b></p>
+VD: Although she is old, she can compute very fast= Despite / In spite of her old age, she can
+compute very fast
+(Mặc dù cô ấy đã già,cô ấy vẫn có thể dùng máy tính rất nhanh)</p>
+<b>88.Harly + had +S + Vp2 when S + Vpast: ngay sau khi ..thi…</p>
+    No sooner + had +S + Vp2 than S + Vpast </b></p>
+VD: As soon as I left the house, he appeared(Ngay khi tôi rời khỏi nhà,anh ấy xuất hiện)<br>
+Harly had I left the house when he appeared<br>
+No sooner had I left the house than he appeared</p>
+<b>89.Tobe not worth = there is no point in doing sth : không đáng làm gì</b></p>
+<b>Tobe not worth doing sth = there is no point in doing sth : không đáng, vô ích làm gì</b></p>
+VD:It’s not worth making him get up early There is no point in making him getting early</p>
+<b>90. It seems that = it appears that = it is likely that = it look as if/ as though: dường như
+    rằng</b></p>
+VD: It seems that he will come late= it appears that /it is likely he will come late= he is likely
+to come late.it look as if he will come late</p>
+<b>91.S + would prefer + V-ing + O + to + V-ing + O(Thích cái gì hơn cái gì)</b>
+</p> VD: She would prefer learning English to watching TV.(Cô ấy thích học tiếng anh hơn xem TV)<br>
+I’d prefer playing football to (playing) volleyball.(Tôi thích chơi đá bóng hơn bóng chuyền)</p>
+<b>92.It’s one’s duty to do sth = S + be + supposed to do sth</b></p>
+VD:It's your duty to do something = You are supposed to do something(Bạn có nhiệm vụ phải làm gì
+đó?)</p>
+<b>93.I + let + O + do sth = S + allow + S.O + to do Sth</b></p>
+VD: My boss let him be on leave for wedding = My boss allow him to be on leave for wedding.(Ông chủ
+của tôi cho phép anh ấy nghỉ phép cho đám cưới)</p>
+<b>94. S + once + past verb = S + would to + do sth.</b></p>
+<b>95. S + present verb (negative) any more = S + would to + do sth.</b></p>
+<b>96. S + V + because + S + V = S + V + to + infinitive</b></p>
+-> She studies hard because she wants to pass the final examination = She studies hard to pass the
+final examination
+(Cô ấy học hành chăm chỉ bỏi vì cô ấy muốn vượt qua kì thi cuối cùng)</p>
+<b>97. S + V + so that/ in order that+ S + V = S + V + to + infinitive</b></p>
+VD:I study hard so that I can pass the exam.(Tôi học hành chăm chỉ để tôi có thể vượt qua kì
+thi)</p>
+<b>98. To infinitive or gerund + be + adj = It + be + adj + to + V</b></p>
+<b>99. S + V + and + S + V = S + V + both ... and</b></p>
+<b>100.S + V + both ... and(vừa..vừa... , cả .... lẫn..)</b></p>
+VD: Both Mary and Tom are students ( cả Mary lẫn Tom đều là sinh viên)</p>
+<b>101. S + V + not only … + but also = S + V + both … and: … không chỉ … mà còn …</b></p>
+VD: He translated fast and correctly = He translated not only fast but also correctly (Anh ấy dịch
+bài không chỉ nhanh mà còn chính xác)</p>
+<b>102. S1 + HTD + and+ S2 + TLD =If + S1 + HTD + S2 + TLD</b></p>
+<b>103. S1 + didn’t + V1 + Because + S2 + didn’t + V2 = If Clause </b></p>
+<b>104. S + be + scared of sth = S + be + afraid of + sth: lo sợ điều gì</b></p>
+VD: He is scared of spider(Anh ấy sợ nhện)</p>
+<b>105. Why don’t you do sth? = In my opinion = Let’s + V = S + advise = S + suggest + that + S +
+    present subjunctive: gợi ý làm gì</b></p>
+VD: Why don't you do play football? (Tại sao bạn k chơi đá bóng?)</p>
+<b>106. S + force + sb + to do sth : bắt buộc ai đó làm gì</b></p>
+VD: The bank robbers forced the manager to give them all the mone(Bọn cướp nhà băng bắt người quán
+lý đưa cho họ toàn bộ số tiền)</p>
+<b>107. S + aks + sb + to do sth = S + have + sb + do sth = bảo ai đó làm gì</b></p>
+VD: Police asked him to identify the other man in the next room = Police have him identify the other
+man in the next room (Cảnh sát bảo anh ta nhận diện người đàn ông ở phòng bên cạnh)</p>
+<b>108. S + request + sb + to do sth= S + have + sb + do sth: yêu cầu ai làm gì</b></p>
+VD: The teacher request students to learn by heart this poem.The teacher have students laern by
+heart this poem (Cô giáo yêu cầu học sinh học thuộc bài thơ)</p>
+<b>109. S + be + adj + prep = S + V + adv</b></p>
+VD: My students are very good at Mathematics = My students study Mathematics well<br> (Học sinh của
+tôi học tiếng anh rất tốt) </p>
+<b>110. Be made of = consist of = được làm bằng – đề cập đến chất liệu làm vật </b></p>
+VD: This table is made of wood<br>
+(Cái bàn này được làm bằng gỗ)
+<p><b>111. be made from = được làm từ – đề cập đến nguyên vật liệu bị biến đổi khỏi trạng thái ban
+    đầu</b></p>
+VD: Paper is made from wood<br>( Giấy được làm từ gỗ)
+<p><b>112. be made out of = được làm bằng – đề cập đến quá trình làm ra vật </b>.</p>
+VD: This cake was made out of flour, butter, sugar, eggs and milk
+<p><b>113. The last time + S + V (QKĐ) was + in/on/at + Danh từ chỉ thời gian hoặc khoảng thời gian
+    + Ago</b></p>
+VD:
+The last time I saw him was two weeks ago.<br>
+(Lần cuối tôi thấy anh ấy là 2 năm trước)
+<p><b>114. It is + khoảng thời gian + Since + S + V (Qkđ)</b></p>
+VD:
+The last time it snowed here was 3 months ago.<br>
+-> It hasn't snowed here for 3 months.<br>
+-> It is 3 months since it snowed here.<br>
+(Lần cuối tuyết rơi là 3 tháng trước)
+<p><b>115. S + started / began + Ving/ to + V + ...</b><br>
+    = S + have /has + Ving</p>
+VD: We started learning English 3 years ago.<BR>
+= We have been learning English for 3 years.<br>
+(Chúng tôi đã học tiếng anh được 3 năm)
+
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>

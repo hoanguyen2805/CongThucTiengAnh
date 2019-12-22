@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+</script>
+<!-- End tim kiem -->
+</div>
+</div>
+<br><br>
+Câu chẻ hay còn gọi là câu nhấn mạnh theo đúng như tên gọi của nó, dùng để khi ta muốn nhấn mạnh vào
+một đối tượng hay sự việc nào đó. Câu thường chia làm hai vế, một vế chính và một vế là mệnh đề quan
+hệ sử dụng that, Who, When, While…
+<br>
+<br>
+* Câu chẻ là câu có cấu trúc : <b>It is/was + …. that + …</b> <br>
+* Ta có thể nhấn mạnh chủ ngữ, tân ngữ, trạng ngữ của câu bằng cách đưa vào giữa <b>It is/was</b> và
+<b>that</b>
+<br>
+<br>
+1.<b> Nhấn mạnh chủ ngữ</b> <br> <br>
+a.<b> It is/was + chủ ngữ (người) + who/that + V</b> <br>
+
+VD : <br>
+<b>Mr. Hung</b> teaches English at my school <br>
+—> It is <b>Mr Hung</b> who/that teaches English at my school<br>
+(Chính là ông Hùng là giáo viên dạy tiếng anh tại trường tôi)<br><br>
+b.<b> It is/was + chủ ngữ (vật) + that + V</b> <br>
+<b>My dog</b> made neighbors very scared<br>
+—> It was <b>my dog</b> that made neighbors very scared
+<br>
+(Chính con chó của tôi đã làm hàng xóm hoảng sợ) <br>
+<br>
+2. <b>Nhấn mạnh tân ngữ</b> <br> <br>
+a.<b> It is/was + tân ngữ (người) + who/whom + S + V<br>
+    It is/was + tân ngữ (danh từ riêng) + that + S + V<br>
+</b>
+
+VD :<br>
+He gave <b>his wife</b> the whole confidential document
+<br> —> It was <b>his wife</b> that/whom he gave the whole confidential document<br>
+(Chính vợ anh ấy là người anh ấy đưa tài liệu mật) <br>
+<br>I met <b>Mai</b> at the party
+<br>—> It was <b>Mai</b> that I met at a party<br>
+(Chính Mai người mà tôi đã gặp ở bữa tiệc)<br>
+<br>She sent <b>her friend</b> a postcard
+<br>—> It was <b>her friend</b> that she sent a postcard <br>
+(Chính bạn cô ấy người mà cô ấy đưa danh thiếp) <br>
+<br>
+b.<b>It is/was + tân ngữ (vật)+ that + S + V</b> <br>
+VD: <br>
+My brother bought an old motorbike from our neighbor. <br>
+—> It was an old motorbike that my brother bought from our neighbor. <br>
+(Chính cái xe máy cũ là cái anh tôi đã mua từ người hàng xóm)
+<br> <br>
+3. <b>Nhấn mạnh trạng ngữ (thời gian, nơi chốn, cách thức, lý do,…)<br> <br>
+    * It is/was + trạng ngữ + that + S + V + O</b> <br>
+VD: <br>
+My father bought a new car <b>last Sunday</b>
+<br>—> It was <b>last Sunday</b> that my father bought a new car<br>
+(Đó là chủ nhật tuần trước bố tôi mua 1 chiếc xe mới) <br>
+<br>I was born in <b>this house</b>
+<br>—> It was in <b>this house</b> that I was born<br>
+(Đó chính là ngôi nhà mà tôi được sinh ra) <br>
+<br>You can kill computer viruses <b>by using this software</b>
+<br>—> It is <b>by using this software</b> that you can kill computer viruses
+<br> (Đó là phần mềm được sử dụng để bạn có thể diệt virus<br>
+<br>My father repaired the bicycle <b>for my brother</b>
+<br>—> It was <b>for my brother</b> that my father repaired the bicycle<br>
+(Chính là anh trai tôi mà bố tôi phải sửa chiếc xe đạp) <br>
+<br>
+<br>
+4. <b>Câu chẻ bị động</b> <br> <br>
+a. <b>It + is / was + Chủ ngữ(người) + who + be + P.P…</b> <br>
+VD:<br> Fans gave <b>that singer</b> a lot of flowers.<br>
+—> It was <b>that singer</b> who was given a lot of flowers.<br>
+(Chính người ca sĩ đó được tặng rất nhiều hoa)<br> <br>
+b. <b>It + is / was + Chủ ngữ(vật) + that + be + P.P…</b> <br>
+VD: <br> People talk about <b>this film.</b>
+<br> —> It is <b>this film</b> that is talked about.<br>
+(Chính bộ phim này là cái được nói đến) <br> <br>
+Fans gave that singer <b>a lot of flowers.</b> <br>
+→ It was <b>a lot of flowers</b> that were given to that singer.<br>
+(Chính nhiều hoa đã được tặng cho người ca sĩ)
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

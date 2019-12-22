@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem-->
+    </div>
+    </div>
+
+    <br>
+    <br>
+    1.<b>Công thức:</b>
+    <ul>
+        <li>Khẳng định: S + was/were + V_ing + O</li>
+        <li>Phủ định: S + wasn’t/weren’t+ V-ing + O</li>
+        <li>Nghi vấn: Was/Were + S+ V-ing + O?</li>
+    </ul>
+    2.<b>Cách dùng</b>
+    <br>
+    <br>
+    <li>Diễn đạt hành động đang xảy ra tại một thời điểm trong quá khứ tiếp diễn<br>
+        VD: When my sister got there, he was waiting for her.
+        (Khi chị tôi tới, anh ta đã đợi ở đây rồi.)
+    </li>
+    <li>Diễn đạt hai hành động xảy ra đồng thời trong quá khứ<br>
+        VD: While I was taking a bath, she was using the computer.
+
+        (Trong khi tôi đang tắm thì cô ấy dùng máy tính.)
+    </li>
+    <li>Diễn đạt hành động đang xảy ra thì có hành động khác xen vào<br>
+        VD: I was listening to the news when she phoned.
+
+        (Tôi đang nghe tin tức thì cô ấy gọi tới.)
+    </li>
+    <br>
+    3.<b>Dấu hiệu nhận biết:</b><br>
+    <br>
+    Từ nhận biết : While, when, at that time, at + giờ quá khứ, …..
+    <br>
+    <br>
+    <b>Non-continuous verbs</b>
+    <br>
+    <br>
+    Động từ không có dạng tiếp diễn vì thế ta không sử dụng những động từ này trong các thì tiếp
+    diễn.
+    <br>
+    Đây thường là những động từ mà ta không thể nhìn thấy hành động của chủ thể ( want – muốn, need
+    – cần …):
+    <br>
+    <b>Abstract verbs</b> : động từ trừu tượng <br>
+    VD: To be, to want , to seem, to care, to exist…
+    <br>
+    <b>Possession verbs</b> : động từ chỉ sở hữu <br>
+    VD: To own, to belong, to possess
+    <br>
+    <b>Emotion verbs</b> : động từ chỉ cảm xúc<br>
+    VD: To love, to like , to dislike, to fear , to mind ,…
+    <br>
+    Ex : We have loved each other for 5 year ( = we still love each other now)
+    <br>
+    NOT : We have been loving each other for 5 year ( = we are still loving each other now)<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>

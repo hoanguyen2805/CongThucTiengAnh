@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+<script src="jquery/jquery-1.11.3.min.js"></script>
+
+<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+</script>
+<style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+</style>
+<div class="float-ck" style="right: 0px">
+    <div type="hide_float_right">
+        <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+            kiếm [X]</a></div>
+    <div type="float_content_right" class="float_content_right">
+        <!-- Start tim kiem-->
+
+        <form type="f1" name="f1" action="javascript:void()"
+              onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+            <input type="text" type="t1" name="t1" value="" size="20">
+            <input type="submit" name="b1" value="Tìm kiếm">
+        </form>
+    </div>
+</div>
+<script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+</script>
+<!-- End tim kiem-->
+</div>
+</div>
+<br><br>
+
+1. <b>Động từ(Verb):</b>
+Vị trí :<br>
+- Thường đứng sau Chủ ngữ: <br>
+VD: He plays volleyball everyday.
+- Có thể đứng sau trạng từ chỉ mức độ thường xuyên: <br>
+VD: I usually get up early.
+</p>
+2. <b>Tính từ( adjective):</b>
+Vị trí :<br>
+- <b>Trước danh từ,bổ nghĩa cho từ đó:</b> beautiful girl, lovely house…></p>
+-<b>Sau TOBE</b>:<br>
+
+VD: I am fat, She is intelligent, You are friendly…<br></p>
+
+-<b>Sau động từ chỉ cảm xúc : feel, look, become, get, turn, seem, sound, hear + adj </b>
+<br>
+VD: She feels tired<br></p>
+
+-<b>Sau các từ: something, someone, anything, anyone + adj</b><br>
+VD: Is there anything new?/ I’ll tell you something interesting.
+</p>
+
+-<b>Sau keep/make+ (o)+ adj…:</b><br>
+VD: Let’s keep our school clean.
+</p>
+-<b>Sau "too": S + tobe/seem/look... + too + adj</b><br>
+VD : He is too short to play basketball</p>
+
+-<b>Trước "enough": S + tobe + adj + enough </b><br>
+VD: She is tall enough to play volleyball</p>
+
+-<b>Trong cấu trúc so...that : tobe/seem/look/feel... + so + adj + that</b><br>
+VD: The weather was so bad that we decided to saty at home</p>
+
+-<b>Tính từ còn được dùng dưới các dạng so sánh </b>
+(lưu ý tính từ dài hay đứng sau more, the most, less, as....as)<br>
+VD: Meat is more expensive than fish.<br>
+Huyen is the most intelligent student in my class<br>
+-<b>Tính từ trong câu cảm thán: How +adj + S + V</b>
+What + (a/an) + adj + N
+</p>
+Dấu hiệu nhận biết : <b>Thường có hậu tố(đuôi) là:</b><br>
+<b>al</b>: national, cutural…<br>
+<b>ful</b>: beautiful, careful, useful,peaceful…<br>
+<b>ive</b>: active, attractive ,impressive……..<br>
+<b>able</b>: comfortable, miserable…<br>
+<b>ous</b>: dangerous, serious, homorous,continuous,famous…<br>
+<b>cult</b>: difficult…<br>
+<b>ish</b>: selfish, childish…<br>
+<b>ed</b>: bored, interested, excited…<br>
+<b>y</b>: danh từ+ Y thành tính từ : daily, monthly, friendly, healthy…
+</p>
+
+3. <b>Danh từ (Noun):</b>(thường đứng đầu câu,sau trạng ngữ chỉ thời gian)</p>
+Vị trí :<br>
+-<b>Sau Tobe</b>: I am a student.</p>
+-<b>Sau tính từ</b>: nice school…</p>
+- <b>Làm tân ngữ, sau động từ</b><br>
+VD: I like English.</p>
+-<b>Sau a/an, the, this, that, these, those, each, every, both, no, some, any, few, a few, little, a
+    little,.....(Lưu ý cấu trúc a/an/the + adj + noun)
+</b><br>
+VD: This book is an interesting book.
+</p>
+-<b>Sau tính từ sở hữu : my, your, his, her, their…</b><br>
+VD: His father works in hospital.</p>
+-<b>Sau “enough”</b><br>
+VD: He didn’t have enough money to buy that car.</p>
+-<b>Sau giới từ: in, on, of, with, under, about, at</b><br>
+VD: Thanh is good at literature.
+</p>
+-<b>Sau many, a lot of/ lots of , plenty of…</b><br>
+The +(adj) N …of + (adj) N…
+</p>
+Dấu hiệu nhận biết :<br>
+Thường có hậu tố là:<br>
+<b>tion:</b> nation,education,instruction...<br>
+<b>sion:</b> question, television ,impression,passion...<br>
+<b>ment:</b> pavement, movement, environmemt...<br>
+<b>ce:</b> differrence, independence,peace...<br>
+<b>ness:</b> kindness, friendliness...<br>
+<b>y:</b> beauty, democracy(nền dân chủ), army...<br>
+<b>er/or</b> : động từ+ er/or thành danh từ chỉ người: worker, driver, swimmer, runner, player,
+visitor,…
+</p>
+*Chú ý một số Tính từ có chung Danh từ:<br>
+Adj Adv<br>
+Heavy,light : weight<br>
+Wide,narrow : width<br>
+Deep,shallow : depth<br>
+Long,short : length<br>
+Old : age<br>
+Tall,high : height<br>
+Big,small : size<br>
+</p>
+4.<b>Trạng từ(Adverb):</b></p>
+Trạng từ chỉ thể cách(adverbs of manner): adj+’ly’ adv</p>
+*Vị trí :<br>
+-<b>Trước động từ thường (nhất là các trạng từ chỉ tàn suất: often, always, usually, seldom....)</b><br>
+VD: They often get up at 6am.
+</p>
+-<b>Giữa trợ động từ và động từ thường</b><br>
+VD: I have recently finished my homework.(TĐT adv V)
+</p>
+-<b>Sau đông từ tobe/seem/look...và trước tính từ: tobe/feel/look... + adv + adj</b><br>
+VD: She is very nice.
+</p>
+- <b>Sau “too”: V(thường) + too + adv</b><br>
+VD: The teacher speaks too quickly.
+</p>
+- <b>Trước “enough” : V(thường) + adv + enough</b><br>
+VD: The teacher speaks slowly enough for us to understand.
+</p>
+-<b>Trong cấu trúc so....that: V(thường) + so + adv + that</b><br>
+VD: Jack drove so fast that he caused an accident.
+</p>
+- <b>Đứng cuối câu</b>
+VD: The doctor told me to breathe in slowly.</p>
+- <b>Trạng từ cũng thường đứng một mình ở đầu câu,hoặc giữa câu và cách các thành phần khác của câu
+    bằng dấu phẩy(,)</b><br>
+
+VD: Last summer I came back my home country<br>
+My parents had gone to bed when I got home.<br>
+It’s raining hard. Tom, however, goes to school.
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>

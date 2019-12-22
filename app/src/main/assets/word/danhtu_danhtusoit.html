@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+<script src="jquery/jquery-1.11.3.min.js"></script>
+
+<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+</script>
+<style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+</style>
+<div class="float-ck" style="right: 0px">
+    <div type="hide_float_right">
+        <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+            kiếm [X]</a></div>
+    <div type="float_content_right" class="float_content_right">
+        <!-- Start tim kiem-->
+
+        <form type="f1" name="f1" action="javascript:void()"
+              onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+            <input type="text" type="t1" name="t1" value="" size="20">
+            <input type="submit" name="b1" value="Tìm kiếm">
+        </form>
+    </div>
+</div>
+<script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+</script>
+<!-- End tim kiem-->
+</div>
+</div>
+<br><br>
+<b>Danh từ số ít và danh từ số nhiều</b>
+</p>
+Với Danh từ đếm được (Countable nouns) , chúng được chia thành danh từ số ít (Singular nouns ) và
+danh từ số nhiều (Plural nouns) .
+
+<p><b>Với các danh từ theo quy tắc:</b></p>
+<table border="3">
+    <tbody>
+    <tr>
+        <td><span><strong>Cách chuyển dạng số nhiều</strong></span></td>
+        <td><span><strong>Danh từ số ít</strong></span></td>
+        <td><span><strong>Danh từ số nhiều</strong></span></td>
+    </tr>
+    <tr>
+        <td><span>Thêm&nbsp;<em><strong>s&nbsp;</strong></em> vào sau hầu hết danh từ</span></td>
+        <td><span>A book&nbsp;</span></td>
+        <td><span>books</span></td>
+    </tr>
+    <tr>
+        <td><span>Thêm <b><i>es</i></b><i></i> vào sau danh từ kết thúc bởi&nbsp;<em><strong>sh, ch, ss, s, x, o</strong></em></span>
+        </td>
+        <td><span>A toothbrush</span></td>
+        <td><span>Toothbrushes</span></td>
+    </tr>
+    <tr>
+        <td>
+            <span>Thêm&nbsp;<em><strong>ves&nbsp;</strong></em> với danh từ kết thúc bởi&nbsp;<em><strong>f&nbsp;</strong></em></span>
+        </td>
+        <td><span>A wife&nbsp;</span></td>
+        <td><span>Wives</span></td>
+    </tr>
+    <tr>
+        <td>
+            <span>Thêm <b><i>ies&nbsp;</i></b><i></i>với danh từ kết thúc bởi <b><i>phụ âm + y</i></b></span>
+        </td>
+        <td><span>Diary&nbsp;</span></td>
+        <td><span>Diaries&nbsp;</span></td>
+    </tr>
+    </tbody>
+</table>
+<p><b>Với các danh từ bất quy tắc :</b></p>
+
+<table border="4">
+    <tbody>
+    <tr>
+        <td><span><strong>Danh từ số ít</strong></span></td>
+        <td><span><strong>Danh từ số nhiều</strong></span></td>
+        <td><span><strong>Danh từ số ít</strong></span></td>
+        <td><span><strong>Danh từ số nhiều</strong></span></td>
+    </tr>
+    <tr>
+        <td><span>Foot</span></td>
+        <td><span>Feet</span></td>
+        <td><span>Mouse</span></td>
+        <td><span>Mice</span></td>
+    </tr>
+    <tr>
+        <td><span>Tooth</span></td>
+        <td><span>Teeth</span></td>
+        <td><span>Person&nbsp;</span></td>
+        <td><span>People</span></td>
+    </tr>
+    <tr>
+        <td><span>Woman</span></td>
+        <td><span>Women</span></td>
+        <td><span>Goose</span></td>
+        <td><span>Geese</span></td>
+    </tr>
+    <tr>
+        <td><span>Man</span></td>
+        <td><span>Men</span></td>
+        <td><span>Louse</span></td>
+        <td><span>Lice</span></td>
+    </tr>
+    <tr>
+        <td><span>Child</span></td>
+        <td><span>Children</span></td>
+        <td><span>Ox</span></td>
+        <td><span>Oxen</span></td>
+    </tr>
+    </tbody>
+</table>
+<p><b>Một số danh từ mang hình thức số nhiều, nhưng lại mang nghĩa số ít.</b></p>
+
+Động từ theo chủ ngữ này chia ở Ngôi 3 số ít
+</p>
+News: Tin tức - Mumps: Bệnh quai bị <br>
+Measles: Bệnh sởi- Rickets: Bệnh còi xương<br>
+Shingles: Bệnh Zona - Billiards: Bi-da<br>
+Dart: Môn ném phi tiêu - Draughts: Môn cờ vua<br>
+Bowls: Môn ném bóng gỗ - Dominoes: Đô-mi-nô <br>
+The united States: Hợp chủng quốc Hoa Kỳ<br>
+Ex: The news is bad (Tin tức chẳng lành)
+
+<p><b>A or An ?</b></p>
+
+Với danh từ đếm được số ít, ta thêm mạo từ a/an vào trước danh từ.
+</p>
+Ta dùng a trước một phụ âm : A book , a key, a hat…
+</p>
+Ta dùng an trước 1 nguyên âm A,E,I,O,U : An apple , an umbrella…
+</p>
+Một mẹo đơn giản để phân biệt các nguyên âm và phụ âm: các nguyên âm ghép thành từ “<b>UỂ OẢI</b>”,
+các chữ còn lại là phụ âm .
+</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>

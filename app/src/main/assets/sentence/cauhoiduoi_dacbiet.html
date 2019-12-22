@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+}</script>
+    <!-- End tim kiem -->
+    </div>
+    </div>
+<br><br>
+<b>Dạng đặc biệt của câu hỏi đuôi</b><br>
+<br>
+- <b>Câu giới thiệu dùng “I am”, câu hỏi đuôi là “aren’t I”</b> <br>
+VD:      I am a student, aren’t I <br>
+<br>
+- <b>Câu giới thiệu dùng Let’s, câu hỏi đuôi là “Shall we”</b> <br>
+VD:      Let’s go for a picnic, shall we? <br>
+<br>
+- <b>Chủ ngữ là những đại từ bất định “Everyone, someone, anyone, no one, nobody…” câu hỏi đuôi là “they”</b> <br>
+VD:      Somebody wanted a drink, didn’t they? <br>
+
+Nobody phoned, did they?<br>
+<br>
+- <b>Chủ ngữ là “nothing” thì câu hỏi đuôi dùng “it”. Và Nothing là chủ ngữ có nghĩa là mệnh đề giới thiệu đang ở dạng phủ định, câu hỏi đuôi sẽ ở dạng khẳng định.</b> <br>
+VD: Nothing can happen, can it? <br>
+<br>
+- <b>Trong câu có các trạng từ phủ định và bán phủ định như: never, seldom, hardly, scarely, little… thì câu đó được xem như là câu phủ định – phần hỏi đuôi sẽ ở dạng khẳng định</b> <br>
+VD: He seldom drinks wine, does he? <br>
+<br>
+- <b>Câu đầu có It seems that + mệnh đề, lấy mệnh đề làm câu hỏi </b> <br>
+VD: It seems that you are right, aren’t you ? <br> <br>
+– <b>Chủ từ là mệnh đề danh từ, dùng “it” trong câu hỏi đuôi</b> <br>
+VD: What you have said is wrong, isn’t it ?<br>
+Why he killed himself seems a secret, doesn’t it ? <br>
+<br>
+- <b>Sau câu mệnh lệnh cách (Do…/Don’t do v.v… ),  câu hỏi đuôi thường là … will you?:</b> <br>
+VD: Open the door, will you? <br>
+
+Don’t be late, will you? <br>
+<br>
+- <b>Câu đầu là I WISH, dùng MAY trong câu hỏi đuôi</b> <br>
+VD:  I wish to study English, may I ? <br> <br>
+– <b>Chủ từ là ONE, dùng you hoặc one trong câu hỏi đuôi</b> <br>
+VD: One can be one’s master, can’t you/one? <br>
+<br>
+– <b>Câu đầu có MUST, must có nhiều cách dùng cho nên tùy theo cách dùng mà sẽ có câu hỏi đuôi khác nhau
+Must chỉ sự cần thiết: => dùng needn’t </b> <br>
+VD: They must study hard, needn’t they? <br>
+<br>
+<b>Must chỉ sự cấm đoán: => dùng must</b><br>
+VD: You mustn’t come late, must you ?<br>
+<br>
+<b>Must chỉ sự dự đoán ở hiện tại: => dựa vào động từ theo sau must </b> <br>
+VD: He must be a very intelligent student, isn’t he? <br>
+( anh ta ắt hẳn là 1 học sinh rất thông minh, phải không ?)<br>
+<br>
+<b>Must chỉ sự dự đoán ở quá khứ ( trong công thức must +have+ p.p) : => dùng  là have/has</b>
+<br>
+VD: You must have stolen my bike, haven’t you?<br>
+( bạn chắc hẵn là đã lấy cắp xe của tôi, phải không?)
+<br>
+<br>
+- <b>Câu cảm thán, lấy danh từ trong câu đổi thành đại từ,  dùng is, am, are</b> <br>
+
+VD:What a beautiful dress, isn’t it?<br>
+How intelligent you are, aren’t you?<br>
+<br>
+- <b>Câu đầu có I + các động từ sau: think, believe, suppose, figure, assume, fancy, imagine, reckon, expect, seem, feel + mệnh đề phụ, lấy mệnh đề phụ làm câu hỏi đuôi.</b>
+<br>
+VD: I think he will come here, won’t he?<br>
+I don’t believe Mary can do it, can she?<br>
+<b>( lưu ý MĐ chính có not thì vẫn tính như ở MĐ phụ)</b><br>
+Cùng mẫu này nhưng nếu chủ từ không phải là I thì lại dùng mệnh đề đầu làm câu hỏi đuôi.<br>
+VD: She thinks he will come, doesn’t she?<br>
+<br>
+- <b>USED TO:</b> từng (diễn tả thói quen, hành động thường lập đi lập lại trong quá khứ).<br>
+Trường hợp này, ta cứ việc xem <b>USED TO</b> là một động từ chia ở thì quá khứ. Do đó, câu hỏi đuôi tương ứng chỉ cần mượn trợ động từ <b>DID</b> <br>
+
+VD: She used to live here, didn’t she?
+<br>
+<br>
+– <b>Had better:</b>  “had better” thường được viết ngắn gọn thành <b>‘D BETTER</b>, nên dễ khiến ta lúng túng khi phải lập câu hỏi đuôi tương ứng. Khi thấy <b>‘D BETTER</b>, chỉ cần mượn trợ động từ <b>HAD</b> để lập câu hỏi đuôi.
+<br>VD: He’d better stay, hadn’t he?<br>
+<br>
+– <b>WOULD RATHER:</b>  Would rather thường được viết gọn là <b>‘D RATHER</b> nên cũng dễ gây lúng túng cho bạn. Chỉ cần mượn trợ động từ <b>WOULD</b> cho trường hợp này để lập câu hỏi đuôi.
+<br>VD: You’d rather go, wouldn’t you?
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>

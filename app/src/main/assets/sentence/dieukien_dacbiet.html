@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem -->
+    </div>
+    </div>
+    <br><br>
+    1.<b>Câu điều kiện hỗn hợp:</b>
+    <br>
+    - Câu điều kiện hỗn hợp là câu điều kiện kết hợp giữa câu điều kiện loại 3 và câu điều kiện loại
+    2. -> Dùng để diễn đạt giả định về một điều “trái với sự thật trong quá khứ”, nhưng kết quả muốn
+    nói đến trái ngược với sự thật ở hiện tại.
+    <br><br>
+    * Cấu trúc: <b> S + had + VpII, S + would/should + V(nguyên thể) </b>
+    <br><br>
+    Ta thấy mệnh đề chứa “If” hay còn gọi là “mệnh đề giả định” sử dụng cấu trúc của câu điều kiện
+    loại III (động từ chia thì quá khứ hoàn thành), còn mệnh đề chính sử dụng cấu trúc của câu điều
+    kiện loại II (would/should + V(nguyên thể)).
+    <br>
+    <br>
+    VD:
+
+    If he had told me the reason yesterday, I wouldn’t be sad now. (Nếu hôm qua anh ấy nói với tôi
+    lý do thì bây giờ tôi sẽ không buồn như vậy.)<br>
+    -> Sự thật là hôm qua anh ấy đã không nói với tôi lý do, và bây giờ tôi cảm thấy rất buồn.
+    <br>
+    Ta thấy mệnh đề “If” đưa ra một giả định trái với sự thật trong quá khứ (hôm qua), và mệnh đề
+    chính đưa ra giả định về kết quả trái với sự thật ở hiện tại (bây giờ).
+    <br>
+    <br>
+    2.<b>Câu điều kiện với UNLESS</b>:
+    <br>
+    <br>
+    Ta có: <b> Unless (trừ khi) = if not</b>
+    <br>
+    VD:
+
+    - If she <b>doesn’t study</b> hard, she <b>will get</b> bad marks. (Nếu cô ấy không học hành
+    chăm chỉ, cô ấy sẽ bị điểm kém.)
+    <br>
+    = <b>Unless</b> she <b>studies</b> hard, she <b>will get</b> bad marks. (Trừ khi cô ấy học hành
+    chăm chỉ, nếu không cô ấy sẽ bị điểm kém.)
+    <br><br>
+    CHÚ Ý:
+    <br>
+    * Ta chỉ sử dụng “unless” trong câu điều kiện loại I (giả định một việc có thể xảy ra ở hiện tại
+    và tương lai)
+    <br>
+    * Không sử dụng “unless” trong câu điều kiện loại II và loại III.
+    <br>
+    * Không sử dụng “unless” trong câu hỏi.
+    <br>
+    VD:
+
+    Ta có thể sử dụng: What will you do if he doesn’t come? (Bạn sẽ làm gì nếu anh ấy không đến?)
+    <br>
+    Nhưng ta KHÔNG sử dụng: What will you do unless he comes?<br>
+    <br>
+    <b> Một số biến thể có thể có của các cụm động từ trong các vế của câu điều kiện: </b>
+    <br>
+    <br>
+    1.<b>LOẠI I</b>
+    <br>
+    <br>
+    <b>A. Biến thể của cụm động từ trong mệnh đề chính (main clause) </b>
+    <br><br>
+    - Đối với trường hợp muốn nhấn mạnh tính có thể xảy ra sự việc<br>
+    <b>If + present simple, ... may/might + V-inf.</b><br>
+    VD: If the weather gets worse, the flight may/might be delayed.
+    <br>
+    <br>
+    - Đối với trường hợp thể hiện sự đồng ý, cho phép, gợi ý<br>
+    <b>If + present simple, ... may/can + V-inf.</b>
+    <br>
+    VD: If it stops raining, we can go out.<br>
+    <br>
+    - Đối với câu gợi ý, khuyên răn, đề nghị hoặc yêu cầu nhưng nhấn mạnh về hành động<br>
+    <b>If + present simple, ... would like to/must/have to/should... + V-inf.</b><br>
+    VD: If you go to the library today, I would like to go with you.<br>
+    If you want to lose weight, you should do some exercise.<br>
+    <br>
+    - Đối với trường hợp muốn diễn tả hậu quả tất yếu của điều kiện đặt ra theo quy luật hoặc thói
+    quen
+    <br><b>If + present simple, present simple.</b><br>
+    VD: If you eat this poisonous fruit, you die at once.<br>
+    If you boil water, it turns to vapor.<br>
+    <br>
+    - Đối với trường hợp có thể xảy ra trong tương lai và nhấn mạnh trạng thái diễn ra/hoàn thành
+    của sự việc<br>
+    <b>If + present simple, future continuous/future perfect.</b><br>
+    VD: If we leave Hanoi for Hue today, we shall be staying in Hue tomorrow.<br>
+    If you do your home work right now, you will have finished it in 2 hours' time.<br>
+    <br>
+    - Đối với câu mệnh lệnh (chủ ngữ ẩn ở mệnh đề chính)<br>
+    <b>If + present simple, (do not) V-inf.</b><br>
+    VD: If you are hungry, go to a restaurant.<br>
+    If you feel cold, don't open the door.<br>
+    <br>
+    - Đối với câu khuyên răn, trong trường hợp này không thực sự là một câu điều kiện bởi "if" mang
+    nghĩa như "as, since, because"
+    <b>If + present simple, why do (not) + V-inf.</b>
+    VD: If you like the movie, why don't you go to the cinema?<br>
+    <br>
+    <b>B. Biến thể của cụm động từ trong mệnh đề điều kiện (if-clause)</b><br>
+    <br>
+    - Đối với trường hợp đang xảy ra ngay trong hiện tại
+    <br> <b>If + present continuous, simple future.</b><br>
+    VD: If he is working, I won't disturb him.<br>
+    If you are doing exercises, I shall wait.<br>
+    If I am playing a nice game, don't put me to bed.(tương đương simple future)
+    <br> <br>
+    - Đối với trường hợp không chắc về thời gian của điều kiện có thật mà nhấn mạnh tính hoàn tất
+    của nó
+    <br> <b>If + present perfect, simple future.</b> <br>
+    VD: If you have finished your homework, I shall ask for your help.
+    <br><br>
+    - Đối với câu gợi ý nhưng nhấn mạnh về điều kiện<br>
+    <br><b>If + would like to + V-inf, ... will/can/must/nothing + V-inf.</b>
+    VD: If you would like to go to the library today, I can/will go with you.<br>
+    <br>
+    - Đối với câu đề nghị, gợi ý, bày tỏ ý kiến mang tính lịch sự
+    <br> <b>If + can/may/must/have to/should/be going to + V-inf, simple future.</b> <br>
+    VD: If I can help you, I will.<br>
+    If I may get into the room now, I shan't feel cold.<br>
+    If I must/have to take the oral test, I shall feel afraid.<br>
+    If you are going to go to University, you must study hard before an entrance examination.<br>
+    If you should see her tomorrow, please tell her to phone me at once. (tương đương probably)<br>
+    <br>
+    <b>Lưu ý:</b> Trong câu <b>"if + subject + should + V-inf."</b>, should có thể được đưa lên đầu
+    câu thay "if"
+    <b>Should + S + V-inf, simple future</b>.<br>
+    VD: Should you see him on the way home from work, please tell him to call on me<br>
+    <br>
+    Tương tự như vậy, ta có một số biến thể ít phổ biến hơn của cụm động từ đối với <b>GIẢ ĐỊNH
+    KHÔNG CÓ THỰC (unreal conditions loại II và III)</b>, tuỳ vào việc muốn nhấn mạnh và trạng thái
+    diễn tiến hay hoàn thành của sự việc trong mệnh đề điều kiện hoặc sự việc trong mệnh đề chính.
+    <br> <br>
+    2.<b>LOẠI II</b>
+    <br> <br>
+    <b>A. Mệnh đề chính (main clause)</b><br>
+    - <b>If + past simple, ... would/should/could/might/had to/ought to + be V-ing.</b><br>
+    VD: If we left Hanoi for Hue this morning, we would be staying in Hue tomorrow.<br>
+    <br>
+    - <b>If + past simple, past simple. (việc đã xảy ra)</b><br>
+    VD: If the goalkeeper didn't catch the ball, they lost.<br>
+    <br>
+    - <b>If + past simple, ... would be + V-ing.</b><br>
+    VD: If I were on holiday with him, I would/might be touring Italy now.<br>
+    <br>
+    - <b>If dùng như "as, since, because" có thể kết hợp với động từ ở nhiều thì khác nhau trong
+    mệnh đề chính và không thực sự là một câu điều kiện.</b>
+    <br> VD: If you knew her troubles, why didn't you tell me?<br>
+    <br>
+    B.<b> Mệnh đề phụ (if-clause)</b>
+    <br> <br>
+    - <b>If + past continuous, ... would/could + V-inf.</b><br>
+    VD: If we were studying English in London now, we could speak English much better.
+    <br>
+    - <b>If + past perfect, ... would/could + V-inf.</b><br>
+    VD: If you had taken my advice, you would be a millionaire now.<br>
+    <br>
+    3. <b>LOẠI III</b><br>
+    <br>
+    A. <b>Mệnh đề chính (main clause)</b>
+    <br> <br>
+    - <b>If + past perfect, ... could/might + present perfect.</b>
+    <br>
+    VD: If we had found him earlier, we could have saved his life.<br>
+    <br>
+    - <b>If + past perfect, present perfect continuous.</b><br>
+    VD: If you had left Hanoi for Haiphong last Saturday, you would have been swimming in Doson last
+    Sunday.
+    <br> <br>
+    - <b>If + past perfect, ... would + V-inf.</b>
+    <br>
+    VD: If she had followedmy advice, she would be richer now.<br>
+    If you had taken the medicine yesterday, you would be better now.<br>
+    <br>
+    <b>B. Mệnh đề phụ (if-clause)</b><br>
+    <br>
+    - <b>If + past perfect continuous, ... would + present perfect.</b><br>
+    VD: If it hadn't been raining the whole week, I would have finished the laundry<br>
+    <br>
+    Đối với trường hợp <b>"if" được sử dụng như một liên từ dùng để bắt đầu một mệnh đề phụ trạng
+    ngữ chỉ điều kiện về thời gian, lúc này "if = when".</b> Vậy "if" và "when" khác nhau thế nào?
+    <br><br>
+    - <b>WHEN: được dùng khi diễn tả một điều gì đó chắc chắn xảy ra.</b> <br>
+    VD: I am going to do some shopping today. When I go shopping, I'll buy you some coffee.<br>
+    <br>
+    - <b>IF: được dùng khi diễn tả một điều không chắc chắn (có thể hoặc không thể) xảy ra trong
+    tương lai.</b><br>
+    VD: I may go shopping today. If I go shopping, I'll buy you some coffee.<br>
+    <br>
+    <b>Lưu ý: Động từ chính trong mệnh đề phụ trạng ngữ bắt đầu bằng "when" hoặc "if" luôn ở thì
+        present simple mặc dù hành động sẽ xảy ra trong tương lai.</b><br>
+    VD: When/If he arrives tomorrow, I'll tell him about it<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>

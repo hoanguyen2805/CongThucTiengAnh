@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem -->
+    </div>
+    </div>
+    <br><br>
+    <p><b>1. Đảo ngữ với NO và NOT</b></p>
+    <b>No + N + Trợ động từ + S + Verb (inf)
+        <br>
+        Not any + N + Trợ động từ + S + Verb (inf)</b></p>
+    VD: No money shall I lend you from now on.<br>
+    (= Not any money shall I lend you from now on.)
+    <p><b>2. Đảo ngữ với các trạng từ phủ định: Never, Rarely, Seldom, Little, Hardly ever,…</b></p>
+    <b>Never/ Rarely/ Seldom /Little/ Hardly ever + Trợ động từ + S + V</b><br>
+    VD: Never in Mid-summer does it snow.<br>
+    (Không bao giờ giữa mùa hè có tuyết)<br>
+    Hardly ever does he speak in the public.<br>
+    (Hầu như k bao giờ a ấy nói ở nơi công cộng)
+    <p><b>3. Đảo ngữ với ONLY</b></p>
+    Only once + Trợ động từ + S + V<br>
+    Only later + Trợ động từ + S + V<br>
+    Only in this way + Trợ động từ + S + V<br>
+    Only in that way + Trợ động từ + S + V<br>
+    Only then + Trợ động từ + S + V<br>
+    Only after + N<br>
+    Only by V_ing/ N<br>
+    Only when + clause<br>
+    Only with + N<br>
+    Only if+ clause<br>
+    Only in adv of time/ place<br>
+    VD: <br>
+    Only once did I meet her.<br>
+    (Tôi chỉ gặp cô ấy 1 lần)<br>
+    Only after all guests had gone home could we relax.<br>
+    (Chúng ta có thể thư giãn khi mà mọi người đã ra về)<br>
+    Only when I understand her did I like her.<br>
+    (Tôi thích cô ấy khi mà tôi hiểu được cô ấy )<br>
+    Only by practising English every day can you speak it fluently.
+    <p><b>4. Đảo ngữ với các cụm từ có No</b></p>
+    At no time + Trợ động từ + S + N <br>
+    On no condition + Trợ động từ + S + N <br>
+    On no account + Trợ động từ + S + N <br>
+    Under/ in no circumstances + Trợ động từ + S + N <br>
+    For no reason + Trợ động từ + S + N <br>
+    In no way + Trợ động từ + S + N <br>
+    No longer + Trợ động từ + S + N<br>
+    VD:<br>
+    For no reason shall you play truant.<br>
+    (Không có lý do gì để bạn nghỉ học)<br>
+    The money is not to be paid under any circumstances.<br>
+    (= Under no circumsstances is the money tobe paid.)<br>
+    On no condition shall we accept their proposal.
+    <p><b>5. No sooner ... than... = Hardly / Barely / Scarely ...when / before... (Vừa mới ....
+        thì.....)</b>
+    </p>
+    <b>No sooner had + S + V(PP/V3) + than + clause (mệnh đề thường ở thì quá khứ đơn).
+        <br><br>
+        Hardly / Barely / Scarely had + S + V(PP/V3) + when / before + clause (mệnh đề thường ở thì
+        quá khứ đơn)
+    </b><br>
+    VD:<br>
+    No sooner had I arrived home than the telephone rang.<br>
+    (Tôi vừa về tới nhà thì điện thoại reo)<br>
+    Hardly / Scarely / Barely had we sat down at the table, when the phone rang<br>
+    (Chúng tôi vừa ngồi xuống bàn thì điện thoại reo)
+    <p><b>6. Đảo ngữ với Not only…… but also…</b><br><br>
+        Not only: mệnh đề đảo<br>
+        But … also: mệnh đề thường.
+
+        <b>Not only + Trợ động từ/be + S + V but + S + also</b>
+        VD:<br>
+        Not only is he good at English but he can also draw very well.<br>
+        (Anh ta không chỉ giỏi tiếng Anh mà anh ta còn vẽ rất đẹp.)<br>
+        Not only do we finish this work but we also work overtime.<br>
+        (Không những phải làm xong công việc này mà chúng tôi còn phải làm thêm giờ nữa).
+
+    <p><b>7. Đảo ngữ với SO</b></p>
+    <b>So + Adj/ Adv + Trợ động từ + S + V + that-clause (mệnh đề danh từ)</b><br>
+    VD:<br>
+    So dark is it that I can’t write.<br>
+    (Tôi k thể viết vì quá tối)<br>
+    So busy am I that I don’t have time to look after myself.<br>
+    (Tôi k có thời gian chăm sóc bản thân vì quá bận)<br>
+    So difficult was the exam that few student pass it.<br>
+    So attractive is she that many boys run after her.
+    <P><b>8. So + adjective + be + N + clause</b></P>
+    VD: <br>
+    So intelligent is that she can answer all questions in the interview.<br>
+    (Cô ấy có thể trả lời tất cả câu hỏi trong buổi phỏng vấn vì cô ấy rất tự tin)
+    <p><b>9. Đảo ngữ với until/ till + clause/ Adv of time + Trợ động từ + S + V(Cho đến khi...)</b>
+    </p>
+    VD: I won’t come home till 10 o’clock.<br>
+    (Tôi k muốn về nhà cho đến khi 10 giờ)<br>
+    (=Not until/ till o’clock that I will come home.)<br>
+    (= It is not until 10 o’clock that I will come home.)<br>
+    I didn’t know that I had lost my key till I got home.<br>
+    (Tôi k biết tôi làm mất chìa khóa cho đến khi tôi về nhà)<br>
+    (= Not until/ till I got home did I know that I had lost my key.)
+    <p><b>10. Đảo ngữ với No where + Aux (Trợ động từ) + S + V</b>(Không nơi nào...)</p>
+    VD: <br>
+    No where in the Vietnam is the scenery as beautiful as that in my country.<br>
+    (K nơi nào ở Việt Nam có phong cảnh đẹp như ở quê tôi)<br>
+    No where do I feel as comfortable as I do at home.<br>
+    (K nơi nào tôi cảm thấy thoải mái như ở nhà)<br>
+    No where can you buy the goods as good as those in my country.<br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>

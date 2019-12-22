@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Công thức - Ngữ Pháp Tiếng Anh</string>
+    <string name="formula">Ngữ Pháp</string>
+    <string name="banner_home_footer" translatable="false">9358/2805871133</string>
+    <string name="ads_full_screen" translatable="false">ca-app-299358/2063635107</string>
+    <string name="admob_app_id" translatable="false">ca-ap8~3219855670</string>
+    <string name="tab_sentence">Câu</string>
+    <string name="tab_word">Từ</string>
+    <string name="formula_english">Ngữ Pháp tiếng Anh</string>
+    <string name="share_app">Chia sẻ</string>
+    <string name="rare_app">Đánh giá</string>
+    <string name="share_with_app">Chia sẻ với ứng dụng</string>
+    <string name="no_app">Không có ứng dụng</string>
+    <string name="information">Thông tin</string>
+    <string name="create_by">Create by Dream Team</string>
+    <string name="app_information">Ứng dụng bao gồm các nội dung chính:\n
+        Công thức các thì và các loại câu trong tiếng anh\n
+        Công thức viết lại câu\n
+        Thành ngữ tục ngữ\n
+        Cấu trúc trật từ tính từ\n
+        Bảng động từ bất quy tắc\n
+        Mỗi nội dung đều có chức năng tìm kiếm nhanh\n
+        Nội dung ứng dụng phù hợp với tất cả các cấp học.</string>
+</resources>

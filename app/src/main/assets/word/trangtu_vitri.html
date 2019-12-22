@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+<script src="jquery/jquery-1.11.3.min.js"></script>
+
+<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+</script>
+<style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+</style>
+<div class="float-ck" style="right: 0px">
+    <div type="hide_float_right">
+        <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+            kiếm [X]</a></div>
+    <div type="float_content_right" class="float_content_right">
+        <!-- Start tim kiem-->
+
+        <form type="f1" name="f1" action="javascript:void()"
+              onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+            <input type="text" type="t1" name="t1" value="" size="20">
+            <input type="submit" name="b1" value="Tìm kiếm">
+        </form>
+    </div>
+</div>
+<script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+</script>
+<!-- End tim kiem -->
+</div>
+</div><br>
+<p><b>I.Cách hình thành trạng từ.</b></p>
+Tính từ + -ly : Phần lớn trạng từ chỉ thể cách có hể được thành lập bằng cách thêm -ly vào tính
+từ:</p>
+- Quick -> Quickly
+<br>- Kind -> kindly
+<br>- Bad -> badly
+<br>- Easy -> easily
+<p><b>II. Vị trí của trạng từ.</b></p>
+Trạng từ (adverbs): Trạng từ thường đứng ở các vị trí sau
+
+<p><b>1. Trước động từ thường</b>(nhất là các trạng từ chỉ tàn suất: often, always, usually,
+    seldom....)</p>
+VD: They often get up at 6am.<br>
+(Họ thường ngủ dậy lúc 6 giờ sáng)
+<p><b>2. Giữa trợ động từ và động từ thường</b>(TĐT - adv - V)</p>
+VD: I have recently finished my homework.<br>
+(Gần đây tôi đã hoàn thành bài tập về nhà của tôi.)
+<p><b>3. Sau đông từ tobe/seem/look...và trước tính từ: tobe/feel/look... + adv + adj</b>(Adv adj)
+</p>
+VD: She is very nice.<br>
+(Cô ấy rất tốt)
+<p><b>4. Sau “too”: V(thường) + too + adv</b></p>
+VD: The teacher speaks too quickly.<br>(Giao viên nói quá nhanh)
+<p><b>5. Trước “enough” : V(thường) + adv + enough</b></p>
+VD: The teacher speaks slowly enough for us to understand.<br>
+(Giao viên nói đủ chậm để họ hiểu dc)
+<p><b>6. Trong cấu trúc so....that: V(thường) + so + adv + that</b></p>
+VD: Jack drove so fast that he caused an accident.<br>
+(Jack đã lái xe rất nhanh nên a ấy gặp tai nạn)
+<p><b>7. Đứng cuối câu</b></p>
+VD: The doctor told me to breathe in slowly.<br>
+(Bác sĩ bảo tôi hít thở thật chậm rãi)
+<p><b> 8. Trạng từ cũng thường đứng một mình ở đầu câu,hoặc giữa câu và cách các thành phần khác của
+    câu bằng dấu phẩy(,)</b></p>
+VD: Last summer I came back my home country<br>
+My parents had gone to bed when I got home.<br>
+(Ông bà tôi chỉ đi ngủ khi tôi về nhà)
+<p>- Trạng từ bổ nghĩa cho từ loại nào thì phải đứng gần từ loại ấy. Quy tắc này thường được gọi là
+    Quy tắc "cận kề".</p>
+VD: She often says she visits her grandmother. (Often bổ nghĩa cho "says"). <br>
+She says he often visits her grandmother. (Often bổ nghĩa cho "visits")
+<p>- Trạng từ chỉ thời gian trong tình huống bình thường nên đặt nó ở cuối câu (như vậy rất khác với
+    tiếng Việt Nam ).</p>
+VD: We visited our grandmother yesterday.<br>
+I took the exams last week.
+<p>- Trạng từ không được đặt/dùng giữa Động từ và Tân ngữ:</p>
+VD: He speaks English slowly. He speaks English very fluently.
+<p>- Một khi có nhiều trạng từ trong một câu, vị trí của trạng từ nằm ở cuối câu sẽ có thứ tự ưu
+    tiên như sau: </p>
+<b>[ Nơi chốn - Cách thức - Tần suất - Thời gian]</b>
+<br>
+<table border="5">
+    <tbody>
+    <tr>
+        <td><span>Chủ ngữ</span></td>
+        <td><span>Nơi chốn</span></td>
+        <td><span>Cách thức</span></td>
+        <td><span>Tần suất</span></td>
+        <td><span>Thời gian</span></td>
+    </tr>
+    <tr>
+        <td><span>/động từ</span></td>
+        <td><span>/địa điểm</span></td>
+        <td><span><em>by plane</em></span></td>
+        <td><span><em>everyday <br></em></span></td>
+        <td><span><em>yesterday</em><em> </em><em> </em></span></td>
+    </tr>
+    <tr>
+        <td><span><em>I went</em></span></td>
+        <td><span><em>to Bankok</em></span></td>
+        <td><span><em>by jet plane</em></span></td>
+        <td><span><em>once a week</em></span></td>
+        <td><span><em>last month</em></span></td>
+    </tr>
+    <tr>
+        <td><span><em>I walked</em></span></td>
+        <td><span><em>to the library</em></span></td>
+        <td></td>
+        <td></td>
+        <td><span><em>last year</em></span></td>
+    </tr>
+    <tr>
+        <td><span><em>He flew</em></span></td>
+        <td><span><em>to London</em></span></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+<p>Những trạng từ chỉ phẩm chất cho cả một câu như Luckily, Fortunately, Eventually, Certainly hoặc
+    Surely ... thường được đặt ở đầu mỗi câu.
+</p>
+VD: Certainly, they will be here this afternoon.<br>
+Luckily, she didn't live where the war broke out in 1914-1918.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>

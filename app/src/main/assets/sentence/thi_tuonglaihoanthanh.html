@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem-->
+    </div>
+    </div>
+    <b> Thì tương lai hoàn thành - Future Perfect</b><br>
+    <br>
+    1.<b>Công thức:</b>
+    <ul>
+        <li>Khẳng định: S + shall/will + have + Past Participle</li>
+        <li>Phủ định: S + shall/will + NOT+ be + V_ing+ O</li>
+        <li>Nghi vấn: shall/will + NOT+ be + V_ing+ O?</li>
+    </ul>
+    2.<b>Cách dùng</b>
+    <br>
+    <li>Dùng để diễn tả một hành động hay sự việc hoàn thành trước một thời điểm trong tương
+        lai.<br>
+
+        VD: I will have finished my homework before 9 o’clock this evening. (Cho đến trước 9h tối
+        nay tôi sẽ hoàn thành xong bài tập về nhà rồi.)<br>
+
+        Ta thấy “9h tối nay” là một thời điểm trong tương lai và “việc bài tập về nhà” sẽ được hoàn
+        thành trước thời điểm này nên ta sử dụng thì tương lai hoàn thành.
+    </li>
+    <li>Dùng để diễn tả một hành động hay sự việc hoàn thành trước một hành động hay sự việc khác
+        trong tương lai.<br>
+        Hành động, sự việc hoàn thành trước sẽ chia thì tương lai hoàn thành. Hành động, sự việc xảy
+        ra sau sẽ chia thì hiện tại đơn.
+        <br>
+        VD: I will have made the meal ready before the time you come tomorrow. (Ngày mai tôi đã
+        chuẩn bị bữa ăn sẵn sàng trước khi bạn đến ngày mai.)<br>
+
+        Ta thấy có hai sự việc sẽ xảy ra trong tương lai: “chuẩn bị bữa ăn” và “bạn đến”. Việc
+        “chuẩn bị bữa ăn” sẽ được hoàn thành trước việc “bạn đến” nên ta sử dụng thì tương lai hoàn
+        thành. Việc xảy ra sau “bạn đến” sẽ chia thì hiện tại đơn.
+    </li>
+    <br>
+    3.<b>Dấu hiệu nhận biết</b>
+    <br>
+    - by + thời gian trong tương lai<br>
+
+    - by the end of + thời gian trong tương lai<br>
+
+    - by the time …<br>
+
+    - before + thời gian trong tương lai<br>
+
+    VD: By the end of this month I will have taken an English course. (Cho tới cuối tháng này thì
+    tôi đã tham gia một khóa học Tiếng Anh rồi.)
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>

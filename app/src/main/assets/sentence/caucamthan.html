@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+</script>
+<!-- End tim kiem -->
+</div>
+</div><br>
+<br>
+I.<b>Câu cảm thán</b> <br> <br>
+Câu cảm thán là câu diễn tả một cảm giác cảm xúc hay thái độ (ngạc nhiên, thán phục, tội nghiệp, ghê
+tởm, …) của một người trước một người, sự vật, sự việc nào đó.
+<br>
+Hình thức cảm thán thường được cấu tạo với “HOW, WHAT, SO, SUCH” và hình thức câu hỏi phủ định.
+<br> <br>
+1.<b>Câu cảm thán với “WHAT” </b> <br> <br>
+- <b>What + a/ an + adj + danh từ số ít</b>
+<br>
+VD:<br>
+
+What a lazy student! (Cậu học trò lười quá!)
+<br>
+What an interesting novel! (Quyển tiểu thuyết hay quá!)
+<br> <br>
+- <b>What + adj + danh từ số nhiều/ không đếm được</b>
+<br>
+VD:
+<br>
+What tight shoes are! (Giầy chật quá!)
+<br>
+What beautiful flowers are! (Bông hoa đẹp quá!)
+<br>
+What beautiful weather! (Thời tiết đẹp quá!)
+<br> <br>
+- <b>What + a/ an + adj + noun + S + V</b>
+<br>
+VD:
+<br>
+What a beautiful smile you have! (Bạn có nụ cười đẹp quá!)
+<br>
+What a good picture they saw! (Tôi đã xem một bức tranh thật tuyệt)
+<br> <br>
+
+2.<b>Câu cảm thán với “ HOW:</b> <br> <br>
+- <b>How + adjective/ adverb + S + V</b>
+<br>
+VD:
+<br>
+How cold (adj) it is! (Trời lạnh quá!)
+<br>
+How interesting (adj) this film is! (Bộ phim này hay quá!)
+<br>
+How well (adv) she sings! (Cô ấy hát hay thật!)
+<br> <br>
+- <b>How + subject + verb</b>
+<br>
+VD: <br> How you’ve grown! (Cháu lớn nhannh quá!)
+<br> <br>
+3.<b>Câu cảm thán với SO và SUCH:</b>
+<br> <br>
+- <b>So + adjective</b> <br>
+
+- <b>Such (+ a/ an) + adjective + noun</b>
+<br>
+VD:<br>
+
+He is so fat! (Anh ta mập quá!)
+<br>
+It was such a boring speech! (Bài diễn văn buồn tẻ quá!)
+<br>
+She has such an expensive coat! (Cô ấy có cái áo khoác đắt tiền làm sao!)
+<br>
+<br>
+4.<b>Dạng câu hỏi phủ định:</b> <br>
+VD:
+<br>
+Isn’t the weather nice! (Thời tiết đẹp quá nhỉ)
+<br>
+Hasn’t she grown! (Cô bé lớn nhanh thật)
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>
+

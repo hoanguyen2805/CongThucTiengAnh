@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+<script src="jquery/jquery-1.11.3.min.js"></script>
+
+<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+</script>
+<style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+</style>
+<div class="float-ck" style="right: 0px">
+    <div type="hide_float_right">
+        <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+            kiếm [X]</a></div>
+    <div type="float_content_right" class="float_content_right">
+        <!-- Start tim kiem-->
+
+        <form type="f1" name="f1" action="javascript:void()"
+              onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+            <input type="text" type="t1" name="t1" value="" size="20">
+            <input type="submit" name="b1" value="Tìm kiếm">
+        </form>
+    </div>
+</div>
+<script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+</script>
+<!-- End tim kiem -->
+</div>
+</div>
+<br><br>
+<b>Bảng so sánh tính từ, trạng từ bất quy tắc</b>
+<br>
+<table border="3 ">
+    <tbody>
+    <tr>
+        <td>
+            <table border="1" cellpadding="1" cellspacing="1">
+                <tbody>
+                <tr>
+                    <td><strong>Adj</strong></td>
+                    <td><strong>So sánh hơn</strong></td>
+                    <td><strong>So sánh nhất</strong></td>
+                </tr>
+                <tr>
+                    <td>good/well</td>
+                    <td>better</td>
+                    <td>best</td>
+                </tr>
+                <tr>
+                    <td>bad&nbsp;</td>
+                    <td>worse</td>
+                    <td>worst</td>
+                </tr>
+                <tr>
+                    <td>little (amount)</td>
+                    <td>less</td>
+                    <td>least</td>
+                </tr>
+                <tr>
+                    <td>little (size)</td>
+                    <td>smaller</td>
+                    <td>smallest</td>
+                </tr>
+                <tr>
+                    <td>much / many</td>
+                    <td>more</td>
+                    <td>most</td>
+                </tr>
+                <tr>
+                    <td>far (place + time)</td>
+                    <td>further</td>
+                    <td>furthest</td>
+                </tr>
+                <tr>
+                    <td>far (place)</td>
+                    <td>farther</td>
+                    <td>farthest</td>
+                </tr>
+                <tr>
+                    <td>late (time)</td>
+                    <td>later</td>
+                    <td>latest</td>
+                </tr>
+                <tr>
+                    <td>near (place)</td>
+                    <td>nearer</td>
+                    <td>nearest</td>
+                </tr>
+                <tr>
+                    <td>old (people and things)</td>
+                    <td>older/elder</td>
+                    <td>oldest/eldest</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div>&nbsp;</div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<br> <br>
+<b>IN or OF</b>
+<br>
+Trong hình thức so sánh nhất :
+<br>
+-<b> IN</b> được dùng với danh từ đếm được số ít để chỉ một nơi chốn (vd: city, building, country,
+…), một tổ chức hoặc nhóm người (class, team, family, …)
+<br>
+VD : Who’s the best player in the team?
+<br>
+(Ai là cầu thủ chơi hay nhất đội?)
+<br>
+<br>
+
+- <b>OF</b> được dùng để chỉ khoảng thời gian hoặc dùng trước danh từ đếm được số nhiều chỉ một số
+lượng xác định người hoặc vật.
+<br>VD : She is the most beautiful of the three sisters.
+<br>
+(Cô ấy xinh nhất trong ba chị em)
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>

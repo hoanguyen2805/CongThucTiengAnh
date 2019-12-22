@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem -->
+    </div>
+    </div>
+    <br>
+    <br>
+    1.<b>Đại từ quan hệ</b> <br>
+    <table border="3">
+        <tbody>
+        <tr>
+            <td><strong>Đại từ quan hệ</strong></td>
+
+            </td>
+            <td style="text-align: center; "><strong>Cách sử dụng</strong></td>
+            <td style="text-align: center; "><strong>Ví dụ</strong></td>
+        </tr>
+        <tr>
+            <td>Who</td>
+            <td>Dùng cho người, đứng sau danh từ chỉ người để làm chủ ngữ hoặc tân ngữ cho động từ
+                đứng sau nó.
+            </td>
+            <td>- Who là chủ ngữ của mệnh đề quan hệ:<br>
+                Her boyfriend, <b>who</b> was afraid, asked her not to go out.
+
+                (Bạn trai cô ấy vì đang hoảng sợ yêu cầu cô không được ra ngoài).
+                <br>
+                - Who là tân ngữ của mệnh đề quan hệ:<br>
+                That is the girl <b>who</b> I am looking for.
+
+                (Đây là cô gái tôi đang tìm kiếm).
+            </td>
+        </tr>
+        <tr>
+            <td>Which</td>
+            <td> là đại từ quan hệ chỉ vật, đứng sau các danh từ chỉ con vật, đồ vật, sự vật, làm
+                chức năng chủ ngữ hoặc tân ngữ cho động từ đứng sau nó.
+            </td>
+            <td>This is the sport <b>which</b> I often practice whenever I have free time.
+
+                (Đây là môn thể thao mà tôi thường tập luyện mỗi khi có thời gian rỗi).<br>
+
+
+                <b>- Which</b> thay thế cho danh từ chỉ vật sport và đóng vai trò là tân ngữ trong
+                mệnh đề quan hệ.
+                <br>
+                The shorts <b>which</b> is dark – green is mine.
+
+                (Chiếc quần sooc màu xanh sẫm là của tôi).
+                <br>
+                <b>- Which</b> thay thế cho danh từ chỉ vật shorts và đóng vai trò là chủ ngữ trong
+                mệnh đề quan hệ.
+            </td>
+        </tr>
+        <tr>
+            <td>Of which</td>
+            <td>
+                Đại từ quan hệ chỉ sở hữu được dùng để chỉ sở hữu cho danh từ chỉ vật đứng trước,
+                không dùng cho người.
+            </td>
+
+            <td> The house <b>whose</b> windows = the windows <b>of which</b> are broken is mine.
+                <br>
+                (Ngôi nhà có cửa sổ bị vỡ là ngôi nhà của tôi).
+            </td>
+        </tr>
+        <tr>
+            <td>Whose</td>
+            <td>Được dùng khi danh từ đứng sau nó thuộc sở hửu của danh từ đứng trước nó. Chú ý danh
+                từ đi sau whose không có The.
+            </td>
+            <td>We often do not like people <b>whose</b> ideas are contrary to ours.
+                <br>
+                (Chúng ta thường không thích những người có ý tưởng khác với chúng ta).
+            </td>
+        </tr>
+        <tr>
+            <td>Whom</td>
+            <td>Dùng cho người, đứng sau danh từ chỉ người để làm tân ngữ cho động từ đứng sau nó.
+            </td>
+            <td>She married a man <b>whom</b> she did not know much about.
+                <br>
+                (Cô ấy lấy người mình không biết rõ lắm).
+            </td>
+        </tr>
+        <tr>
+            <td>That</td>
+            <td>
+                Đại từ quan hệ chỉ người hoặc vật, đứng trước các danh từ chỉ người, vật, hoặc cả
+                người cả vật để làm chủ ngữ hoặc tân ngữ.<br>
+                <br>
+                * <b>Chú ý:</b>
+
+                <p>- “<b>That</b>” có thể dùng để thay thế who, whom, which.</p>
+
+
+                <p>- “<b>That</b>” thường được dùng trong các trường hợp sau:</p>
+
+                <p>+ Khi mang nghĩa so sánh hơn nhất, số thứ tự: <b>the most, the last/only/ first
+                    person,</b> ….</p>
+
+                <p>+ Khi đi sau: <b>all, same, any, only, none, little…. và đôi khi sau It is/ It
+                    was</b></p>
+
+                <p>+ Khi là các đại từ bất định: <b>no one, nobody, nothing, something, somebody,
+                    someone, anybody, anyone, anything, everything</b> …..</p>
+
+                + Khi danh từ đứng trước bao gồm cả người lẫn vật.
+            </td>
+            <td>The firemen managed to rescue the old lady and her cat <b>that</b> were stuck in the
+                house.
+                <br>
+                (Người lính cứu hỏa cố gắng cứu cả bà cụ và con mèo của bà đang bị kẹt trong ngôi
+                nhà).
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    2.<b>Trạng từ quan hệ</b>
+    <br>
+    <table border="4">
+        <tbody>
+        <tr>
+            <td><strong>Trạng từ quan hệ</strong></td>
+
+            </td>
+            <td style="text-align: center; "><strong>Nghĩa</strong></td>
+            <td style="text-align: center; "><strong>Cách sử dụng</strong>
+            <td style="text-align: center; "><strong>Ví dụ</strong>
+            </td>
+        </tr>
+        <tr>
+            <td>When</td>
+            <td>in/on which</td>
+            <td>là trạng từ quan hệ chỉ thời gian được dùng để bổ nghĩa cho danh từ chỉ thời gian
+                đứng trước nó.
+            </td>
+            <td>
+                I still remember the day <b>when = on which</b> we first met.
+                <br>
+                (Em vẫn nhớ ngày đầu tiên chúng ta gặp nhau)
+            </td>
+        </tr>
+        <tr>
+            <td>Where</td>
+            <td>in/at which</td>
+            <td> là trạng từ quan hệ chỉ nơi chốn được dùng để bổ nghĩa cho danh từ chỉ nơi chốn
+                đứng trước nó.
+            </td>
+            <td>This is the city <b>where = in which</b> I was born.
+                <br>
+                (Đây là thành phố nơi tôi đã sinh ra).
+            </td>
+        </tr>
+        <tr>
+            <td>Why</td>
+            <td> for which</td>
+            <td>là trạng từ quan hệ chỉ lý do, thường theo sau bổ nghĩa cho danh từ “the reason”.
+            </td>
+            <td>That isn’t the reason <b>why</b> they were late.
+                <br>
+                (Đó là lý do tại sao họ lại đến muộn)
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </p>
+    3.<b>NHỮNG LƯU Ý KHI DÙNG ĐẠI TỪ QUAN HỆ ( WHO ,WHICH ,WHOM.... )</b></p>
+    a)<b>Khi nào dùng dấu phẩy ?</b> </p>
+    <b> Khi danh từ đứng trước who ,which,whom... là :</b>
+    + <b>Danh từ riêng ,tên:</b><br>
+    Ha Noi , which ....<br>
+    Mary ,who is ...</p>
+    + <b>Có this ,that ,these ,those đứng trước danh từ :</b><br>
+    This book ,which ....></p>
+    + <b>Có sở hửu đứng trước danh từ :</b><br>
+    My mother ,who is ....</p>
+    + <b>Là vật duy nhất ai cũng biết : </b>( Sun ( mặt trời ) ,moon ( mặt trăng )<br>
+    The Sun ,which ...<br>
+    b) <b>Đặt dấu phẩy ở đâu ?</b></p>
+    - Nếu mệnh đề quan hệ ở giữa thì dùng 2 dấu phẩy đặt ở đầu và cuối mệnh đề<br>
+    My mother , who is a cook , cooks very well</p>
+    - Nếu mệnh đề quan hệ ở cuối thì dùng một dấu phẩy đặt ở đầu mệnh đề ,cuối mệnh đề dùng dấu chấm
+    .
+    <br> This is my mother , who is a cook .</p>
+    c)<b>Khi nào có thể lược bỏ đại từ quan hệ WHO ,WHICH ,WHOM...</b></p>
+    - Khi nó làm túc từ và phía trước nó không có dấu phẩy ,không có giới từ ( whose không được bỏ
+    <br> This is the book which I buy.</p>
+    Ta thấy which là túc từ ( chủ từ là I ,động từ là buy ) ,phía trước không có phẩy hay giới từ gì
+    cả nên có thể bỏ which đi :<br>
+    -> This is the book I buy.<br>
+    This is my book , which I bought 2 years ago.<br>
+    Trước chữ which có dấu phẩy nên không thể bỏ được .</p>
+    This is the house in which I live .<br>
+    Trước which có giới từ in nên cũng không bỏ which đựơc .</p>
+    This is the man who lives near my house.<br>
+    Who là chủ từ ( của động từ lives ) nên không thể bỏ nó được .</p>
+    d).<b> Khi nào KHÔNG ĐƯỢC dùng THAT :</b></p>
+    - Khi phía trước nó có dấu phẩy hoặc giới từ :</p>
+    This is my book , that I bought 2 years ago. (sai) vì phía trước có dấu phẩy -. phải dùng
+    which<br>
+    This is the house in that I live .(sai) vì phía trước có giới từ in - phải dùng which<br>
+    e). <b>Khi nào bắt buộc dùng THAT</b></p>
+    - Khi danh từ mà nó thay thế gồm 2 danh từ trở lên trong đó vừa có ngừơi vừa có vật<br>
+    The man and his dog that ....<br>
+    That thay thế cho : người và chó
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>

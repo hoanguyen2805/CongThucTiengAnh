@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem-->
+    </div>
+    </div>
+    <br><br>
+    I.<b>So sánh bằng (Equality)</b>
+    <br>
+    <br>
+    1.<b>Cấu trúc as….as</b>
+    <br>
+    <br>
+    Khẳng định (positive): <b>S + V + as + adj/adv + as + N/pronoun</b> <br>
+    Phủ định (negative): <b>S + V + not + so/as + adj/adv + N/Pronoun</b> <br>
+    <br>
+    Note: <br>
+
+    – Sau “as” thứ hai nhất thiết phải là đại từ nhân xưng chủ ngữ, không được là tân ngữ <br>
+
+    – Danh từ cũng có thể dùng so sánh trong trường hợp này nhưng đảm bảo danh từ đó phải có tính từ
+    tương đương.
+    <br>
+    – Nếu là câu phủ định, “as” thứ nhất có thể thay bằng “so”
+    <br>
+    – Danh từ cũng được dùng để so sánh, nhưng trước khi so sánh thì cần xác định danh từ đó là đếm
+    được hay là không đếm được và sử dụng công thức so sánh sau:
+    <br> <br>
+    <b>S + V + as + many/much/little/few + noun + as + noun/pronoun</b>
+    <br>
+    VD:<br> – Bin is as tall as Bon<br>
+
+    – Bin is not so tall as Bon
+    <br>
+    – Johh earns as much money as his wife
+    <br>
+    - This flat isn’t as/ so big as our old one.
+    <br> <br>
+    2 <b>Cấu trúc the same…as</b>
+    <br> <br>
+    <b>S + V + the same + (noun) + as + noun/ pronoun </b>
+    <br>
+    Note: <br>
+
+    – Trái nghĩa với “ the same….as..” là “different from…”, không dùng “different than…”
+    <br>
+    – Nếu chủ ngữ sau as trùng với chủ ngữ thứ nhất hoặc động từ sau as ở dạnh bị động thì có thể
+    loại bỏ danh từ đó
+    <br>
+    VD: <br>
+    Your house is the same height as mine
+    <br>
+    Your house is different from mine
+
+    <p><b>II. So sánh bội số,</b></p>
+    So sánh bội số là so sánh: bằng nửa (half), gấp đôi (twice), gấp ba (three times),... </p>
+    Không được sử dụng so sánh hơn kém mà sử dụng so sánh bằng, khi so sánh phải xác
+    định danh từ là đếm được hay không đếm được, vì đằng trước chúng có <i>
+    many/much</i>  </p>  This encyclopedy
+    costs <u> twice as much as</u> the other one.<br/>Jerome has <u> half as
+    many</u> records now <u> as</u> I had last year.<br/>At the clambake last
+    week, Fred ate <u> three times as many</u> oysters <u> as</u> Bob. </p>  </blockquote> <p
+        style="margin-top: 12px;">
+    Các lối nói: <i> twice that many/twice that much</i> = gấp đôi ngần ấy... chỉ
+    được dùng trong khẩu ngữ, không được dùng trong văn viết. </p>
+    <p style="margin-top: 12px;">
+        We have expected 80 people at that rally, but <u> twice that many</u> showned
+        up. (twice as many as that number). </p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>

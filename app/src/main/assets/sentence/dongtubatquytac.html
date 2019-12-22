@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem -->
+    </div>
+    </div>
+    <br>
+    <br>
+    <table border=3>
+        <tbody style="background: #f7f7f7">
+        <tr>
+            <td style>Động từ
+                nguyên mẫu
+                &nbsp;(V1)
+            </td>
+            <td style>Thể quá khứ&nbsp;
+                (V2
+            </td>
+            <td style>Quá khứ phân từ&nbsp;
+                (V3)
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">abide</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">abode/abided</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">abode / abided</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">arise</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">arose</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">arisen</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">awake</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">awoke</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">awoken</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">be</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">was/were</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">been</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">bear</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">bore</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">borne</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">become</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">became</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">become</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">befall</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">befell</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">befallen</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">begin</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">began</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">begun</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">behold</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">beheld</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">beheld</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">bend</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">bent</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">bent</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">beset</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">beset</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">beset</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">bespeak</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">bespoke</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">bespoken</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">bid</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">bid</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">bid</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">bind</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">bound</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">bound</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">bleed</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">bled</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">bled</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">blow</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">blew</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">blown</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">break</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">broke</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">broken</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">breed</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">bred</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">bred</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">bring</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">brought</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">brought</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">broadcast</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">broadcast</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">broadcast</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">build</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">built</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">built</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">burn</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">burnt/burned</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">burnt/burned</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">buy</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">bought</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">bought</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">cast</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">cast</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">cast</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">catch</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">caught</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">caught</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">chide</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">chid/ chided</span>
+            </td>
+            <td style><span
+                    style="color: fuchsia; background: transparent;">chid/ chidden/ chided</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">choose</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">chose</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">chosen</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">cleave</span></td>
+            <td style><span
+                    style="color: #3366ff; background: transparent;">clove/ cleft/ cleaved</span>
+            </td>
+            <td style><span
+                    style="color: fuchsia; background: transparent;">cloven/ cleft/ cleaved</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">cleave</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">clave</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">cleaved</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">come</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">came</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">come</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">cost</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">cost</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">cost</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">crow</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">crew/crewed</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">crowed</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">cut</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">cut</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">cut</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">deal</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">dealt</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">dealt</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">dig</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">dug</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">dug</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">dive</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">dove/ dived</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">dived</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">draw</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">drew</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">drawn</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">dream</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">dreamt/ dreamed</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">dreamt/ dreamed</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">drink</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">drank</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">drunk</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">drive</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">drove</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">driven</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">dwell</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">dwelt</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">dwelt</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">eat</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">ate</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">eaten</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">fall</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">fell</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">fallen</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">feed</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">fed</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">fed</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">feel</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">felt</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">felt</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">fight</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">fought</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">fought</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">find</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">found</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">found</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">flee</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">fled</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">fled</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">fling</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">flung</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">flung</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">fly</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">flew</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">flown</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">forbear</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">forbore</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">forborne</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">forbid</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">forbade/ forbad</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">forbidden</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">forecast</span></td>
+            <td style><span
+                    style="color: #3366ff; background: transparent;">forecast/ forecasted</span>
+            </td>
+            <td style><span
+                    style="color: fuchsia; background: transparent;">forecast/ forecasted</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">foresee</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">foresaw</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">forseen</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">foretell</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">foretold</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">foretold</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">forget</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">forgot</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">forgotten</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">forgive</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">forgave</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">forgiven</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">forsake</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">forsook</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">forsaken</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">freeze</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">froze</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">frozen</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">get</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">got</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">got/ gotten</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">gild</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">gilt/ gilded</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">gilt/ gilded</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">gird</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">girt/ girded</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">girt/ girded</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">give</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">gave</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">given</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">go</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">went</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">gone</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">grind</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">ground</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">ground</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">grow</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">grew</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">grown</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">hang</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">hung</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">hung</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">hear</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">heard</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">heard</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">heave</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">hove/ heaved</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">hove/ heaved</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">hide</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">hid</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">hidden</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">hit</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">hit</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">hit</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">hurt</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">hurt</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">hurt</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">inlay</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">inlaid</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">inlaid</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">input</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">input</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">input</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">inset</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">inset</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">inset</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">keep</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">kept</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">kept</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">kneel</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">knelt/ kneeled</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">knelt/ kneeled</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">knit</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">knit/ knitted</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">knit/ knitted</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">know</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">knew</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">known</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">lay</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">laid</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">laid</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">lead</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">led</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">led</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">leap</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">leapt</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">leapt</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">learn</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">learnt/ learned</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">learnt/ learned</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">leave</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">left</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">left</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">lend</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">lent</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">lent</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">let</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">let</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">let</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">lie</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">lay</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">lain</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">light</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">lit/ lighted</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">lit/ lighted</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">lose</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">lost</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">lost</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">make</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">made</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">made</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">mean</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">meant</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">meant</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">meet</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">met</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">met</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">mislay</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">mislaid</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">mislaid</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">misread</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">misread</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">misread</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">misspell</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">misspelt</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">misspelt</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">mistake</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">mistook</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">mistaken</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">misunderstand</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">misunderstood</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">misunderstood</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">mow</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">mowed</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">mown/ mowed</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">outbid</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">outbid</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">outbid</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">outdo</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">outdid</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">outdone</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">outgrow</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">outgrew</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">outgrown</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">output</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">output</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">output</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">outrun</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">outran</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">outrun</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">outsell</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">outsold</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">outsold</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">overcome</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">overcame</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">overcome</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">overeat</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">overate</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">overeaten</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">overfly</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">overflew</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">overflown</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">overhang</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">overhung</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">overhung</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">overhear</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">overheard</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">overheard</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">overlay</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">overlaid</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">overlaid</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">overpay</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">overpaid</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">overpaid</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">overrun</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">overran</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">overrun</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">oversee</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">oversaw</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">overseen</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">overshoot</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">overshot</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">overshot</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">oversleep</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">overslept</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">overslept</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">overtake</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">overtook</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">overtaken</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">overthrow</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">overthrew</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">overthrown</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">pay</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">paid</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">paid</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">prove</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">proved</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">proven/proved</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">put</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">put</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">put</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">read /&nbsp;</span>riːd /
+            </td>
+            <td style><span
+                    style="color: #3366ff; background: transparent;">read &nbsp;/</span><span
+                    style="color: #3366ff; background: transparent;">red /</span></td>
+            <td style><span
+                    style="color: fuchsia; background: transparent;">read /&nbsp;</span><span
+                    style="color: #ff00ff; background: transparent;">red &nbsp;/</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">rebuild</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">rebuilt</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">rebuilt</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">redo</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">redid</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">redone</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">remake</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">remade</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">remade</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">rend</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">rent</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">rent</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">repay</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">repaid</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">repaid</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">resell</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">retold</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">retold</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">retake</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">retook</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">retaken</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">rewrite</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">rewrote</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">rewritten</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">rid</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">rid</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">rid</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">ride</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">rode</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">ridden</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">ring</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">rang</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">rung</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">rise</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">rose</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">risen</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">run</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">ran</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">run</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">saw</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">sawed</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">sawn</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">say</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">said</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">said</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">see</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">saw</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">seen</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">seek</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">sought</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">sought</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">sell</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">sold</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">sold</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">send</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">sent</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">sent</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">sew</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">sewed</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">sewn/sewed</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">shake</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">shook</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">shaken</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">shear&nbsp;</span>/ʃɪə(r)
+                &nbsp;; ʃɪr &nbsp; /
+            </td>
+            <td style><span style="color: #3366ff; background: transparent;">sheared</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">shorn /&nbsp;</span>ʃɔːn
+                / or / ʃɔːrn/
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">shed</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">shed</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">shed</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">shine</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">shone</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">shone</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">shoot</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">shot</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">shot</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">show</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">showed</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">shown/ showed</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">shrink</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">shrank</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">shrunk</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">shut</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">shut</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">shut</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">sing</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">sang</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">sung</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">sink</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">sank</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">sunk</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">sit</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">sat</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">sat</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">slay</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">slew</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">slain</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">sleep</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">slept</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">slept</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">slide</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">slid</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">slid</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">sling</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">slung</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">slung</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">slink</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">slunk</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">slunk</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">smell</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">smelt</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">smelt</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">smite</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">smote</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">smitten</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">sow</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">sowed</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">sown/ sewed</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">speak</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">spoke</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">spoken</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">speed</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">sped/ speeded</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">sped/ speeded</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">spell</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">spelt/ spelled</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">spelt/ spelled</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">spend</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">spent</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">spent</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">spill</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">spilt/ spilled</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">spilt/ spilled</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">spin</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">spun/ span</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">spun</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">spit</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">spat</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">spat</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">spoil</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">spoilt/ spoiled</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">spoilt/ spoiled</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">spread</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">spread</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">spread</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">spring</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">sprang</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">sprung</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">stand</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">stood</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">stood</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">stave</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">stove/ staved</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">stove/ staved</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">steal</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">stole</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">stolen</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">stick</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">stuck</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">stuck</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">sting</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">stung</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">stung</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">stink</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">stunk/ stank</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">stunk</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">strew</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">strewed</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">strewn/ strewed</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">stride</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">strode</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">stridden</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">strike</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">struck</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">struck</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">string</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">strung</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">strung</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">strive</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">strove</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">striven</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">swear</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">swore</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">sworn</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">sweep</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">swept</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">swept</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">swell</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">swelled</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">swollen/ swelled</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">swim</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">swam</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">swum</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">swing</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">swung</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">swung</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">take</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">took</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">taken</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">teach</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">taught</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">taught</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">tear</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">tore</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">torn</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">tell</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">told</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">told</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">think</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">thought</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">thought</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">throw</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">threw</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">thrown</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">thrust</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">thrust</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">thrust</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">tread</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">trod</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">trodden/ trod</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">unbend</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">unbent</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">unbent</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">undercut</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">undercut</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">undercut</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">undergo</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">underwent</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">undergone</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">underlie</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">underlay</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">underlain</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">underpay</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">undercut</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">undercut</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">undersell</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">undersold</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">undersold</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">understand</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">understood</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">understood</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">undertake</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">undertook</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">undertaken</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">underwrite</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">underwrote</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">underwritten</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">undo</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">undid</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">undone</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">unfreeze</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">unfroze</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">unfrozen</span></td>
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">unwind</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">unwound</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">unwound</span></td>
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">uphold</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">upheld</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">upheld</span></td>
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">upset</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">upset</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">upset</span></td>
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">wake</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">woke/ waked</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">woken/ waked</span>
+            </td>
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">waylay</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">waylaid</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">waylaid</span></td>
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">wear</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">wore</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">worn</span></td>
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">weave</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">wove/ weaved</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">woven/ weaved</span>
+            </td>
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">wed</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">wed/ wedded</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">wed/ wedded</span></td>
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">weep</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">wept</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">wept</span></td>
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">wet</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">wet / wetted</span>
+            </td>
+            <td style><span style="color: fuchsia; background: transparent;">wet / wetted</span>
+            </td>
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">win</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">won</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">won</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">wind</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">wound</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">wound</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">withdraw</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">withdrew</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">withdrawn</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">withhold</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">withheld</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">withheld</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">withstand</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">withstood</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">withstood</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">work</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">worked</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">&nbsp;worked</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">wring</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">wrung</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">wrung</span></td>
+
+        </tr>
+        <tr>
+            <td style><span style="color: teal; background: transparent;">write</span></td>
+            <td style><span style="color: #3366ff; background: transparent;">wrote</span></td>
+            <td style><span style="color: fuchsia; background: transparent;">written</span></td>
+
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>
+</html>

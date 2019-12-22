@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+<script src="jquery/jquery-1.11.3.min.js"></script>
+
+<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+</script>
+<style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+</style>
+<div class="float-ck" style="right: 0px">
+    <div type="hide_float_right">
+        <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+            kiếm [X]</a></div>
+    <div type="float_content_right" class="float_content_right">
+        <!-- Start tim kiem-->
+
+        <form type="f1" name="f1" action="javascript:void()"
+              onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+            <input type="text" type="t1" name="t1" value="" size="20">
+            <input type="submit" name="b1" value="Tìm kiếm">
+        </form>
+    </div>
+</div>
+<script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+</script>
+<!-- End tim kiem-->
+</div>
+</div>
+<br><br>
+
+I.Mệnh đề quan hệ rút gọn:</p>
+
+1. <b>Rút gọn bằng cách dùng participle phrases (V-ing)</b></p>
+
+- Được dùng cho các mệnh đề chủ động</p>
+
+VD: The woman who is standing over there is my mother
+<br>
+=> The woman standing over there is my mother.</p>
+
+Ta thấy, trong ví dụ trên đại từ quan hệ who và động từ to be(is) được lược bỏ đi làm cho câu gọn
+hơn.
+</p>
+2. <b>Rút gọn bằng cách dùng past participle phrase (V-ed )</b></p>
+
+- Được dùng cho mệnh đề bị động</p>
+
+VD:
+I love songs which were presented by Maroon 5
+<br>
+=> I love songs presented by Maroon 5</p>
+
+Tương tự, đại từ quan hệ which và động từ to be(were) cũng được lược bỏ đi.</p>
+
+3. <b>Dùng cụm động từ nguyên mẫu( to infinitive)</b></p>
+
+
+- <b>Dùng khi đứng trước các từ bổ nghĩa như: only, first, second, last...</b></p>
+
+VD: He is the last person who left the office.
+<br>
+=> He is the last person left the office</p>
+
+Từ ví dụ trên ta thấy, do trong câu có từ last nên đại từ quan hệ who được lược bỏ đi.</p>
+
+- <b>Động từ have/had:</b></p>
+
+VD: He had something that he could/ had to do
+<br>
+=> He had something to do.
+</p>
+Ta thấy mệnh đề sau có chứa động từ had nên câu sẽ được lược bỏ đi đại từ quan hệ that và động từ
+had.
+</p>
+- <b>Đầu câu có here(be), there(be)</b></p>
+
+VD: There is a deadline which have to be done today.
+<br>
+=> There is a deadline to be done today.</p>
+
+Trong phần to inf này các bạn cần nhớ 2 điều sau:</p>
+
+- <b>Nếu chủ từ 2 mệnh đề khác nhau thì thêm cụm for sb trước to inf.</b></p>
+
+We have some picture books that children can read.
+<br>
+=>We have some picture books for children to read.</p>
+
+Tuy nhiên nếu chủ từ đó là đại từ có nghĩa chung chung như we,you,everyone…. thì có thể không cần
+ghi ra.
+</p>
+Studying abroad is the wonderful thing that we must think about.
+<br>
+=>Studying abroad is the wonderful (for us ) to think about.
+
+- <b>Nếu trước relative pronoun có giới từ thì phải đem xuống cuối câu. ( đây là lỗi dễ sai
+    nhất).</b>
+</p>
+We have a peg on which we can hang our coat.
+<br>
+=>We have a peg to hang our coat on.
+
+4.<b>Dùng cụm danh từ</b></p>
+
+- Chúng ta sử dụng khi mệnh đề tính từ có dạng:</p>
+
+<b>S + BE + DANH TỪ/CỤM DANH TỪ/ CỤM GIỚI TỪ</b></p>
+
+- Chúng ta chỉ việc bỏ who, which và be
+</p>
+VD: Football, which is a popular sport, is very good for health
+<br>
+=> Football, a popular sport, is very good for health.
+</p>
+5. <b>Mệnh đề tính từ có dạng be và tính từ/cụm tính từ:</b></p>
+
+Có 2 công thức rút gọn:</p>
+*<b>Công thức 1: Bỏ who, which...to be -> giữ nguyên tính từ phía sau.</b>
+<br>
+Điều kiện 1: Nếu phía trước that là đại từ phiếm chỉ như something, anything, anybody...
+</p>
+VD:
+There must be something that is wrong.<br>
+=> There must be something wrong.</p>
+
+<b>Điều kiện 2: Có dấu phẩy phía trước và phải có từ 2 tính từ trở lên</b>
+</p>
+VD:
+My grandmother, who is old and sick, never goes out of the house.<br>
+
+=> My grandmother, old and sick, never goes out of the house.</p>
+
+*<b>Công thức 2: Những trường hợp còn lại ta đem tính từ lên trước danh từ</b>
+</p>
+VD:
+My grandmother, who is sick, never goes out of the house.
+<br>
+=> My sick grandmother never goes out of the house.
+</p>
+I buy a hat which is very beautiful and fashionable.
+<br>
+=> I buy a very beautiful and fashionable hat.
+</p>
+* Tuy nhiên nếu cụm tính từ gồm cả danh từ ở trong nó thì ta chỉ còn cách dùng V-ing mà thôi
+</p>
+VD:
+I met a man who was very good at both English and French.
+<br>
+=> I met a man being very good at both English and French.</p>
+
+Tóm lại cách rút gọn loại này khá phức tạp vì nó tùy thuộc vào đến 3 yếu tố:</p>
+
+- Có một hay nhiều tính từ
+<br>
+- Danh từ đứng trước có phải là phiếm chỉ không
+<br>
+- Có dấu phẩy hay không
+</p>
+6) <b>Mệnh đề tính từ thành tính từ ghép</b></p>
+
+Cách làm: Ta sẽ rút gọn mệnh đề thành một tính từ ghép bằng cách tìm trong mệnh đề một số đếm và
+danh từ đi sau nó, sau đó ta để chúng kế nhau và thêm dấu gạch nối ở giữa. Đem tính từ ghép đó ra
+trước danh từ đứng trước who, which...- những phần còn lại bỏ hết.
+<br>Lưu ý:<br>
+- Danh từ không được thêm "s"
+<br>
+- Chỉ dùng được dạng này khi mệnh đề tính từ có số đếm
+<br>
+- Các cụm như tuổi thì sẽ viết lại cả 3 từ và gạch nối giữa chúng (two years old và
+two-year-old)</p>
+VD:
+I have a car which has four seats.<br>
+=>
+I have a four-seat car.</p>
+
+I had a holiday which lasted two days.
+<br>
+=>I had a two-day holiday.
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>

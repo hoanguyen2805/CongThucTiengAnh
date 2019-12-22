@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+<script src="jquery/jquery-1.11.3.min.js"></script>
+
+<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+</script>
+<style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+</style>
+<div class="float-ck" style="right: 0px">
+    <div type="hide_float_right">
+        <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+            kiếm [X]</a></div>
+    <div type="float_content_right" class="float_content_right">
+        <!-- Start tim kiem-->
+
+        <form type="f1" name="f1" action="javascript:void()"
+              onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+            <input type="text" type="t1" name="t1" value="" size="20">
+            <input type="submit" name="b1" value="Tìm kiếm">
+        </form>
+    </div>
+</div>
+<script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+</script>
+<!-- End quang cao -->
+</div>
+</div>
+<br>
+<br>
+<b>Double comparison (So sánh kép)</b>
+<p>+ Cùng một tính từ:</p>
+
+<p><b>– Tính từ/Trạng từ ngắn: S + V + adj/adv + er + and + adj/adv + er</b></p>
+<p><b>– Tính từ/Trạng từ dài: S + V + more and more + adj/adv</b></p>
+Ví dụ:<br>
+The weather gets colder and colder. (Tính từ ngắn)<br>
+Thời tiết càng ngày càng lạnh.<br>
+<br>
+His daughter becomes more and more intelligent. (Tính từ dài)<br>
+Con gái anh ấy ngày càng trở nên thông minh.
+<p>+ 2 tính từ khác nhau:</p>
+<p><b>The + comparative + S + V the + comparative + S + V.</b></p>
+(The + comparative : The + từ ở dạng so sánh hơn)<br><br>
+Ví dụ:<br>
+The richer she is the more selfish she becomes.<br>
+Càng giàu,cô ấy càng trở nên ích kỷ hơn.<br>
+<br>
+The more intelligent he is the lazier he becomes.<br>
+Càng thông minh,anh ta càng trở nên lười hơn.
+<p>+ Dạng khác: (càng…càng…)</p>
+<p><b> The + S + V + the + comparative + S + V</b></p>
+Ví dụ:<br>
+The more we study the more stupid we feel.<br>
+Chúng ta càng học thì chúng ta càng thấy mình chậm hiểu.<br> <br>
+<b>Lưu ý</b>:<br>
+Trong câu so sánh kép, nếu túc từ là một danh từ thì ta đặt danh từ ấy ngay sau tính từ so sánh.
+<br>Ví dụ:<br>
+The more English vocabulary we know the better we speak.<br>
+Càng biết nhiều từ vựng tiếng Anh, ta càng nói tốt hơn.
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</head>

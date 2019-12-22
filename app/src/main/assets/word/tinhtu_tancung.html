@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem-->
+    </div>
+    </div>
+    <br><br>
+    <b>Tính từ tận cùng bằng –ing và –ed</b></p>
+    Chúng thuộc loại tính từ miêu tả, nhưng chúng ta sẽ làm rõ sự khác biệt giữa hai loại này trong
+    phần này.Có nhiều cặp tính từ tận cùng bằng –ing và –ed
+    <br>
+    VD: boring and bored, interesting and interested…</p>
+    - <b>Tính từ kết thúc bằng đuôi –ing cho bạn biết về tính chất của một cái gì đó</b></p>
+    VD: <br>
+    My job is boring(Công việc của tôi rất nhàm chán)<br>
+    The film was disappointing. I expected it to be better ((Tôi quá thất vọng về bộ phim. Tôi đã
+    nghĩ nó sẽ hay hơn nhiều))
+    - <p><b>Tính từ tận cùng bằng đuôi –ed cho bạn biết một người nào đó cảm thấy như thế nào về một
+    cái gì đó.</b></p>
+    VD:
+    I’m not satisfied with my job.( Tôi k hài lòng với công việc của mình)<br>
+    Julia is interested in politics.<br>
+    I’m bored(Tôi cảm thấy chán nản)
+    <p><b>Ai đó “interested” (quan tâm) bởi vì có điều gì (hay ai) “interesting” (hấp dẫn, lí
+        thú)</b></p>
+    VD: Are you interested in buying a car?(Bạn có quan tâm đến việc mua một chiếc xe?) <br>
+    Tom find politics interesting (Tom thấy chính trị rất lí thú hấp dẫn)<br>
+    Did you meet anyone interesting at the party?
+    <p><b> Ai đó “surprised” (ngạc nhiên) bởi vì điều gì đó “surprising” (gây ngạc nhiên)</b></p>
+    VD: Everyone was surprised that he passed the examination.(Tất cả mọi người ngạc nhiên vì anh ấy
+    vượt qua kì thi)<br>
+    It was quite surprising that he passed the examination.
+    <p><b>Ai đó “disappointed” (thất vọng) bởi vì điều gì đó “disappointing” (làm thất vọng)</b></p>
+    VD: I was disappointed with the film.(Tôi cảm thấy thất vọng vì bộ phim đó)<br>
+    The film was disappointing.(Bộ phim thật đáng thất vọng)
+    <p><b> Ai đó “tired” (mệt mỏi) vì điều gì đó “tiring” (làm mệt mỏi)</b></p>
+
+    VD: He is always very tired when he gets home from work. (Anh ấy luôn cảm thấy mệt mỏi khi đi
+    làm về)
+    <p><b>Những cặp tính từ khác tận cùng bằng –ing và –ed là:</b></p>
+    <table border="2">
+        <tbody>
+        <tr>
+            <td><em>fascinating</em> (lôi cuốn, hấp dẫn)<em>exciting</em> (sôi động)<p></p>
+                <p><em>amusing</em> (hay, vui)</p>
+                <p><em>amazing</em> (làm kinh ngạc)</p>
+                <p><em>astinishing</em> (làm kinh ngạc)</p>
+                <p><em>shocking</em> (làm sửng sốt)</p>
+                <p><em>disgusting</em> (làm kinh tởm)</p>
+                <p><em>embarrassing </em>(làm bối rối)</p>
+                <p><em>confusing</em> (làm bối rối)</p>
+                <p><em>horrifying</em> (làm kinh hoàng)</p>
+                <p><em>terrifying</em> (kinh khiếp)</p>
+                <p><em>frightening</em> (làm sợ hãi)</p>
+                <p><em>depressing</em> (làm nản chí)</p>
+                <p><em>worrying</em> (làm lo lắng)</p>
+                <p><em>annoying</em> (là phiền, quấy rầy)</p>
+                <p><em>exhausting</em> (làm mệt nhoài)</p>
+                <p><em>satisfying</em> (làm thoả mãn)</p></td>
+            <td><em>fascinated</em> (bị lôi cuốn, bị thu hút)<em>excited</em> (bị kích động)<p></p>
+                <p><em>amused</em> (thấy vui thích)</p>
+                <p><em>amazed</em> (kinh ngạc, thấy lạ lùng)</p>
+                <p><em>astonished</em> (kinh ngạc)</p>
+                <p><em>shocked</em> (sửng sốt)</p>
+                <p><em>disgusted</em> (kinh tởm)</p>
+                <p><em>embarrassed</em> (cảm thấy bối rối)</p>
+                <p><em>confused</em> (cảm thấy bối rối)</p>
+                <p><em>horrified</em> (kinh hoàng)</p>
+                <p><em>terrified</em> (kinh hoàng)</p>
+                <p><em>frightened</em> (sợ hãi)</p>
+                <p><em>depressed</em> (nản chí)</p>
+                <p><em>worried</em> (lo lắng)</p>
+                <p><em>annoyed</em> (thấy khó chịu)</p>
+                <p><em>exhausted</em> (mệt nhoài)</p>
+                <p><em>satisfied</em> (thoả mãn)</p></td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br></head>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem-->
+    </div>
+    </div>
+    <br><br>
+    <b>1. Những câu tục ngữ, thành ngữ dân gian Anh - Việt thông dụng nhất :</b>
+
+    <p>- Better safe than sorry: Cẩn tắc vô áy náy
+
+    <p>- Money is the good servant but a bad master: Khôn lấy của che thân, dại lấy thân che của
+
+    <p>- The grass are allways green on the other side of the fence: Đứng núi này trông núi nọ
+
+    <p>- One bitten, twice shy: Chim phải đạn sợ cành cong
+
+    <p>- In rome do as Romans do: Nhập gia tùy tục
+
+    <p>- Honesty is the best policy: Thật thà là thượng sách
+
+    <p>- A woman gives and forgives, a man gets and forgets: Đàn bà cho và tha thứ, đàn ông nhận và
+        quên
+
+    <p>- No roses without a thorn: Hồng nào mà chẳng có gai, việc nào mà chẳng có vài khó khăn!
+
+    <p>- It never rains but it pours: Phúc bất trùng lai ( họa vô đơn chí )
+
+    <p>- Save for the rainny day: Làm khi lành để dành khi đau
+
+    <p>- It's an ill bird that fouls its own nest: Vạch áo cho người xem lưng / Tốt đẹp phô ra xấu
+        xa đậy lại.
+
+    <p>- Don't trouble trouble till trouble troubles you: Tránh voi chẳng xấu mặt nào.
+
+    <p>- Still water run deep: Tâm ngẩm tầm ngầm mà đấm chết voi
+
+    <p>- Men make house, women make home: Đàn ông xây nhà, đàn bà xây tổ ấm
+
+    <p>- East or west - home is best: Ta về ta tắm ao ta ( Không đâu tốt bằng ở nhà )
+
+    <p>- Many a little makes a mickle: Kiến tha lâu đầy tổ
+
+    <p>- Penny wise pound foolish: Tham bát bỏ mâm
+
+
+    <p>- Money make the mare go: Có tiền mua tiên cũng được
+
+    <p>- Like father, like son: Con nhà tông không giống lông thì cũng giống cánh
+
+    <p>- Beauty is in the eye of the beholder: Giai nhân chỉ đẹp trong mắt người hùng.
+
+    <p>- The die is cast: Bút sa gà chết
+
+    <p>- Two can play that game: Ăn miếng trả miếng
+
+    <p>- Love is blind: Tình yêu mù quáng
+
+    <p>- So far so good: Mọi thứ vẫn tốt đẹp
+
+    <p>- Practice makes perfect: Có công mài sắt có ngày nên kim
+
+    <p>- Silence is gold: Im lặng là vàng
+
+    <p>- The more the merrier: Càng đông càng vui
+
+    <p>- Time is money: Thời gian là tiền bạc
+
+    <p>- The truth will out: Cái kim trong bọc có ngày lòi ra
+
+    <p>- Walls have ear: Tường có vách
+
+    <p>- Everyone has their price: Con người cũng có giá của nó
+
+    <p>- It's a small world: Quả đất tròn
+
+    <p>- You're only young once: Miệng còn hôi sữa
+
+    <p>- Ignorance is bliss: Không biết thì dựa cột mà nghe
+
+    <p>- No pain, no gain: Có làm thì mới có ăn
+
+    <p>- A swallow cant make a summer: Một con én ko làm nổi mùa xuân
+
+    <p>- A bad beginning makes a bad ending: Đầu xuôi đuôi lọt.
+
+    <p>- A clean fast is better than a dirty breakfast: Giấy rách phải giữ lấy lề.
+
+    <p>- Barking dogs seldom bite: Chó sủa chó không cắn.
+
+
+    <p>- Beauty is but skin-deep: Cái nết đánh chết cái đẹp.
+
+    <p>- Calamity is man's true touchstone: Lửa thử vàng, gian nan thử sức.
+
+    <p>- Catch the bear before tou sell his skin: Chưa đỗ ông Nghè đã đe hàng tổng
+
+    <p>- Diamond cut diamond: Vỏ quýt dày có móng tay nhọn
+
+    <p>- Diligence is the mother succees: Có công mài sắt có ngày nên kim
+
+    <p>- Each bird loves to hear himself sing: Mèo khen mèo dài đuôi
+
+    <p>- Far from eye, far from heart: Xa mặt cách lòng
+
+    <p>- Fine words butter no parsnips: Có thực mới vực được đạo
+
+    <p>- Give him an inch and he will take a yard: Được voi, đòi tiên
+
+    <p>- Grasp all, lose all: Tham thì thâm
+
+    <p>- Habit cures habit: Dĩ độc trị độc
+
+    <p>- Haste makes waste Dục tốc bất đạt
+
+    <p>- Robbing a cradle: Trâu già mà gặm cỏ non
+
+    <p>- Raining cats and dogs = Rain like pouring the water: Mưa như trút nước
+
+    <p>- A stranger nearby is better than a far-away relative: Bà con xa không bằng láng giềng gần
+
+    <p>- Tell me who's your friend and I'll tell you who you are: Hãy nói cho tôi biết bạn của anh
+        là ai, tôi sẽ nói cho anh biết anh là người như thế nào
+
+    <p>- Time and tide wait for no man: Thời gian và nước thủy triều không đợi ai cả.
+
+    <p>- Silence is golden: Im lặng là vàng
+
+    <p>- Don't judge a book by its cover: Đừng trông mặt mà bắt hình dong
+
+    <p>- The tongue has no bone but it breaks bone: Cái lưỡi không xương đôi đường lắt léo
+
+    <p>- You will reap what you will sow: Gieo nhân nào gặt quả nấy
+
+
+    <p>- A wolf won't eat wolf: Chó sói không bao giờ ăn thịt đồng loại
+
+    <p>- Don't postpone until tomorrow what you can do today: Đừng để những việc cho ngày mai mà bạn
+        có thể làm hôm nay
+    <p>
+        <b> 2. Những câu cao dao Anh - Việt phổ biến nhất</b>
+
+    <p>- Flat wine can cause drunkenness with large consumption Great speakers can create boredom
+        with lengthy orations : Rượu nhạt uống lắm cũng say. Người hay nói lắm dẩu hay cũng nhàm
+
+    <p>- True gold is to be tested with coal and fire Good bells by how they reverberate, good
+        people by how they verbalize: Vàng thì thử lửa thử than Chuông kêu thử tiếng, người ngoan
+        thử lời
+
+    <p>- Compliments to whoever built this leaden bell Wonderfully shaped like a real one except for
+        being mute: Khen ai khéo đúc chuông chì. Dạng thì có dạng, đánh thì không kêu.
+
+    <p>- If a cockatiel chose a pelican to mess with, He will beg for mercy when starting to get
+        hit: Chim chích mà ghẹo bồ nông. Đến khi nó mổ, lạy ông tôi chừa.
+
+    <p>- East or west-home is best: Ta về ta tắm ao ta Dù trong dù đục ao nhà vẫn hơn</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>

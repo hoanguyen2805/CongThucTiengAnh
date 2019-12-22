@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+<script src="jquery/jquery-1.11.3.min.js"></script>
+
+<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+</script>
+<style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+</style>
+<div class="float-ck" style="right: 0px">
+    <div type="hide_float_right">
+        <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+            kiếm [X]</a></div>
+    <div type="float_content_right" class="float_content_right">
+        <!-- Start tim kiem-->
+
+        <form type="f1" name="f1" action="javascript:void()"
+              onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+            <input type="text" type="t1" name="t1" value="" size="20">
+            <input type="submit" name="b1" value="Tìm kiếm">
+        </form>
+    </div>
+</div>
+<script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+</script>
+<!-- End tim kiem-->
+</div>
+</div>
+<br><br>
+
+<p><b>Cấu trúc của động từ khuyết thiếu trong câu</b></p>
+
+<p><b>S + Modal Verb + V- infinitive.</b></p>
+
+Chúng ta không sử dụng <b>To</b> sau Modal verb</p>
+
+VD:I can swim .
+(Tôi có thể bơi)
+<br>
+NOT : I can to swim.
+
+<p><b>Lưu ý</b></p>
+
+- Động từ khuyết thiếu: không biến đổi dạng thứ trong các ngôi.</p>
+VD:He can swim.
+
+(Anh ấy có thể bơi)
+<br>
+NOT : He cans swim.
+</p>
+- Không dùng trợ động từ “do” trong câu hỏi, câu phủ định, câu hỏi đuôi và câu trả lời ngắn như các
+động từ thường.</p>
+VD: Can you speak French?
+
+(Bạn có biết nói tiếng Pháp không?)
+<br>
+NOT Do you can speak?
+</p>
+VD: You shouldn’t tell lies.
+
+(Bạn không nên nói dối)
+<br>
+NOT You don’t should tell lie.
+
+<p><b>CAN – COULD</b></p>
+
+<table border="2">
+    <tbody>
+    <tr>
+        <td>
+            <p><span><strong>Can</strong></span></p>
+        </td>
+        <td>
+            <p><span><strong>Could</strong></span></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><span>Khả năng hiện tại, tương lai là một người có thể làm được gì, hoặc một sự việc có thể xảy ra</span>
+            </p>
+            <p>
+            </p>
+            <p><span>VD: You can speak English.</span></p>
+            <p><span>(Bạn có thể nói tiếng Anh)</span></p>
+        </td>
+        <td>
+            <p>
+                <span>Diễn tả điều gì có thể xảy ra ở hiện tại hoặc tương lai, nhưng không chắc chắn</span>
+            </p>
+            <p>
+            </p>
+            <p><span>VD: The phone is ringing. It could be Tim.</span></p>
+            <p> (Điện thoại đang rung. Có thể là Tim đang gọi)</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><span>Sự xin phép và cho phép hoặc lời yêu cầu, đề nghị hoặc gợi </span></p>
+            <p><span>VD: Can I use your phone?</span></p>
+            <p>(Tôi có thể sử dụng điện thoại của bạn không?)</p>
+        </td>
+        <td>
+            <p><span>Sự xin phép, yêu cầu lịch sự (lịch sự và trang trọng hơn “can”)</span></p>
+            <p>
+            </p>
+            <p><span>VD: Could you mail this letter for me?</span></p>
+            <p>(Bạn có thể gửi lá thư này chô tôi không?)</p>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>
+            <p><span>Diễn tả khả năng ở quá khứ</span></p>
+            <p>
+            </p>
+            <p><span>VD: My brother could speak English when he was five.</span></p>
+            <p><span>(Anh trai tôi có thể nói Tiếng Anh khi anh ấy 5 tuổi)</span></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<p><b>MAY – MIGHT (có lẽ, có thể)</b></p>
+<table border="2">
+    <tbody>
+    <tr>
+        <td>
+            <p><span><b>May- might</b></span></p>
+        </td>
+        <td>
+            <p><span><b>Example </b></span></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><span>Dùng để diễn đạt điều gì đó có thể là thật hoặc có khả năng xảy ra ở hiện tại hoặc tương lại</span>
+            </p>
+        </td>
+        <td>
+            <p><span>It might/may be a bomb.</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><span>Dùng để xin phép. May, might có tính chất trang trọng hơn can/ could</span></p>
+        </td>
+        <td>
+            <p><span>May I put the TV on?</span></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<p><b>MUST – HAVE TO</b></p>
+
+<table border="2">
+    <tbody>
+    <tr>
+        <td>
+            <p><span><strong>Must</strong></span></p>
+        </td>
+        <td>
+            <p><span><strong>Have to</strong></span></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><span>Diễn đạt sự cần thiết, bắt buộc ở hiện tại hoặc tương lai.</span></p>
+            <p><span>VD: You must get up early in the morning.</span></p>
+            <p>&nbsp; &nbsp; &nbsp;(Bạn phải dậy sớm vào buổi sáng)</p>
+        </td>
+        <td>
+            <p><span>Dùng tương đương với <i>must</i> để diễn đạt sự cần thiết</span></p>
+            <p><span>VD: I have to go to the hospital</span></p>
+            <p>&nbsp; &nbsp; &nbsp; &nbsp;(Tôi phải đi tới bệnh viện)</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><span><i>Must </i>được dùng để diễn đạt sự bắt buộc đến từ phía người nói (cảm xúc và mong ước của &nbsp;người nói).</span>
+            </p>
+            <p>
+            </p>
+            <p><span>VD: I really must stop smoking</span></p>
+            <p><span>&nbsp; &nbsp; &nbsp; (Thực sự tôi phải bỏ thuốc thôi =&gt; Và Bản thân &nbsp; &nbsp; &nbsp;tôi muốn bỏ.)</span>
+            </p>
+        </td>
+        <td>
+            <p><span><i>Have to</i> được dùng để diễn đạt sự bắt buộc do tình thế hoặc do điều kiện bên ngoài (nội quy, luật pháp, quy định, mệnh lệnh, …)</span>
+            </p>
+            <p><span>VD: I have to stop smoking. Doctor’s orders</span></p>
+            <p><span>&nbsp; &nbsp; &nbsp; &nbsp;(Tôi phải bỏ thuốc thôi. Bác sĩ yêu cầu đấy =&gt;Theo yêu cầu cảu bác sĩ)</span>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><span><i>Must not (mustn’t)</i> được dùng để chỉ sự cấm đoán – nói rằng điều gì không nên làm, hoặc bảo ai không được làm điều gì.</span>
+            </p>
+            <p><span>VD: We mustn’t park here.</span></p>
+            <p><span>&nbsp; &nbsp; &nbsp; &nbsp;(Chúng ta bị cấm đỗ xe ở đây)</span></p>
+        </td>
+        <td>
+            <p><span><i>don’t have to</i> chỉ sự không cần thiết</span></p>
+            <p><span>Trợ động từ “do” được dùng với “have to” trong câu hỏi và câu phủ định.</span>
+            </p>
+            <p>
+            </p>
+            <p><span>VD: You don’t have to wash these shoes, they’re clean.</span></p>
+            <p><span>&nbsp; &nbsp; &nbsp; &nbsp; (Bạn không cần giặt giày đâu, nó sạch mà)</span>
+            </p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<p><b>WILL – WOULD</b></p>
+<table border="2">
+    <tbody>
+    <tr>
+        <td>
+            <p><span><b>Will</b></span></p>
+        </td>
+        <td>
+            <p><span><b>Would</b></span></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Diễn đạt hoặc dự đoán sự việc, tình huống sẽ xảy ra trong tương lai</p>
+            <p>VD: Tomorrow I will have an exam</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Ngày mai tôi sẽ có một bài kiểm tra)</p>
+        </td>
+        <td>&nbsp;
+            <p>Diễn tả một giả định ở quá khứ hoặc dự đoán về một tình huống có thể sảy ra trong
+                tương lai</p>
+            <p>VD: He was so tired. He would get up late the tomorrow (Anh ấy rất mệt. Ngày mai,
+                chắc anh ấy sẽ dậy muộn)</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>&nbsp;</p>
+            <p>Đưa ra một quyết định ngay thời điểm nói</p>
+            <p>VD: I will go to the store right now</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Tôi sẽ đến cửa hang ngay bây giờ)</p>
+        </td>
+        <td>
+            <p>Được dùng trong lời mời, yêu cầu một cách lịch sự</p>
+            <p>VD: Would you like to go out with me tonight?</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Bạn có muốn ra ngoài cùng tôi tối nay không?)</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Đưa ra lời đề nghị, lời yêu cầu, lời mời</p>
+            <p>VD: Will you have dinner with me?</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Bạn đi ăn tối cùng tôi nhé?)</p>
+            <p>&nbsp;</p>
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </tbody>
+</table>
+<p><b>SHALL – SHOULD</b></p>
+<table border="2">
+    <tbody>
+    <tr>
+        <td>
+            <p><span><b>Shall</b></span></p>
+        </td>
+        <td>
+            <p><span><b>Should</b></span></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Dùng trong cấu trúc thì tương lai</p>
+            <p>VD: I shall take a holiday at the weekend</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Tôi sẽ đi nghỉ mát vào cuối tuần)</p>
+        </td>
+        <td>
+            <p>&nbsp;</p>
+            <p>Dùng thay cho&nbsp;must&nbsp;khi không muốn diễn tả một ý nghĩa quá bắt buộc ai đó
+                phải làm gì.</p>
+            <p>VD: Yould should apply for the position before 15 September</p>
+            <p>(Bạn nên nộp đơn ứng tuyển cho vị trí trước ngày 15 tháng 9)</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Diễn tả một lời hứa, một sự quả quyết hay mối đe dọa</p>
+            <p>Lời hứa:</p>
+            <p>VD: Don’t worry! My wife shall bring you the money tomorrow morning</p>
+            <p>(Đừng lo. Sáng mai vợ tôi sẽ đem tiền trả cho bạn)</p>
+            <p>Đe dọa:</p>
+            <p>VD: You shall be punished if you disobey me.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Nếu không tuôn lệnh tôi, anh sẽ bị phạt)</p>
+            <p>Quả quyết, bắt buộc:</p>
+            <p>VD: Each competitor shall wear a number &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Mỗi
+                người dự thi phải mang số)</p>
+            <p>&nbsp;</p>
+        </td>
+        <td>
+            <p>Dùng trong câu khuyên ai đó nên làm gì, và tương đương với&nbsp;ought to.</p>
+            <p>VD: She should tell him the truth</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Cô ấy nên nói cho anh ấy biết sự thật)</p>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>
+            <p>&nbsp;</p>
+            <p>Diễn tả hành động lẽ ra nên sảy ra trong quá khứ nhưng thực tế là đã không xảy ra</p>
+            <p>VD: He should have apologized her</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Lẽ ra anh ấy nên xin lỗi cô ấy =&gt; nhưng thực tế
+                thì anh ấy đã không xin lỗi)</p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<p><b>OUGHT TO</b></p>
+
+– <b>OUGHT TO có nghĩa là “nên”, gần giống với should. Trong hầu hết các trường hợp OUGHT TO có thể
+    được thay thế bằng should.
+</b></p>
+VD: They ought to (should) pay the money.
+
+(Họ nên trả tiền)
+</p>
+He ought to (should) be ashamed of himself.
+
+(Anh ta nên tự cảm thấy xấu hổ về chính mình)
+</p>
+– <b>OUGHT TO cũng dùng để diễn tả một sự gần đúng, rất có thể đúng (strong probability).</b>
+</p>
+VD: If Alice left home at 9:00, she ought to be here any minute now.
+
+(Nếu Alice rời khỏi nhà lúc 9 giờ, rất có thể cô ấy sẽ ở đây trong vài phút nữa)
+</p>
+– <b>OUGHT TO có thể dùng trong tương lai với các từ xác định thời gian tương lai như tomorrow, next
+    Tuesday…
+</b></p>
+VD: Our team ought to win the match tomorrow.
+
+(Đội của chúng tôi sẽ chiến thắng vào ngày mai)
+</p>
+– <b>OUGHT NOT TO HAVE + past participle diễn tả một sự không tán đồng về một hành động đã làm trong
+    quá khứ.
+</b></p>
+VD: You ought not to have spent all that money on such a thing.
+
+(Bạn lẽ ra không nên tiêu hết tiền vào một thứ như vậy)
+</p>
+<b>DARE</b>
+</p>
+– <b>DARE có nghĩa là “dám, cả gan” có thể được xem như một động từ khuyết lẫn động từ thường. Khi
+    là một động từ khuyết thiếu, nó có đầy đủ đặc tính của loại động từ này.
+</b>
+VD: Dare he go and speak to her? (động từ khuyết thiếu)
+<br>
+(Anh ta dám đến và nói với cô ấy sao?)
+</p>
+You daren’t climb that tree, dare you? (động từ khuyết thiếu)
+<br>
+(Bạn không dám trèo lên cái cây đó, đúng không?)
+</p>
+He doesn’t dare to answer my letter. (động từ thường)
+<br>
+(Anh ta không dám trả lời thư của tôi)
+</p>
+She didn’t dare to say a word, did she? (động từ thường)
+<br>
+(Cô ấy đã không dám nói một từ nào đúng không?)
+</p>
+– <b>Thành ngữ “I dare say” có nghĩa là “có thể, có lẽ” đồng nghĩa với các từ “perhaps”, “it is
+    probable”. Thành ngữ này thường không dùng với chủ từ nào khác ngoài ngôi thứ nhất.
+</b></p>
+VD: He is not here yet, but I daresay he will come later.
+
+(Anh ấy không có ở đây, có thể anh ấy sẽ đến sau)
+</p>
+<p><b>NEED</b></p>
+
+– <b>Có hai động từ NEED:</b><br>
+Một động từ thường và một động từ khuyết thiếu. Khi là động từ khuyết thiếu NEED chỉ có hình thức
+Hiện tại và có đầy đủ đặc tính của một động từ khuyết thiếu. Nó có nghĩa là “cần phải”, tương tự như
+have to. Vì thế nó cũng được xem là một loại phủ định của must.
+</p>
+VD: Need he work so hard?
+
+(Anh ấy cần phải làm việc rất vất vả đúng không?)
+</p>
+You needn’t go yet, need you?
+
+(Bạn không cần phải đi đúng không?)
+</p>
+– <b>Có một điều cần nhớ là động từ khuyết thiếu NEED không dùng ở thể xác định. Nó chỉ được dùng ở
+    thể phủ định và nghi vấn. Khi dùng ở thể xác định nó phải được dùng với một từ ngữ phủ định.
+</b></p>
+You needn’t see him, but I must.
+
+(Bạn không cần gặp anh ấy, nhưng tôi phải)
+</p>
+I hardly need say how much I enjoyed the holiday.
+
+(Tôi không cần nói về việc tôi đã tận hưởng kì nghỉ như thế nào)
+</p>
+<b>USED TO</b></p>
+
+– <b>USED TO là một hình thức động từ đặc biệt. Nó có thể được xem như một động từ thường hay một
+    động từ khuyết thiếu trong việc hình thành thể phủ định và thể nghi vấn.
+</b></p>
+VD: You used to live in London, usedn’t you?
+
+(Bạn đã từng sống ở London, đúng không?)
+</p>
+He usedn’t to smoke as much as he does now.
+
+(Anh ta đã không hút thuốc nhiều như bây giờ)
+</p>
+He didn’t use to smoke as much as he does now.
+
+(Anh ta đã không hút thuốc nhiều như bây giờ)
+</p>
+Did you use to climb the old tree in the garden?
+
+(Bạn đã từng leo lên cái cây cổ thụ trong vường đúng không?)
+</p>
+– <b>Ngày nay người ta có khuynh hướng dùng did và didn’t để lập thể phủ định và thể nghi vấn cho
+    USED TO.</b> Trong nhiều trường hợp thể phủ định có thể được hình thành bằng cách sử dụng never.
+Cách dùng usedn’t to rất hiếm gặp vì cách viết hay nhầm lẫn và khó đọc.
+</p>
+VD: You never used to make that mistake.
+
+(Bạn chưa bao giờ phạm phải sai lầm đó)
+</p>
+-<b>USED TO được dùng để chỉ một hành động liên tục, kéo dài, lặp đi lặp lại trong quá khứ mà nay
+    không còn nữa.
+</b></p>
+VD: People used to think that the earth was flat.
+
+(Con người đã cho rằng trái đất phẳng)
+</p>
+-<b>Với thì Quá khứ đơn người ta chỉ biết hành động đã xảy ra. Với USED TO người ta thấy được tính
+    chất kéo dài của hành động ấy.
+</b></p>
+VD: He was my classmate. (không rõ trong thời gian bao lâu)
+
+(Anh ấy đã là bạn cùng lớp của tôi)
+</p>
+He used to be my classmate. (trong một thời gian khá lâu)
+
+(Anh ấy đã từng là bạn cùng lớp của tôi)
+
+<p><b>Phân biệt USED TO và một số hình thức khác</b></p>
+
+– USED TO + infinitive: hành động liên tục trong quá khứ
+</p>
+– (be) USED TO + V.ing: quen với một việc gì
+</p>
+– (get) USED TO + V.ing: làm quen với một việc gì.
+
+VD:
+He used to work six days a week. (Now he doesn’t)
+
+(Anh ấy đã từng làm việc 6 ngày một tuần)
+</p>
+It took my brother two weeks to get used to working at night. Now he’s used to it.
+
+(Anh trai tôi đã mất 2 tuần để làm quen với việc phải làm việc ban đêm. Bây giờ thì anh ấy đã quen
+với nó)
+</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>

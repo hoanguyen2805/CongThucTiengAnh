@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+
+    </script>
+    <!-- End tim kiem -->
+    </div>
+    </div>
+    <br><br>
+    1.<b> It's your duty to+Vinf</b>
+    <br>
+    <br>
+    --> <b> bị động </b> : You're supposed to+Vinf
+    <br>
+    VD: It's your duty to make tea today.<br>
+    >> You are supposed to make tea today.
+    <br>
+    <br>
+    2.<b> It's impossible to+Vinf </b>
+    <br>
+    <br>
+    --> <b>bị động </b> : S + can't + be + P2<br>
+    VD: It's impossible to solve this problem.<br>
+    >> This problem can't be solve.
+    <br>
+    <br>
+    3.<b>It's necessary to + Vinf</b>
+    <br>
+    <br>
+    --> <b> bị động </b> : S + should/ must + be +P2
+    <br>VD: It's necessary for you to type this letter. <br> >> This letter should/ must be typed by
+    you.
+    <br>
+    <br>
+    4.<b> Mệnh lệnh thức + Object.</b>
+    <br>
+    <br>
+    --> <b>bị động </b> : S + should/must + be +P2.<br>
+    VD: Turn on the lights!<br>
+    >> The lights should be turned on.
+    <br>
+    <br>
+    <b> BỊ ĐỘNG CỦA ĐỘNG TỪ MAKE/ LET</b>
+    <br>
+    <br>
+    Công thức chủ động : S + make/ let + sb+ Vinf. <br>
+    --> <b> Bị động </b> : S +be+ made + to + Vinf/let + Vinf.<br>
+    VD: My parent never let me do anything by myself.<br>
+    >> I'm never let to do anything by myself.<br>
+    <br>
+    <b>BỊ ĐỘNG CỦA CẤU TRÚC " NHỜ AI LÀM GÌ"</b>
+    <br>
+    <br>
+    <b>Chủ động</b> : S + have(get) + sb + (to)Vinf
+    <br>--> <b>Bị động</b> : S + have/ get + st +done.
+    <br> VD: I have my father repair my bike.
+    <br> >> I have my bike repaired by my father.
+    <br>
+    <br>
+    <b>BỊ ĐỘNG CỦA ĐỘNG TỪ ĐI SAU NÓ LÀ MỘT ĐỘNG TỪ Ở DẠNG VING</b>
+    <br>
+    <br>
+    Các động từ đó như : love, like, dislike, enjoy, fancy, hate, imagine, regret, mind, admit,
+    involve, deny, avoid....etc
+    <br> <b>Chủ động</b> : S + V + sb Ving
+    <br> --> <b>Bị động </b> : S + V + sb/st + being + P2
+    <br> VD: I like you wearing this dress.
+    <br> >> I like this dress being worn by you.
+    <br>
+    <br>
+    <b> BỊ ĐỘNG CỦA CÁC ĐỘNG TỪ TRI GIÁC( Vp --- verb of perception)</b>
+    <br>
+    <br>
+    1.<b> Cấu trúc 1: S + Vp + sb + Ving.</b>
+    <br>
+    <br>
+    (Ai đó chứng kiến người khác làm gì và chỉ thấy 1 phần của hành động hoặc 1 hành động dand diễn
+    ra bị 1 hành động khác xen vào)
+    <br> VD: Opening the door, we saw her overhearing us.
+    <br>
+    <br>
+    2.<b>Cấu trúc 2: S + Vp + sb + V.</b><br>
+    <br>
+    (Ai đó chứng kiến người khác làm gì từ đầu đến cuối)
+    <br> VD: I saw him close the door and drive his car away.
+    <br>NOTE: riêng các động từ : feel, find, catch thì chỉ sử dụng công thức 1.
+    <br> --> <b>Bị động</b> : S + be + P2(of Vp) + to +Vinf
+    <br> VD: He was seen to close the door and drive his car away.
+    <br>
+    <br>
+    <b>BỊ ĐỘNG KÉP.</b>
+    <br>
+    <br>
+    1.<b> Khi main verb ở thời HIỆN TẠI</b>
+    <br>
+    <br>
+    <b>Chủ động:</b><br>
+    People/they + think/say/suppose/believe/consider/report.....+ that + clause.
+    <br> --> <b>Bị động </b> :<br>
+    a)<b> It's + thought/said/ supposed/believed/considered/reported...+ that + clause</b><br>
+    ( trong đó clause = S + Vinf + O)<br>
+    b)<b> Động từ trong clause để ở thì HTD hoặc TLĐ</b><br>
+    S + am/is/are + thought/ said/supposed... + to + Vinf<br>
+    VD: People say that he is a good doctor.<br>
+    >> It's said that he is a good doctor.<br>
+    He is said to be a good doctor.<br>
+
+    c)<b> Động từ trong clause để ở thời QKD hoặc HTHT.</b><br>
+    S + am/is/are + thought/ said/ supposed... + to + have + P2.<br>
+    VD: People think he stole my car.<br>
+    >> It's thought he stole my car.<br>
+    He is thought to have stolen my car.<br>
+    <br>
+    2.<b> Khi main verb ở thời QUÁ KHỨ.</b><br>
+    <br>
+    <b>Chủ động:</b><br>
+    People/they + thought/said/supposed...+ that + clause.<br>
+    >> <b>Bị động</b> :<br>
+    a) <b>It was + thought/ said/ supposed...+ that + clause.</b><br>
+    b) <b>Động từ trong clause để ở thì QKĐ:</b><br>
+    S + was/were + thought/ said/ supposed... + to + Vinf.<br>
+    VD: People said that he is a good doctor.
+    <br>
+    >> It was said that he is a good doctor.<br>
+    He was said to be a good doctor.<br>
+    c) <b>Động từ trong clause ở thì QKHT</b><br>
+    S + was/were + thought/ said/ supposed... + to + have + P2.<br>
+    VD: They thought he was one of famous singers.<br>
+    >> It was thought he was one of famous singers. <br>
+    He was thought to be one of famous singers.<br>
+    <br>
+    <b>BỊ ĐỘNG CỦA TÁM ĐỘNG TỪ ĐẶC BIỆT</b>
+    <br>
+    <br>
+    Các động từ :<b> suggest, require, request, order, demand, insist(on), recommend.</b>
+    <br>
+    <b>Chủ động:</b>
+    <br>
+    S + suggest/ recommend/ order/ require... + that + clause.
+    ( trong đó clause = S + Vinf + O)<br>
+    >> <b>Bị động:</b><br>
+    It + was/ will be/ has been/ is... + P2( of 8 verb) + that + st + be + P2.<br>
+    ( trong đó "be" là không đổi vì động từ trong clause ở câu chủ động ở dạng Vinf)<br>
+    VD: He suggested that she buy a new car. <br>
+    >> It was suggessted that a new car be bought.<br>
+    <br>
+    <b>BỊ ĐỘNG CỦA CẤU TRÚC CHỦ NGỮ GIẢ " IT".</b>
+    <br>
+    <br>
+    <b>Chủ động:</b>
+    It + be + adj + for sb + to do st.<br>
+    >><b>Bị động</b>:<br>
+    It + be + adj + for st + to be done.<br>
+    VD: It is difficult for me to finish this test in one hour <br> >> It is difficult for this test
+    to be finished in one hour.
+    <br>
+    <br>
+    <b>BỊ ĐỘNG TRONG TRƯỜNG HỢP 2 TÂN NGỮ.</b>
+    <br>
+    <br>
+    Trong đó : Oi = Indirect Object.<br>
+    Od = Direct Object.<br>
+    <b>Chủ động</b>:<br>
+    S + V + Oi + Od <br>
+    >><b>Bị động</b>:<br>
+    a) <b> Oi + be + P2( of V) + Od.</b>
+    b) <b>Od + be + P2( of V) + to Oi.</b><br>
+    ( riêng động từ " buy" dùng giới từ " for" ).<br>
+    VD: My friend gave me a present on my birthday.<br>
+    >> A present was given to me by my friend on my birthday.<br>
+    I was given a present on my birthday by my friend.<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>
+</html>

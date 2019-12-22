@@ -1,0 +1,2755 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem-->
+    </div>
+    </div>
+    <br>
+    <br>
+    <table border="2">
+        <tbody>
+        <tr>
+            <td></td>
+            <td><b>Tính từ</b></td>
+            <td><b>Nghĩa</b></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>different</td>
+            <td>khác nhau</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>used</td>
+            <td>được sử dụng</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>important</td>
+            <td>quan trọng</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>every</td>
+            <td>mỗi</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>large</td>
+            <td>lớn</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>available</td>
+            <td>có sẵn</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>popular</td>
+            <td>phổ biến</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>able</td>
+            <td>thể</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>basic</td>
+            <td>cơ bản</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>known</td>
+            <td>được biết đến</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>various</td>
+            <td>khác nhau</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>difficult</td>
+            <td>khó khăn</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>several</td>
+            <td>nhiều</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>united</td>
+            <td>thống nhất</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>historical</td>
+            <td>lịch sử</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>hot</td>
+            <td>nóng</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>useful</td>
+            <td>hữu ích</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>mental</td>
+            <td>tinh thần</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>scared</td>
+            <td>sợ hãi</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>additional</td>
+            <td>thêm</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>emotional</td>
+            <td>cảm xúc</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>old</td>
+            <td>cũ</td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td>political</td>
+            <td>chính trị</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>similar</td>
+            <td>tương tự</td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td>healthy</td>
+            <td>khỏe mạnh</td>
+        </tr>
+        <tr>
+            <td>26</td>
+            <td>financial</td>
+            <td>tài chính</td>
+        </tr>
+        <tr>
+            <td>27</td>
+            <td>medical</td>
+            <td>y tế</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>traditional</td>
+            <td>truyền thống</td>
+        </tr>
+        <tr>
+            <td>29</td>
+            <td>federal</td>
+            <td>liên bang</td>
+        </tr>
+        <tr>
+            <td>30</td>
+            <td>entire</td>
+            <td>toàn bộ</td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td>strong</td>
+            <td>mạnh mẽ</td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>actual</td>
+            <td>thực tế</td>
+        </tr>
+        <tr>
+            <td>33</td>
+            <td>significant</td>
+            <td>đáng kể</td>
+        </tr>
+        <tr>
+            <td>34</td>
+            <td>successful</td>
+            <td>thành công</td>
+        </tr>
+        <tr>
+            <td>35</td>
+            <td>electrical</td>
+            <td>điện</td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td>expensive</td>
+            <td>đắt</td>
+        </tr>
+        <tr>
+            <td>37</td>
+            <td>pregnant</td>
+            <td>mang thai</td>
+        </tr>
+        <tr>
+            <td>38</td>
+            <td>intelligent</td>
+            <td>thông minh</td>
+        </tr>
+        <tr>
+            <td>39</td>
+            <td>interesting</td>
+            <td>thú vị</td>
+        </tr>
+        <tr>
+            <td>40</td>
+            <td>poor</td>
+            <td>người nghèo</td>
+        </tr>
+        <tr>
+            <td>41</td>
+            <td>happy</td>
+            <td>hạnh phúc</td>
+        </tr>
+        <tr>
+            <td>42</td>
+            <td>responsible</td>
+            <td>chịu trách nhiệm</td>
+        </tr>
+        <tr>
+            <td>43</td>
+            <td>cute</td>
+            <td>dễ thương</td>
+        </tr>
+        <tr>
+            <td>44</td>
+            <td>helpful</td>
+            <td>hữu ích</td>
+        </tr>
+        <tr>
+            <td>45</td>
+            <td>recent</td>
+            <td>gần đây</td>
+        </tr>
+        <tr>
+            <td>46</td>
+            <td>willing</td>
+            <td>sẵn sàng</td>
+        </tr>
+        <tr>
+            <td>47</td>
+            <td>nice</td>
+            <td>đẹp</td>
+        </tr>
+        <tr>
+            <td>48</td>
+            <td>wonderful</td>
+            <td>tuyệt vời</td>
+        </tr>
+        <tr>
+            <td>49</td>
+            <td>impossible</td>
+            <td>không thể</td>
+        </tr>
+        <tr>
+            <td>50</td>
+            <td>serious</td>
+            <td>nghiêm trọng</td>
+        </tr>
+        <tr>
+            <td>51</td>
+            <td>huge</td>
+            <td>lớn</td>
+        </tr>
+        <tr>
+            <td>52</td>
+            <td>rare</td>
+            <td>hiếm</td>
+        </tr>
+        <tr>
+            <td>53</td>
+            <td>technical</td>
+            <td>kỹ thuật</td>
+        </tr>
+        <tr>
+            <td>54</td>
+            <td>typical</td>
+            <td>điển hình</td>
+        </tr>
+        <tr>
+            <td>55</td>
+            <td>competitive</td>
+            <td>cạnh tranh</td>
+        </tr>
+        <tr>
+            <td>56</td>
+            <td>critical</td>
+            <td>quan trọng</td>
+        </tr>
+        <tr>
+            <td>57</td>
+            <td>electronic</td>
+            <td>điện tử</td>
+        </tr>
+        <tr>
+            <td>58</td>
+            <td>immediate</td>
+            <td>ngay lập tức</td>
+        </tr>
+        <tr>
+            <td>59</td>
+            <td>whose</td>
+            <td>có</td>
+        </tr>
+        <tr>
+            <td>60</td>
+            <td>aware</td>
+            <td>nhận thức</td>
+        </tr>
+        <tr>
+            <td>61</td>
+            <td>educational</td>
+            <td>giáo dục</td>
+        </tr>
+        <tr>
+            <td>62</td>
+            <td>environmental</td>
+            <td>môi trường</td>
+        </tr>
+        <tr>
+            <td>63</td>
+            <td>global</td>
+            <td>toàn cầu</td>
+        </tr>
+        <tr>
+            <td>64</td>
+            <td>legal</td>
+            <td>pháp lý</td>
+        </tr>
+        <tr>
+            <td>65</td>
+            <td>relevant</td>
+            <td>có liên quan</td>
+        </tr>
+        <tr>
+            <td>66</td>
+            <td>accurate</td>
+            <td>chính xác</td>
+        </tr>
+        <tr>
+            <td>67</td>
+            <td>capable</td>
+            <td>có khả năng</td>
+        </tr>
+        <tr>
+            <td>68</td>
+            <td>dangerous</td>
+            <td>nguy hiểm</td>
+        </tr>
+        <tr>
+            <td>69</td>
+            <td>dramatic</td>
+            <td>ấn tượng</td>
+        </tr>
+        <tr>
+            <td>70</td>
+            <td>efficient</td>
+            <td>hiệu quả</td>
+        </tr>
+        <tr>
+            <td>71</td>
+            <td>powerful</td>
+            <td>mạnh mẽ</td>
+        </tr>
+        <tr>
+            <td>72</td>
+            <td>foreign</td>
+            <td>nước ngoài</td>
+        </tr>
+        <tr>
+            <td>73</td>
+            <td>hungry</td>
+            <td>đói</td>
+        </tr>
+        <tr>
+            <td>74</td>
+            <td>practical</td>
+            <td>thực tế</td>
+        </tr>
+        <tr>
+            <td>75</td>
+            <td>psychological</td>
+            <td>tâm lý</td>
+        </tr>
+        <tr>
+            <td>76</td>
+            <td>severe</td>
+            <td>nghiêm trọng</td>
+        </tr>
+        <tr>
+            <td>77</td>
+            <td>suitable</td>
+            <td>phù hợp</td>
+        </tr>
+        <tr>
+            <td>78</td>
+            <td>numerous</td>
+            <td>nhiều</td>
+        </tr>
+        <tr>
+            <td>79</td>
+            <td>sufficient</td>
+            <td>đủ</td>
+        </tr>
+        <tr>
+            <td>80</td>
+            <td>unusual</td>
+            <td>bất thường</td>
+        </tr>
+        <tr>
+            <td>81</td>
+            <td>consistent</td>
+            <td>phù hợp</td>
+        </tr>
+        <tr>
+            <td>82</td>
+            <td>cultural</td>
+            <td>văn hóa</td>
+        </tr>
+        <tr>
+            <td>83</td>
+            <td>existing</td>
+            <td>hiện</td>
+        </tr>
+        <tr>
+            <td>84</td>
+            <td>famous</td>
+            <td>nổi tiếng</td>
+        </tr>
+        <tr>
+            <td>85</td>
+            <td>pure</td>
+            <td>tinh khiết</td>
+        </tr>
+        <tr>
+            <td>86</td>
+            <td>afraid</td>
+            <td>sợ</td>
+        </tr>
+        <tr>
+            <td>87</td>
+            <td>obvious</td>
+            <td>rõ ràng</td>
+        </tr>
+        <tr>
+            <td>88</td>
+            <td>careful</td>
+            <td>cẩn thận</td>
+        </tr>
+        <tr>
+            <td>89</td>
+            <td>latter</td>
+            <td>thứ hai</td>
+        </tr>
+        <tr>
+            <td>90</td>
+            <td>obviously</td>
+            <td>rõ ràng</td>
+        </tr>
+        <tr>
+            <td>91</td>
+            <td>unhappy</td>
+            <td>không hài lòng</td>
+        </tr>
+        <tr>
+            <td>92</td>
+            <td>acceptable</td>
+            <td>chấp nhận được</td>
+        </tr>
+        <tr>
+            <td>93</td>
+            <td>aggressive</td>
+            <td>tích cực</td>
+        </tr>
+        <tr>
+            <td>94</td>
+            <td>distinct</td>
+            <td>biệt</td>
+        </tr>
+        <tr>
+            <td>95</td>
+            <td>eastern</td>
+            <td>đông</td>
+        </tr>
+        <tr>
+            <td>96</td>
+            <td>logical</td>
+            <td>hợp lý</td>
+        </tr>
+        <tr>
+            <td>97</td>
+            <td>reasonable</td>
+            <td>hợp lý</td>
+        </tr>
+        <tr>
+            <td>98</td>
+            <td>strict</td>
+            <td>nghiêm ngặt</td>
+        </tr>
+        <tr>
+            <td>99</td>
+            <td>successfully</td>
+            <td>thành công</td>
+        </tr>
+        <tr>
+            <td>100</td>
+            <td>administrative</td>
+            <td>hành chính</td>
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>automatic</td>
+            <td>tự động</td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>civil</td>
+            <td>dân sự</td>
+        </tr>
+        <tr>
+            <td>103</td>
+            <td>former</td>
+            <td>cựu</td>
+        </tr>
+        <tr>
+            <td>104</td>
+            <td>massive</td>
+            <td>lớn</td>
+        </tr>
+        <tr>
+            <td>105</td>
+            <td>southern</td>
+            <td>Nam</td>
+        </tr>
+        <tr>
+            <td>106</td>
+            <td>unfair</td>
+            <td>không công bằng</td>
+        </tr>
+        <tr>
+            <td>107</td>
+            <td>visible</td>
+            <td>có thể nhìn thấy</td>
+        </tr>
+        <tr>
+            <td>108</td>
+            <td>alive</td>
+            <td>sống</td>
+        </tr>
+        <tr>
+            <td>109</td>
+            <td>angry</td>
+            <td>tức giận</td>
+        </tr>
+        <tr>
+            <td>110</td>
+            <td>desperate</td>
+            <td>tuyệt vọng</td>
+        </tr>
+        <tr>
+            <td>111</td>
+            <td>exciting</td>
+            <td>thú vị</td>
+        </tr>
+        <tr>
+            <td>112</td>
+            <td>friendly</td>
+            <td>thân thiện</td>
+        </tr>
+        <tr>
+            <td>113</td>
+            <td>lucky</td>
+            <td>may mắn</td>
+        </tr>
+        <tr>
+            <td>114</td>
+            <td>realistic</td>
+            <td>thực tế</td>
+        </tr>
+        <tr>
+            <td>115</td>
+            <td>sorry</td>
+            <td>xin lỗi</td>
+        </tr>
+        <tr>
+            <td>116</td>
+            <td>ugly</td>
+            <td>xấu xí</td>
+        </tr>
+        <tr>
+            <td>117</td>
+            <td>unlikely</td>
+            <td>không</td>
+        </tr>
+        <tr>
+            <td>118</td>
+            <td>anxious</td>
+            <td>lo lắng</td>
+        </tr>
+        <tr>
+            <td>119</td>
+            <td>comprehensive</td>
+            <td>toàn diện</td>
+        </tr>
+        <tr>
+            <td>120</td>
+            <td>curious</td>
+            <td>tò mò</td>
+        </tr>
+        <tr>
+            <td>121</td>
+            <td>impressive</td>
+            <td>ấn tượng</td>
+        </tr>
+        <tr>
+            <td>122</td>
+            <td>informal</td>
+            <td>chính thức</td>
+        </tr>
+        <tr>
+            <td>123</td>
+            <td>inner</td>
+            <td>bên trong</td>
+        </tr>
+        <tr>
+            <td>124</td>
+            <td>pleasant</td>
+            <td>vừa ý</td>
+        </tr>
+        <tr>
+            <td>125</td>
+            <td>sexual</td>
+            <td>tình dục</td>
+        </tr>
+        <tr>
+            <td>126</td>
+            <td>sudden</td>
+            <td>đột ngột</td>
+        </tr>
+        <tr>
+            <td>127</td>
+            <td>terrible</td>
+            <td>khủng khiếp</td>
+        </tr>
+        <tr>
+            <td>128</td>
+            <td>unable</td>
+            <td>không thể</td>
+        </tr>
+        <tr>
+            <td>129</td>
+            <td>weak</td>
+            <td>yếu</td>
+        </tr>
+        <tr>
+            <td>130</td>
+            <td>wooden</td>
+            <td>gỗ</td>
+        </tr>
+        <tr>
+            <td>131</td>
+            <td>asleep</td>
+            <td>ngủ</td>
+        </tr>
+        <tr>
+            <td>132</td>
+            <td>confident</td>
+            <td>tự tin</td>
+        </tr>
+        <tr>
+            <td>133</td>
+            <td>conscious</td>
+            <td>có ý thức</td>
+        </tr>
+        <tr>
+            <td>134</td>
+            <td>decent</td>
+            <td>phong nha</td>
+        </tr>
+        <tr>
+            <td>135</td>
+            <td>embarrassed</td>
+            <td>xấu hổ</td>
+        </tr>
+        <tr>
+            <td>136</td>
+            <td>guilty</td>
+            <td>tội</td>
+        </tr>
+        <tr>
+            <td>137</td>
+            <td>lonely</td>
+            <td>cô đơn</td>
+        </tr>
+        <tr>
+            <td>138</td>
+            <td>mad</td>
+            <td>điên</td>
+        </tr>
+        <tr>
+            <td>139</td>
+            <td>nervous</td>
+            <td>thần kinh</td>
+        </tr>
+        <tr>
+            <td>140</td>
+            <td>odd</td>
+            <td>lẻ</td>
+        </tr>
+        <tr>
+            <td>141</td>
+            <td>remarkable</td>
+            <td>đáng chú ý</td>
+        </tr>
+        <tr>
+            <td>142</td>
+            <td>substantial</td>
+            <td>đáng kể</td>
+        </tr>
+        <tr>
+            <td>143</td>
+            <td>suspicious</td>
+            <td>đáng ngờ</td>
+        </tr>
+        <tr>
+            <td>144</td>
+            <td>tall</td>
+            <td>cao</td>
+        </tr>
+        <tr>
+            <td>145</td>
+            <td>tiny</td>
+            <td>nhỏ</td>
+        </tr>
+        <tr>
+            <td>146</td>
+            <td>more</td>
+            <td>hơn</td>
+        </tr>
+        <tr>
+            <td>147</td>
+            <td>some</td>
+            <td>một số</td>
+        </tr>
+        <tr>
+            <td>148</td>
+            <td>one</td>
+            <td>một</td>
+        </tr>
+        <tr>
+            <td>149</td>
+            <td>all</td>
+            <td>tất cả</td>
+        </tr>
+        <tr>
+            <td>150</td>
+            <td>many</td>
+            <td>nhiều</td>
+        </tr>
+        <tr>
+            <td>151</td>
+            <td>most</td>
+            <td>nhất</td>
+        </tr>
+        <tr>
+            <td>152</td>
+            <td>other</td>
+            <td>khác</td>
+        </tr>
+        <tr>
+            <td>153</td>
+            <td>such</td>
+            <td>như vậy</td>
+        </tr>
+        <tr>
+            <td>154</td>
+            <td>even</td>
+            <td>thậm chí</td>
+        </tr>
+        <tr>
+            <td>155</td>
+            <td>new</td>
+            <td>mới</td>
+        </tr>
+        <tr>
+            <td>156</td>
+            <td>just</td>
+            <td>chỉ</td>
+        </tr>
+        <tr>
+            <td>157</td>
+            <td>good</td>
+            <td>tốt</td>
+        </tr>
+        <tr>
+            <td>158</td>
+            <td>any</td>
+            <td>bất kỳ</td>
+        </tr>
+        <tr>
+            <td>159</td>
+            <td>each</td>
+            <td>mỗi</td>
+        </tr>
+        <tr>
+            <td>160</td>
+            <td>much</td>
+            <td>nhiều</td>
+        </tr>
+        <tr>
+            <td>161</td>
+            <td>own</td>
+            <td>riêng</td>
+        </tr>
+        <tr>
+            <td>162</td>
+            <td>great</td>
+            <td>tuyệt vời</td>
+        </tr>
+        <tr>
+            <td>163</td>
+            <td>another</td>
+            <td>khác</td>
+        </tr>
+        <tr>
+            <td>164</td>
+            <td>same</td>
+            <td>cùng</td>
+        </tr>
+        <tr>
+            <td>165</td>
+            <td>few</td>
+            <td>số</td>
+        </tr>
+        <tr>
+            <td>166</td>
+            <td>free</td>
+            <td>miễn phí</td>
+        </tr>
+        <tr>
+            <td>167</td>
+            <td>right</td>
+            <td>đúng</td>
+        </tr>
+        <tr>
+            <td>168</td>
+            <td>still</td>
+            <td>vẫn</td>
+        </tr>
+        <tr>
+            <td>169</td>
+            <td>best</td>
+            <td>tốt nhất</td>
+        </tr>
+        <tr>
+            <td>170</td>
+            <td>public</td>
+            <td>công cộng</td>
+        </tr>
+        <tr>
+            <td>171</td>
+            <td>human</td>
+            <td>con người</td>
+        </tr>
+        <tr>
+            <td>172</td>
+            <td>both</td>
+            <td>cả hai</td>
+        </tr>
+        <tr>
+            <td>173</td>
+            <td>local</td>
+            <td>địa phương</td>
+        </tr>
+        <tr>
+            <td>174</td>
+            <td>sure</td>
+            <td>chắc chắn</td>
+        </tr>
+        <tr>
+            <td>175</td>
+            <td>better</td>
+            <td>tốt hơn</td>
+        </tr>
+        <tr>
+            <td>176</td>
+            <td>general</td>
+            <td>chung</td>
+        </tr>
+        <tr>
+            <td>177</td>
+            <td>specific</td>
+            <td>cụ thể</td>
+        </tr>
+        <tr>
+            <td>178</td>
+            <td>enough</td>
+            <td>đủ</td>
+        </tr>
+        <tr>
+            <td>179</td>
+            <td>long</td>
+            <td>dài</td>
+        </tr>
+        <tr>
+            <td>180</td>
+            <td>small</td>
+            <td>nhỏ</td>
+        </tr>
+        <tr>
+            <td>181</td>
+            <td>less</td>
+            <td>ít</td>
+        </tr>
+        <tr>
+            <td>182</td>
+            <td>high</td>
+            <td>cao</td>
+        </tr>
+        <tr>
+            <td>183</td>
+            <td>certain</td>
+            <td>nhất định</td>
+        </tr>
+        <tr>
+            <td>184</td>
+            <td>little</td>
+            <td>ít</td>
+        </tr>
+        <tr>
+            <td>185</td>
+            <td>common</td>
+            <td>phổ biến</td>
+        </tr>
+        <tr>
+            <td>186</td>
+            <td>next</td>
+            <td>tiếp theo</td>
+        </tr>
+        <tr>
+            <td>187</td>
+            <td>simple</td>
+            <td>đơn giản</td>
+        </tr>
+        <tr>
+            <td>188</td>
+            <td>hard</td>
+            <td>cứng</td>
+        </tr>
+        <tr>
+            <td>189</td>
+            <td>past</td>
+            <td>qua</td>
+        </tr>
+        <tr>
+            <td>190</td>
+            <td>big</td>
+            <td>lớn</td>
+        </tr>
+        <tr>
+            <td>191</td>
+            <td>possible</td>
+            <td>có thể</td>
+        </tr>
+        <tr>
+            <td>192</td>
+            <td>particular</td>
+            <td>đặc biệt</td>
+        </tr>
+        <tr>
+            <td>193</td>
+            <td>real</td>
+            <td>thực</td>
+        </tr>
+        <tr>
+            <td>194</td>
+            <td>major</td>
+            <td>chính</td>
+        </tr>
+        <tr>
+            <td>195</td>
+            <td>personal</td>
+            <td>cá nhân</td>
+        </tr>
+        <tr>
+            <td>196</td>
+            <td>current</td>
+            <td>hiện tại</td>
+        </tr>
+        <tr>
+            <td>197</td>
+            <td>left</td>
+            <td>còn lại</td>
+        </tr>
+        <tr>
+            <td>198</td>
+            <td>national</td>
+            <td>quốc gia</td>
+        </tr>
+        <tr>
+            <td>199</td>
+            <td>least</td>
+            <td>ít nhất</td>
+        </tr>
+        <tr>
+            <td>200</td>
+            <td>natural</td>
+            <td>tự nhiên</td>
+        </tr>
+        <tr>
+            <td>201</td>
+            <td>physical</td>
+            <td>vật lý</td>
+        </tr>
+        <tr>
+            <td>202</td>
+            <td>short</td>
+            <td>ngắn</td>
+        </tr>
+        <tr>
+            <td>203</td>
+            <td>last</td>
+            <td>cuối cùng</td>
+        </tr>
+        <tr>
+            <td>204</td>
+            <td>single</td>
+            <td>đơn</td>
+        </tr>
+        <tr>
+            <td>205</td>
+            <td>individual</td>
+            <td>cá nhân</td>
+        </tr>
+        <tr>
+            <td>206</td>
+            <td>main</td>
+            <td>chính</td>
+        </tr>
+        <tr>
+            <td>207</td>
+            <td>potential</td>
+            <td>tiềm năng</td>
+        </tr>
+        <tr>
+            <td>208</td>
+            <td>professional</td>
+            <td>chuyên nghiệp</td>
+        </tr>
+        <tr>
+            <td>209</td>
+            <td>international</td>
+            <td>quốc tế</td>
+        </tr>
+        <tr>
+            <td>210</td>
+            <td>lower</td>
+            <td>thấp hơn</td>
+        </tr>
+        <tr>
+            <td>211</td>
+            <td>open</td>
+            <td>mở</td>
+        </tr>
+        <tr>
+            <td>212</td>
+            <td>according</td>
+            <td>theo</td>
+        </tr>
+        <tr>
+            <td>213</td>
+            <td>alternative</td>
+            <td>thay thế</td>
+        </tr>
+        <tr>
+            <td>214</td>
+            <td>special</td>
+            <td>đặc biệt</td>
+        </tr>
+        <tr>
+            <td>215</td>
+            <td>working</td>
+            <td>làm việc</td>
+        </tr>
+        <tr>
+            <td>216</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+        </tr>
+        <tr>
+            <td>217</td>
+            <td>whole</td>
+            <td>toàn bộ</td>
+        </tr>
+        <tr>
+            <td>218</td>
+            <td>clear</td>
+            <td>rõ ràng</td>
+        </tr>
+        <tr>
+            <td>219</td>
+            <td>dry</td>
+            <td>khô</td>
+        </tr>
+        <tr>
+            <td>220</td>
+            <td>easy</td>
+            <td>dễ dàng</td>
+        </tr>
+        <tr>
+            <td>221</td>
+            <td>cold</td>
+            <td>lạnh</td>
+        </tr>
+        <tr>
+            <td>222</td>
+            <td>commercial</td>
+            <td>thương mại</td>
+        </tr>
+        <tr>
+            <td>223</td>
+            <td>full</td>
+            <td>đầy đủ</td>
+        </tr>
+        <tr>
+            <td>224</td>
+            <td>low</td>
+            <td>thấp</td>
+        </tr>
+        <tr>
+            <td>225</td>
+            <td>primary</td>
+            <td>chính</td>
+        </tr>
+        <tr>
+            <td>226</td>
+            <td>worth</td>
+            <td>giá trị</td>
+        </tr>
+        <tr>
+            <td>227</td>
+            <td>necessary</td>
+            <td>cần thiết</td>
+        </tr>
+        <tr>
+            <td>228</td>
+            <td>positive</td>
+            <td>tích cực</td>
+        </tr>
+        <tr>
+            <td>229</td>
+            <td>present</td>
+            <td>hiện nay</td>
+        </tr>
+        <tr>
+            <td>230</td>
+            <td>close</td>
+            <td>gần</td>
+        </tr>
+        <tr>
+            <td>231</td>
+            <td>creative</td>
+            <td>sáng tạo</td>
+        </tr>
+        <tr>
+            <td>232</td>
+            <td>green</td>
+            <td>màu xanh lá cây</td>
+        </tr>
+        <tr>
+            <td>233</td>
+            <td>late</td>
+            <td>cuối</td>
+        </tr>
+        <tr>
+            <td>234</td>
+            <td>fit</td>
+            <td>phù hợp với</td>
+        </tr>
+        <tr>
+            <td>235</td>
+            <td>glad</td>
+            <td>vui</td>
+        </tr>
+        <tr>
+            <td>236</td>
+            <td>proper</td>
+            <td>thích hợp</td>
+        </tr>
+        <tr>
+            <td>237</td>
+            <td>complex</td>
+            <td>phức tạp</td>
+        </tr>
+        <tr>
+            <td>238</td>
+            <td>content</td>
+            <td>nội dung</td>
+        </tr>
+        <tr>
+            <td>239</td>
+            <td>due</td>
+            <td>do</td>
+        </tr>
+        <tr>
+            <td>240</td>
+            <td>effective</td>
+            <td>hiệu quả</td>
+        </tr>
+        <tr>
+            <td>241</td>
+            <td>middle</td>
+            <td>trung</td>
+        </tr>
+        <tr>
+            <td>242</td>
+            <td>regular</td>
+            <td>thường xuyên</td>
+        </tr>
+        <tr>
+            <td>243</td>
+            <td>fast</td>
+            <td>nhanh chóng</td>
+        </tr>
+        <tr>
+            <td>244</td>
+            <td>independent</td>
+            <td>độc lập</td>
+        </tr>
+        <tr>
+            <td>245</td>
+            <td>original</td>
+            <td>ban đầu</td>
+        </tr>
+        <tr>
+            <td>246</td>
+            <td>wide</td>
+            <td>rộng</td>
+        </tr>
+        <tr>
+            <td>247</td>
+            <td>beautiful</td>
+            <td>đẹp</td>
+        </tr>
+        <tr>
+            <td>248</td>
+            <td>complete</td>
+            <td>hoàn thành</td>
+        </tr>
+        <tr>
+            <td>249</td>
+            <td>active</td>
+            <td>hoạt động</td>
+        </tr>
+        <tr>
+            <td>250</td>
+            <td>negative</td>
+            <td>tiêu cực</td>
+        </tr>
+        <tr>
+            <td>251</td>
+            <td>safe</td>
+            <td>an toàn</td>
+        </tr>
+        <tr>
+            <td>252</td>
+            <td>visual</td>
+            <td>hình ảnh</td>
+        </tr>
+        <tr>
+            <td>253</td>
+            <td>wrong</td>
+            <td>sai</td>
+        </tr>
+        <tr>
+            <td>254</td>
+            <td>ago</td>
+            <td>trước</td>
+        </tr>
+        <tr>
+            <td>255</td>
+            <td>quick</td>
+            <td>nhanh chóng</td>
+        </tr>
+        <tr>
+            <td>256</td>
+            <td>ready</td>
+            <td>sẵn sàng</td>
+        </tr>
+        <tr>
+            <td>257</td>
+            <td>straight</td>
+            <td>thẳng</td>
+        </tr>
+        <tr>
+            <td>258</td>
+            <td>white</td>
+            <td>trắng</td>
+        </tr>
+        <tr>
+            <td>259</td>
+            <td>direct</td>
+            <td>trực tiếp</td>
+        </tr>
+        <tr>
+            <td>260</td>
+            <td>excellent</td>
+            <td>tuyệt vời</td>
+        </tr>
+        <tr>
+            <td>261</td>
+            <td>extra</td>
+            <td>thêm</td>
+        </tr>
+        <tr>
+            <td>262</td>
+            <td>junior</td>
+            <td>cơ sở</td>
+        </tr>
+        <tr>
+            <td>263</td>
+            <td>pretty</td>
+            <td>khá</td>
+        </tr>
+        <tr>
+            <td>264</td>
+            <td>unique</td>
+            <td>độc đáo</td>
+        </tr>
+        <tr>
+            <td>265</td>
+            <td>classic</td>
+            <td>cổ điển</td>
+        </tr>
+        <tr>
+            <td>266</td>
+            <td>final</td>
+            <td>thức</td>
+        </tr>
+        <tr>
+            <td>267</td>
+            <td>overall</td>
+            <td>tổng thể</td>
+        </tr>
+        <tr>
+            <td>268</td>
+            <td>private</td>
+            <td>tin</td>
+        </tr>
+        <tr>
+            <td>269</td>
+            <td>separate</td>
+            <td>riêng</td>
+        </tr>
+        <tr>
+            <td>270</td>
+            <td>western</td>
+            <td>tây</td>
+        </tr>
+        <tr>
+            <td>271</td>
+            <td>alone</td>
+            <td>một mình</td>
+        </tr>
+        <tr>
+            <td>272</td>
+            <td>familiar</td>
+            <td>quen thuộc</td>
+        </tr>
+        <tr>
+            <td>273</td>
+            <td>official</td>
+            <td>chính thức</td>
+        </tr>
+        <tr>
+            <td>274</td>
+            <td>perfect</td>
+            <td>hoàn hảo</td>
+        </tr>
+        <tr>
+            <td>275</td>
+            <td>bright</td>
+            <td>sáng</td>
+        </tr>
+        <tr>
+            <td>276</td>
+            <td>broad</td>
+            <td>rộng</td>
+        </tr>
+        <tr>
+            <td>277</td>
+            <td>comfortable</td>
+            <td>thoải mái</td>
+        </tr>
+        <tr>
+            <td>278</td>
+            <td>flat</td>
+            <td>phẳng</td>
+        </tr>
+        <tr>
+            <td>279</td>
+            <td>rich</td>
+            <td>giàu</td>
+        </tr>
+        <tr>
+            <td>280</td>
+            <td>warm</td>
+            <td>ấm áp</td>
+        </tr>
+        <tr>
+            <td>281</td>
+            <td>young</td>
+            <td>trẻ</td>
+        </tr>
+        <tr>
+            <td>282</td>
+            <td>heavy</td>
+            <td>nặng</td>
+        </tr>
+        <tr>
+            <td>283</td>
+            <td>valuable</td>
+            <td>có giá trị</td>
+        </tr>
+        <tr>
+            <td>284</td>
+            <td>correct</td>
+            <td>chính xác</td>
+        </tr>
+        <tr>
+            <td>285</td>
+            <td>leading</td>
+            <td>hàng đầu</td>
+        </tr>
+        <tr>
+            <td>286</td>
+            <td>slow</td>
+            <td>chậm</td>
+        </tr>
+        <tr>
+            <td>287</td>
+            <td>clean</td>
+            <td>sạch</td>
+        </tr>
+        <tr>
+            <td>288</td>
+            <td>fresh</td>
+            <td>tươi</td>
+        </tr>
+        <tr>
+            <td>289</td>
+            <td>normal</td>
+            <td>bình thường</td>
+        </tr>
+        <tr>
+            <td>290</td>
+            <td>secret</td>
+            <td>bí mật</td>
+        </tr>
+        <tr>
+            <td>291</td>
+            <td>tough</td>
+            <td>khó khăn</td>
+        </tr>
+        <tr>
+            <td>292</td>
+            <td>brown</td>
+            <td>nâu</td>
+        </tr>
+        <tr>
+            <td>293</td>
+            <td>cheap</td>
+            <td>giá rẻ</td>
+        </tr>
+        <tr>
+            <td>294</td>
+            <td>deep</td>
+            <td>sâu</td>
+        </tr>
+        <tr>
+            <td>295</td>
+            <td>objective</td>
+            <td>mục tiêu</td>
+        </tr>
+        <tr>
+            <td>296</td>
+            <td>secure</td>
+            <td>đảm bảo</td>
+        </tr>
+        <tr>
+            <td>297</td>
+            <td>thin</td>
+            <td>mỏng</td>
+        </tr>
+        <tr>
+            <td>298</td>
+            <td>chemical</td>
+            <td>hóa học</td>
+        </tr>
+        <tr>
+            <td>299</td>
+            <td>cool</td>
+            <td>mát mẻ</td>
+        </tr>
+        <tr>
+            <td>300</td>
+            <td>extreme</td>
+            <td>cực</td>
+        </tr>
+        <tr>
+            <td>301</td>
+            <td>exact</td>
+            <td>chính xác</td>
+        </tr>
+        <tr>
+            <td>302</td>
+            <td>fair</td>
+            <td>công bằng</td>
+        </tr>
+        <tr>
+            <td>303</td>
+            <td>fine</td>
+            <td>tốt</td>
+        </tr>
+        <tr>
+            <td>304</td>
+            <td>formal</td>
+            <td>chính thức</td>
+        </tr>
+        <tr>
+            <td>305</td>
+            <td>opposite</td>
+            <td>ngược lại</td>
+        </tr>
+        <tr>
+            <td>306</td>
+            <td>remote</td>
+            <td>từ xa</td>
+        </tr>
+        <tr>
+            <td>307</td>
+            <td>total</td>
+            <td>tổng số</td>
+        </tr>
+        <tr>
+            <td>308</td>
+            <td>vast</td>
+            <td>lớn</td>
+        </tr>
+        <tr>
+            <td>309</td>
+            <td>lost</td>
+            <td>bị mất</td>
+        </tr>
+        <tr>
+            <td>310</td>
+            <td>smooth</td>
+            <td>mịn</td>
+        </tr>
+        <tr>
+            <td>311</td>
+            <td>dark</td>
+            <td>tối</td>
+        </tr>
+        <tr>
+            <td>312</td>
+            <td>double</td>
+            <td>đôi</td>
+        </tr>
+        <tr>
+            <td>313</td>
+            <td>equal</td>
+            <td>bằng</td>
+        </tr>
+        <tr>
+            <td>314</td>
+            <td>firm</td>
+            <td>công ty</td>
+        </tr>
+        <tr>
+            <td>315</td>
+            <td>frequent</td>
+            <td>thường xuyên</td>
+        </tr>
+        <tr>
+            <td>316</td>
+            <td>internal</td>
+            <td>nội bộ</td>
+        </tr>
+        <tr>
+            <td>317</td>
+            <td>sensitive</td>
+            <td>nhạy cảm</td>
+        </tr>
+        <tr>
+            <td>318</td>
+            <td>constant</td>
+            <td>liên tục</td>
+        </tr>
+        <tr>
+            <td>319</td>
+            <td>minor</td>
+            <td>trẻ vị thành niên</td>
+        </tr>
+        <tr>
+            <td>320</td>
+            <td>previous</td>
+            <td>trước</td>
+        </tr>
+        <tr>
+            <td>321</td>
+            <td>raw</td>
+            <td>liệu</td>
+        </tr>
+        <tr>
+            <td>322</td>
+            <td>soft</td>
+            <td>mềm</td>
+        </tr>
+        <tr>
+            <td>323</td>
+            <td>solid</td>
+            <td>rắn</td>
+        </tr>
+        <tr>
+            <td>324</td>
+            <td>weird</td>
+            <td>lạ</td>
+        </tr>
+        <tr>
+            <td>325</td>
+            <td>amazing</td>
+            <td>tuyệt vời</td>
+        </tr>
+        <tr>
+            <td>326</td>
+            <td>annual</td>
+            <td>hàng năm</td>
+        </tr>
+        <tr>
+            <td>327</td>
+            <td>busy</td>
+            <td>bận rộn</td>
+        </tr>
+        <tr>
+            <td>328</td>
+            <td>dead</td>
+            <td>chết</td>
+        </tr>
+        <tr>
+            <td>329</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+        </tr>
+        <tr>
+            <td>330</td>
+            <td>round</td>
+            <td>vòng</td>
+        </tr>
+        <tr>
+            <td>331</td>
+            <td>sharp</td>
+            <td>sắc nét</td>
+        </tr>
+        <tr>
+            <td>332</td>
+            <td>thick</td>
+            <td>dày</td>
+        </tr>
+        <tr>
+            <td>333</td>
+            <td>wise</td>
+            <td>khôn ngoan</td>
+        </tr>
+        <tr>
+            <td>334</td>
+            <td>equivalent</td>
+            <td>tương đương</td>
+        </tr>
+        <tr>
+            <td>335</td>
+            <td>initial</td>
+            <td>ban đầu</td>
+        </tr>
+        <tr>
+            <td>336</td>
+            <td>narrow</td>
+            <td>hẹp</td>
+        </tr>
+        <tr>
+            <td>337</td>
+            <td>nearby</td>
+            <td>lân cận</td>
+        </tr>
+        <tr>
+            <td>338</td>
+            <td>proud</td>
+            <td>tự hào</td>
+        </tr>
+        <tr>
+            <td>339</td>
+            <td>spiritual</td>
+            <td>tinh thần</td>
+        </tr>
+        <tr>
+            <td>340</td>
+            <td>wild</td>
+            <td>hoang dã</td>
+        </tr>
+        <tr>
+            <td>341</td>
+            <td>adult</td>
+            <td>người lớn</td>
+        </tr>
+        <tr>
+            <td>342</td>
+            <td>apart</td>
+            <td>ngoài</td>
+        </tr>
+        <tr>
+            <td>343</td>
+            <td>brief</td>
+            <td>ngắn gọn</td>
+        </tr>
+        <tr>
+            <td>344</td>
+            <td>crazy</td>
+            <td>điên</td>
+        </tr>
+        <tr>
+            <td>345</td>
+            <td>prior</td>
+            <td>trước</td>
+        </tr>
+        <tr>
+            <td>346</td>
+            <td>rough</td>
+            <td>thô</td>
+        </tr>
+        <tr>
+            <td>347</td>
+            <td>sad</td>
+            <td>buồn</td>
+        </tr>
+        <tr>
+            <td>348</td>
+            <td>sick</td>
+            <td>bệnh</td>
+        </tr>
+        <tr>
+            <td>349</td>
+            <td>strange</td>
+            <td>lạ</td>
+        </tr>
+        <tr>
+            <td>350</td>
+            <td>external</td>
+            <td>bên ngoài</td>
+        </tr>
+        <tr>
+            <td>351</td>
+            <td>illegal</td>
+            <td>bất hợp pháp</td>
+        </tr>
+        <tr>
+            <td>352</td>
+            <td>loud</td>
+            <td>lớn</td>
+        </tr>
+        <tr>
+            <td>353</td>
+            <td>mobile</td>
+            <td>điện thoại di động</td>
+        </tr>
+        <tr>
+            <td>354</td>
+            <td>nasty</td>
+            <td>khó chịu</td>
+        </tr>
+        <tr>
+            <td>355</td>
+            <td>ordinary</td>
+            <td>bình thường</td>
+        </tr>
+        <tr>
+            <td>356</td>
+            <td>royal</td>
+            <td>hoàng gia</td>
+        </tr>
+        <tr>
+            <td>357</td>
+            <td>senior</td>
+            <td>cao cấp</td>
+        </tr>
+        <tr>
+            <td>358</td>
+            <td>super</td>
+            <td>siêu</td>
+        </tr>
+        <tr>
+            <td>359</td>
+            <td>tight</td>
+            <td>chặt chẽ</td>
+        </tr>
+        <tr>
+            <td>360</td>
+            <td>upper</td>
+            <td>trên</td>
+        </tr>
+        <tr>
+            <td>361</td>
+            <td>yellow</td>
+            <td>vàng</td>
+        </tr>
+        <tr>
+            <td>362</td>
+            <td>dependent</td>
+            <td>phụ thuộc</td>
+        </tr>
+        <tr>
+            <td>363</td>
+            <td>funny</td>
+            <td>vui</td>
+        </tr>
+        <tr>
+            <td>364</td>
+            <td>gross</td>
+            <td>tổng</td>
+        </tr>
+        <tr>
+            <td>365</td>
+            <td>ill</td>
+            <td>bệnh</td>
+        </tr>
+        <tr>
+            <td>366</td>
+            <td>spare</td>
+            <td>phụ tùng</td>
+        </tr>
+        <tr>
+            <td>367</td>
+            <td>sweet</td>
+            <td>ngọt ngào</td>
+        </tr>
+        <tr>
+            <td>368</td>
+            <td>upstairs</td>
+            <td>trên lầu</td>
+        </tr>
+        <tr>
+            <td>369</td>
+            <td>usual</td>
+            <td>thông thường</td>
+        </tr>
+        <tr>
+            <td>370</td>
+            <td>brave</td>
+            <td>dũng cảm</td>
+        </tr>
+        <tr>
+            <td>371</td>
+            <td>calm</td>
+            <td>bình tĩnh</td>
+        </tr>
+        <tr>
+            <td>372</td>
+            <td>dirty</td>
+            <td>bẩn</td>
+        </tr>
+        <tr>
+            <td>373</td>
+            <td>downtown</td>
+            <td>trung tâm thành phố</td>
+        </tr>
+        <tr>
+            <td>374</td>
+            <td>grand</td>
+            <td>lớn</td>
+        </tr>
+        <tr>
+            <td>375</td>
+            <td>honest</td>
+            <td>trung thực</td>
+        </tr>
+        <tr>
+            <td>376</td>
+            <td>loose</td>
+            <td>lỏng lẻo</td>
+        </tr>
+        <tr>
+            <td>377</td>
+            <td>male</td>
+            <td>nam</td>
+        </tr>
+        <tr>
+            <td>378</td>
+            <td>quiet</td>
+            <td>yên tĩnh</td>
+        </tr>
+        <tr>
+            <td>379</td>
+            <td>brilliant</td>
+            <td>rực rỡ</td>
+        </tr>
+        <tr>
+            <td>380</td>
+            <td>dear</td>
+            <td>thân yêu</td>
+        </tr>
+        <tr>
+            <td>381</td>
+            <td>drunk</td>
+            <td>say rượu</td>
+        </tr>
+        <tr>
+            <td>382</td>
+            <td>empty</td>
+            <td>rỗng</td>
+        </tr>
+        <tr>
+            <td>383</td>
+            <td>female</td>
+            <td>nữ</td>
+        </tr>
+        <tr>
+            <td>384</td>
+            <td>inevitable</td>
+            <td>không thể tránh khỏi</td>
+        </tr>
+        <tr>
+            <td>385</td>
+            <td>neat</td>
+            <td>gọn gàng</td>
+        </tr>
+        <tr>
+            <td>386</td>
+            <td>ok</td>
+            <td>ok</td>
+        </tr>
+        <tr>
+            <td>387</td>
+            <td>representative</td>
+            <td>đại diện</td>
+        </tr>
+        <tr>
+            <td>388</td>
+            <td>silly</td>
+            <td>ngớ ngẩn</td>
+        </tr>
+        <tr>
+            <td>389</td>
+            <td>slight</td>
+            <td>nhẹ</td>
+        </tr>
+        <tr>
+            <td>390</td>
+            <td>smart</td>
+            <td>thông minh</td>
+        </tr>
+        <tr>
+            <td>391</td>
+            <td>stupid</td>
+            <td>ngu ngốc</td>
+        </tr>
+        <tr>
+            <td>392</td>
+            <td>temporary</td>
+            <td>tạm thời</td>
+        </tr>
+        <tr>
+            <td>393</td>
+            <td>weekly</td>
+            <td>hàng tuần</td>
+        </tr>
+        <tr>
+            <td>394</td>
+            <td>that</td>
+            <td>mà</td>
+        </tr>
+        <tr>
+            <td>395</td>
+            <td>this</td>
+            <td>này</td>
+        </tr>
+        <tr>
+            <td>396</td>
+            <td>what</td>
+            <td>những gì</td>
+        </tr>
+        <tr>
+            <td>397</td>
+            <td>which</td>
+            <td>mà</td>
+        </tr>
+        <tr>
+            <td>398</td>
+            <td>time</td>
+            <td>thời gian</td>
+        </tr>
+        <tr>
+            <td>399</td>
+            <td>these</td>
+            <td>các</td>
+        </tr>
+        <tr>
+            <td>400</td>
+            <td>work</td>
+            <td>công việc</td>
+        </tr>
+        <tr>
+            <td>401</td>
+            <td>no</td>
+            <td>không có</td>
+        </tr>
+        <tr>
+            <td>402</td>
+            <td>only</td>
+            <td>chỉ</td>
+        </tr>
+        <tr>
+            <td>403</td>
+            <td>first</td>
+            <td>đầu tiên</td>
+        </tr>
+        <tr>
+            <td>404</td>
+            <td>over</td>
+            <td>hơn</td>
+        </tr>
+        <tr>
+            <td>405</td>
+            <td>business</td>
+            <td>kinh doanh</td>
+        </tr>
+        <tr>
+            <td>406</td>
+            <td>his</td>
+            <td>mình</td>
+        </tr>
+        <tr>
+            <td>407</td>
+            <td>game</td>
+            <td>trò chơi</td>
+        </tr>
+        <tr>
+            <td>408</td>
+            <td>think</td>
+            <td>nghĩ</td>
+        </tr>
+        <tr>
+            <td>409</td>
+            <td>after</td>
+            <td>sau</td>
+        </tr>
+        <tr>
+            <td>410</td>
+            <td>life</td>
+            <td>cuộc sống</td>
+        </tr>
+        <tr>
+            <td>411</td>
+            <td>day</td>
+            <td>ngày</td>
+        </tr>
+        <tr>
+            <td>412</td>
+            <td>home</td>
+            <td>nhà</td>
+        </tr>
+        <tr>
+            <td>413</td>
+            <td>economy</td>
+            <td>nền kinh tế</td>
+        </tr>
+        <tr>
+            <td>414</td>
+            <td>away</td>
+            <td>đi</td>
+        </tr>
+        <tr>
+            <td>415</td>
+            <td>either</td>
+            <td>hoặc</td>
+        </tr>
+        <tr>
+            <td>416</td>
+            <td>fat</td>
+            <td>chất béo</td>
+        </tr>
+        <tr>
+            <td>417</td>
+            <td>key</td>
+            <td>chính</td>
+        </tr>
+        <tr>
+            <td>418</td>
+            <td>training</td>
+            <td>đào tạo</td>
+        </tr>
+        <tr>
+            <td>419</td>
+            <td>top</td>
+            <td>đầu</td>
+        </tr>
+        <tr>
+            <td>420</td>
+            <td>level</td>
+            <td>mức</td>
+        </tr>
+        <tr>
+            <td>421</td>
+            <td>far</td>
+            <td>đến nay</td>
+        </tr>
+        <tr>
+            <td>422</td>
+            <td>fun</td>
+            <td>vui vẻ</td>
+        </tr>
+        <tr>
+            <td>423</td>
+            <td>house</td>
+            <td>nhà</td>
+        </tr>
+        <tr>
+            <td>424</td>
+            <td>kind</td>
+            <td>loại</td>
+        </tr>
+        <tr>
+            <td>425</td>
+            <td>future</td>
+            <td>trong tương lai</td>
+        </tr>
+        <tr>
+            <td>426</td>
+            <td>action</td>
+            <td>hành động</td>
+        </tr>
+        <tr>
+            <td>427</td>
+            <td>live</td>
+            <td>sống</td>
+        </tr>
+        <tr>
+            <td>428</td>
+            <td>period</td>
+            <td>thời gian</td>
+        </tr>
+        <tr>
+            <td>429</td>
+            <td>subject</td>
+            <td>Tiêu đề</td>
+        </tr>
+        <tr>
+            <td>430</td>
+            <td>mean</td>
+            <td>có nghĩa là</td>
+        </tr>
+        <tr>
+            <td>431</td>
+            <td>stock</td>
+            <td>chứng khoán</td>
+        </tr>
+        <tr>
+            <td>432</td>
+            <td>chance</td>
+            <td>cơ hội</td>
+        </tr>
+        <tr>
+            <td>433</td>
+            <td>beginning</td>
+            <td>bắt đầu</td>
+        </tr>
+        <tr>
+            <td>434</td>
+            <td>upset</td>
+            <td>khó chịu</td>
+        </tr>
+        <tr>
+            <td>435</td>
+            <td>chicken</td>
+            <td>gà</td>
+        </tr>
+        <tr>
+            <td>436</td>
+            <td>head</td>
+            <td>đầu</td>
+        </tr>
+        <tr>
+            <td>437</td>
+            <td>material</td>
+            <td>tài liệu</td>
+        </tr>
+        <tr>
+            <td>438</td>
+            <td>salt</td>
+            <td>muối</td>
+        </tr>
+        <tr>
+            <td>439</td>
+            <td>car</td>
+            <td>xe</td>
+        </tr>
+        <tr>
+            <td>440</td>
+            <td>appropriate</td>
+            <td>thích hợp</td>
+        </tr>
+        <tr>
+            <td>441</td>
+            <td>inside</td>
+            <td>bên trong</td>
+        </tr>
+        <tr>
+            <td>442</td>
+            <td>outside</td>
+            <td>bên ngoài</td>
+        </tr>
+        <tr>
+            <td>443</td>
+            <td>standard</td>
+            <td>tiêu chuẩn</td>
+        </tr>
+        <tr>
+            <td>444</td>
+            <td>medium</td>
+            <td>trung</td>
+        </tr>
+        <tr>
+            <td>445</td>
+            <td>choice</td>
+            <td>lựa chọn</td>
+        </tr>
+        <tr>
+            <td>446</td>
+            <td>north</td>
+            <td>phía bắc</td>
+        </tr>
+        <tr>
+            <td>447</td>
+            <td>square</td>
+            <td>vuông</td>
+        </tr>
+        <tr>
+            <td>448</td>
+            <td>born</td>
+            <td>Ngày Sinh:</td>
+        </tr>
+        <tr>
+            <td>449</td>
+            <td>capital</td>
+            <td>vốn</td>
+        </tr>
+        <tr>
+            <td>450</td>
+            <td>shot</td>
+            <td>bắn</td>
+        </tr>
+        <tr>
+            <td>451</td>
+            <td>front</td>
+            <td>trước</td>
+        </tr>
+        <tr>
+            <td>452</td>
+            <td>living</td>
+            <td>sống</td>
+        </tr>
+        <tr>
+            <td>453</td>
+            <td>plastic</td>
+            <td>nhựa</td>
+        </tr>
+        <tr>
+            <td>454</td>
+            <td>express</td>
+            <td>thể hiện</td>
+        </tr>
+        <tr>
+            <td>455</td>
+            <td>mood</td>
+            <td>tâm trạng</td>
+        </tr>
+        <tr>
+            <td>456</td>
+            <td>feeling</td>
+            <td>cảm giác</td>
+        </tr>
+        <tr>
+            <td>457</td>
+            <td>otherwise</td>
+            <td>khác</td>
+        </tr>
+        <tr>
+            <td>458</td>
+            <td>plus</td>
+            <td>cộng với</td>
+        </tr>
+        <tr>
+            <td>459</td>
+            <td>savings</td>
+            <td>tiết kiệm</td>
+        </tr>
+        <tr>
+            <td>460</td>
+            <td>animal</td>
+            <td>động vật</td>
+        </tr>
+        <tr>
+            <td>461</td>
+            <td>budget</td>
+            <td>ngân sách</td>
+        </tr>
+        <tr>
+            <td>462</td>
+            <td>minute</td>
+            <td>phút</td>
+        </tr>
+        <tr>
+            <td>463</td>
+            <td>character</td>
+            <td>nhân vật</td>
+        </tr>
+        <tr>
+            <td>464</td>
+            <td>maximum</td>
+            <td>tối đa</td>
+        </tr>
+        <tr>
+            <td>465</td>
+            <td>novel</td>
+            <td>tiểu thuyết</td>
+        </tr>
+        <tr>
+            <td>466</td>
+            <td>plenty</td>
+            <td>nhiều</td>
+        </tr>
+        <tr>
+            <td>467</td>
+            <td>select</td>
+            <td>chọn</td>
+        </tr>
+        <tr>
+            <td>468</td>
+            <td>background</td>
+            <td>nền</td>
+        </tr>
+        <tr>
+            <td>469</td>
+            <td>forward</td>
+            <td>về phía trước</td>
+        </tr>
+        <tr>
+            <td>470</td>
+            <td>glass</td>
+            <td>kính</td>
+        </tr>
+        <tr>
+            <td>471</td>
+            <td>joint</td>
+            <td>doanh</td>
+        </tr>
+        <tr>
+            <td>472</td>
+            <td>master</td>
+            <td>chủ</td>
+        </tr>
+        <tr>
+            <td>473</td>
+            <td>red</td>
+            <td>màu đỏ</td>
+        </tr>
+        <tr>
+            <td>474</td>
+            <td>vegetable</td>
+            <td>rau</td>
+        </tr>
+        <tr>
+            <td>475</td>
+            <td>ideal</td>
+            <td>lý tưởng</td>
+        </tr>
+        <tr>
+            <td>476</td>
+            <td>kitchen</td>
+            <td>nhà bếp</td>
+        </tr>
+        <tr>
+            <td>477</td>
+            <td>mother</td>
+            <td>mẹ</td>
+        </tr>
+        <tr>
+            <td>478</td>
+            <td>party</td>
+            <td>bên</td>
+        </tr>
+        <tr>
+            <td>479</td>
+            <td>relative</td>
+            <td>tương đối</td>
+        </tr>
+        <tr>
+            <td>480</td>
+            <td>signal</td>
+            <td>tín hiệu</td>
+        </tr>
+        <tr>
+            <td>481</td>
+            <td>street</td>
+            <td>đường phố</td>
+        </tr>
+        <tr>
+            <td>482</td>
+            <td>connect</td>
+            <td>kết nối</td>
+        </tr>
+        <tr>
+            <td>483</td>
+            <td>minimum</td>
+            <td>tối thiểu</td>
+        </tr>
+        <tr>
+            <td>484</td>
+            <td>sea</td>
+            <td>biển</td>
+        </tr>
+        <tr>
+            <td>485</td>
+            <td>south</td>
+            <td>nam</td>
+        </tr>
+        <tr>
+            <td>486</td>
+            <td>status</td>
+            <td>tình trạng</td>
+        </tr>
+        <tr>
+            <td>487</td>
+            <td>daughter</td>
+            <td>con gái</td>
+        </tr>
+        <tr>
+            <td>488</td>
+            <td>hour</td>
+            <td>giờ</td>
+        </tr>
+        <tr>
+            <td>489</td>
+            <td>trick</td>
+            <td>lừa</td>
+        </tr>
+        <tr>
+            <td>490</td>
+            <td>afternoon</td>
+            <td>buổi chiều</td>
+        </tr>
+        <tr>
+            <td>491</td>
+            <td>gold</td>
+            <td>vàng</td>
+        </tr>
+        <tr>
+            <td>492</td>
+            <td>mission</td>
+            <td>Nhiệm vụ</td>
+        </tr>
+        <tr>
+            <td>493</td>
+            <td>agent</td>
+            <td>đại lý</td>
+        </tr>
+        <tr>
+            <td>494</td>
+            <td>corner</td>
+            <td>góc</td>
+        </tr>
+        <tr>
+            <td>495</td>
+            <td>east</td>
+            <td>đông</td>
+        </tr>
+        <tr>
+            <td>496</td>
+            <td>neither</td>
+            <td>không</td>
+        </tr>
+        <tr>
+            <td>497</td>
+            <td>parking</td>
+            <td>bãi đậu xe</td>
+        </tr>
+        <tr>
+            <td>498</td>
+            <td>routine</td>
+            <td>thường xuyên</td>
+        </tr>
+        <tr>
+            <td>499</td>
+            <td>swimming</td>
+            <td>bơi</td>
+        </tr>
+        <tr>
+            <td>500</td>
+            <td>winter</td>
+            <td>mùa đông</td>
+        </tr>
+        <tr>
+            <td>501</td>
+            <td>airline</td>
+            <td>hãng hàng không</td>
+        </tr>
+        <tr>
+            <td>502</td>
+            <td>designer</td>
+            <td>nhà thiết kế</td>
+        </tr>
+        <tr>
+            <td>503</td>
+            <td>dress</td>
+            <td>váy</td>
+        </tr>
+        <tr>
+            <td>504</td>
+            <td>emergency</td>
+            <td>trường hợp khẩn cấp</td>
+        </tr>
+        <tr>
+            <td>505</td>
+            <td>evening</td>
+            <td>buổi tối</td>
+        </tr>
+        <tr>
+            <td>506</td>
+            <td>extension</td>
+            <td>mở rộng</td>
+        </tr>
+        <tr>
+            <td>507</td>
+            <td>holiday</td>
+            <td>kỳ nghỉ</td>
+        </tr>
+        <tr>
+            <td>508</td>
+            <td>horror</td>
+            <td>kinh dị</td>
+        </tr>
+        <tr>
+            <td>509</td>
+            <td>mountain</td>
+            <td>núi</td>
+        </tr>
+        <tr>
+            <td>510</td>
+            <td>patient</td>
+            <td>bệnh nhân</td>
+        </tr>
+        <tr>
+            <td>511</td>
+            <td>proof</td>
+            <td>bằng chứng</td>
+        </tr>
+        <tr>
+            <td>512</td>
+            <td>west</td>
+            <td>tây</td>
+        </tr>
+        <tr>
+            <td>513</td>
+            <td>wine</td>
+            <td>rượu vang</td>
+        </tr>
+        <tr>
+            <td>514</td>
+            <td>expert</td>
+            <td>chuyên gia</td>
+        </tr>
+        <tr>
+            <td>515</td>
+            <td>native</td>
+            <td>bản địa</td>
+        </tr>
+        <tr>
+            <td>516</td>
+            <td>opening</td>
+            <td>mở</td>
+        </tr>
+        <tr>
+            <td>517</td>
+            <td>silver</td>
+            <td>bạc</td>
+        </tr>
+        <tr>
+            <td>518</td>
+            <td>waste</td>
+            <td>chất thải</td>
+        </tr>
+        <tr>
+            <td>519</td>
+            <td>plane</td>
+            <td>máy bay</td>
+        </tr>
+        <tr>
+            <td>520</td>
+            <td>leather</td>
+            <td>da</td>
+        </tr>
+        <tr>
+            <td>521</td>
+            <td>purple</td>
+            <td>màu tím</td>
+        </tr>
+        <tr>
+            <td>522</td>
+            <td>specialist</td>
+            <td>chuyên gia</td>
+        </tr>
+        <tr>
+            <td>523</td>
+            <td>bitter</td>
+            <td>cay đắng</td>
+        </tr>
+        <tr>
+            <td>524</td>
+            <td>incident</td>
+            <td>sự cố</td>
+        </tr>
+        <tr>
+            <td>525</td>
+            <td>motor</td>
+            <td>động cơ</td>
+        </tr>
+        <tr>
+            <td>526</td>
+            <td>pretend</td>
+            <td>giả vờ</td>
+        </tr>
+        <tr>
+            <td>527</td>
+            <td>prize</td>
+            <td>giải thưởng</td>
+        </tr>
+        <tr>
+            <td>528</td>
+            <td>resident</td>
+            <td>cư dân</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>

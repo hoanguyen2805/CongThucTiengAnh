@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+
+
+    </script>
+    <!-- End tim kiem-->
+    </div>
+    </div>
+    <br>
+    <br>
+    <b>1. Vị trí của tính từ: </b></p>
+    Tính từ được chia theo các vị trí như sau:
+    <p><b>a. Trước danh từ:</b></p>
+
+    Khi có nhiều tính từ đứng trước danh từ, trật tự của tính từ như sau:<br>
+    Opinion (nhận xét, ý kiến) > Size (kích thước) > Quality (chất lượng) > Age (tuổi) > Shape (hình
+    dạng) > Color (màu sắc) > Participle Forms (thì hoàn thành) > Origin (xuất xứ) > Material
+    (nguyên liệu) > Type (loại) > Purpose (mục đích sử dụng)
+    <br>
+    VD: a small house
+    <br>
+    an old woman
+
+    <p><b>b. Sau động từ: ( be và các động từ như seem, look, feel..)</b></p>
+    VD:
+    She is tired.
+    <br>
+    Jack is hungry.
+    <br>
+    John is very tall.
+    </p>
+    <b>c. Sau danh từ:</b> Tính từ có thể đi sau danh từ nó bổ trợ trong các trường hợp sau đây:
+
+    <p> * <b>Khi tính từ được dùng để phẩm chất/tính chất các đại từ bất định:</b></p>
+    VD:<br>
+    There is nothing interesting. [nothing là đại từ bất định]
+    <br>
+    I'll tell you something new. [something là đại từ bất định]
+
+    <p>* <b>Khi hai hay nhiều tính từ được nối với nhau bằng "and" hoặc "but", ý tưởng diễn tả bởi
+        tính từ được nhấn mạnh:
+    </b></p>
+    VD:
+    The writer is both clever and wise.(Nhà văn vùa thông minh vừa khôn ngoan)
+    <br>
+    The old man, poor but proud, refused my offer.
+
+    <p>* <b>Khi tính từ được dùng trong các cụm từ diễn tả sự đo lường:</b></p>
+    VD: <br>
+    The road is 5 kms long(Con đường dài 5km)
+    <br>
+    A building is ten storeys high(Tòa nhà đó cao 10 tầng)
+
+    <p> * <b>Khi tính từ ở dạng so sánh:</b></p>
+    VD: <br>
+    They have a house bigger than yours(Họ có ngôi nhà to hơn nhà của bạn)
+    <br>
+    The boys easiest to teach were in the classroom
+
+    <p> * <b>Khi các quá khứ phân từ là thành phần của mệnh đề được rút gọn:</b></p>
+    VD: <br>
+    The glass broken yesterday was very expensive( Cái kính bị vỡ hôm qua rất đắt tiền)
+
+    <p> * <b>Một số quá khứ phân từ (P2) như: involved, mentioned, indicated:</b></p>
+    VD:<br>
+    The court asked the people involved(Tòa án yêu cầu những người liên quan)
+    <br>
+    Look at the notes mentioned/indicated hereafter
+
+    <p><b>2. Tính từ được dùng như danh từ.</b></p>
+    Một số tính từ được dùng như danh từ để chỉ một tập hợp người hoặc một khái niệm thường có "the"
+    đi trước.
+    <br>
+    the poor, the blind, the rich, the deaf, the sick, the handicapped, the good, the old; ...
+    </p>
+    VD: The rich do not know how the poor live.
+    <br>
+    (the rich= rich people, the blind = blind people)
+    </p>
+    <b>3.Tính từ theo chức năng:</b></p>
+    a. <b>Tính từ chỉ sự miêu tả: </b> nice, green, blue, big, good...</p>
+
+    VD: a colorful room, a good boy, a big house.</p>
+
+    * <b>Tính từ chỉ mức độ:</b> là những tính từ có thể diễn tả tính chất hoặc đặc tính ở những mức
+    độ (lớn , nhỏ..) khác nhau. Những tính từ này có thể dùng ở dạng so sánh hoặc có thể phẩm định
+    bởi các phó từ chỉ mức độ như very, rather, so...</p>
+    VD:
+    small - smaller - smallest
+    <br>
+    beautiful - more beautiful - the most beautiful
+    <br>
+    very old - so hot - extremely good
+    </p>
+    b. <b>Tính từ chỉ số đếm:</b> bao gồm tính từ chỉ số đếm (cardianls) như one, two, three... và
+    những tính từ chỉ số thứ tự (ordinals) như first, second, third,..
+    </p>
+    c. <b>Đối với các từ chỉ thị: </b>this, that, these,those; sở hữu (possesives) như my, his,
+    their và bất định (indefinites) như some, many,
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>

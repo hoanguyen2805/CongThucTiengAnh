@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+
+        function hide_float_right(val) {
+            if (val == '1') {
+                $('.float_content_right').show();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(0)').text('Tắt tìm kiếm');
+            } else {
+                $('.float_content_right').hide();
+                $('.btn-show-hide').attr('onclick', 'hide_float_right(1)').text('Bật tìm kiếm');;
+            }
+        }
+        $(document).ready(function() {
+            hide_float_right(0)
+        });
+
+
+    </script>
+    <style>
+        .float-ck { position: fixed; top: 52px; z-index: 9000}
+        * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+        #float_content_right {border: 1px solid #01AEF0;}
+        #hide_float_right {text-align:right; font-size: 11px;}
+        #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+
+    </style>
+    <div class="float-ck" style="right: 0px">
+        <div type="hide_float_right">
+            <a href="javascript:void(0)" onclick="hide_float_right(1)" class="btn-show-hide">Tắt tìm
+                kiếm [X]</a></div>
+        <div type="float_content_right" class="float_content_right">
+            <!-- Start tim kiem-->
+
+            <form type="f1" name="f1" action="javascript:void()"
+                  onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+            parent.findString(this.t1.value);return false;">
+                <input type="text" type="t1" name="t1" value="" size="20">
+                <input type="submit" name="b1" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+    <script language="JavaScript">
+            var TRange=null;
+
+            function findString (str) {
+             if (parseInt(navigator.appVersion)<4) return;
+             var strFound;
+             if (window.find) {
+
+              // CODE FOR BROWSERS THAT SUPPORT window.find
+
+              strFound=self.find(str);
+              if (!strFound) {
+               strFound=self.find(str,0,1);
+               while (self.find(str,0,1)) continue;
+              }
+             }
+             else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+              // EXPLORER-SPECIFIC CODE
+
+              if (TRange!=null) {
+               TRange.collapse(false);
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+              if (TRange==null || strFound==0) {
+               TRange=self.document.body.createTextRange();
+               strFound=TRange.findText(str);
+               if (strFound) TRange.select();
+              }
+             }
+             else if (navigator.appName=="Opera") {
+              alert ("Opera browsers not supported, sorry...")
+              return;
+             }
+             if (!strFound) alert ("Không tìm thấy từ '"+str+"' !")
+             return;
+            }
+</script>
+    <!-- End tim kiem -->
+    </div>
+    </div>
+    <br><br>
+    <p><b>1. TRẠNG TỪ: TOO/SO</b>( cũng, cũng vậy, cũng thế)</p>
+    – Too: được đặt ở cuối câu không cần đảo ngữ.
+    <br>
+    – So: được đặt ở đầu câu và phải đảo ngữ (đảo chủ ngữ và động từ trong câu)
+    Cấu trúc:
+    <p><b>– S1 + V1. So to be/Trợ động từ S1.</b></p>
+
+    VD: She <b>likes</b> studying English. So <b>do</b> I.<br>
+(Cô ấy thích học tiếng anh .Tôi cũng vậy)</p>
+    I <b>was</b> hungry. She <b>was</b>, too.<br>
+    (Tôi đói. Cô ấy cũng đói.) </p>
+    I <b>watched</b> television last night. So <b>did</b> he.<br>
+    (Tôi xem ti vi tối qua. Anh ấy cũng vậy.)</p>
+    I <b>have written</b>  a letter to Jim. So <b>has</b> she.<br>
+(Tôi viết 1 lá thư cho Jim.Cô ấy cũng vậy)
+    <p><b>– S1 + V1. S1 + to be/ Trợ đọng từ, too.</b></p>
+
+    VD:
+    I <b>can</b> speak English. She <b>can</b> speak English, too. (She can, too)<br>
+    (Tôi có thể nói được tiếng Anh. Cô ấy cũng có thể nói được tiếng Anh).</p>
+    I love you.Me too<br>
+    (Anh yêu em.E cũng yêu anh)</p>
+    I <b>watched</b> television last night. So <b>did</b> he.<br>
+    (Tôi xem ti vi tối qua. Anh ấy cũng vậy.)</p>
+    I <b>have written</b>  a letter to Jim. She <b>has</b>, too.<br>
+(Tôi viết thứ cho Jim .Cô ấy cũng viết thư cho tôi)
+    <p><b>Chú ý:</b> Khi trong mệnh đề 1 có một cụm trợ động từ như will go, must do, can take,… thì khi chuyển sang câu đồng tình, những trợ động từ trong mệnh đề 1 được dùng lại.
+</p>
+    VD: I <b>can</b> speak Japanese. So <b>can</b> he.<br>
+(Tôi có thể nói tiếng Nhật.Anh ấy cũng thể nói tiếng Nhật)</p>
+    Jane <b>must</b> do housework. Jim <b>must</b>, too.<br>
+(Jane phải làm việc nhà. Jim cũng vậy)
+    <p><b>2. TRẠNG TỪ: EITHER/NEITHER</b></p>
+    Để diễn tả sự động ý, đồng tình nhưng lại mang ý phủ định ta dùng các trạng từ either hoặc neither.
+    </p>Either/Neither: cũng không.
+<br>
+    – Either: được đặt cuối câu, không đảo ngữ, luôn có not đứng trước either.
+<br>
+    – Neither: được đặt ở đầu câu, phải đảo ngữ.
+<br>
+    – Câu được đề cập trước phải ở thể phủ định.
+    </p>
+    Cấu trúc:
+    <p><b>– S1 + V1 (phủ định). Neither to be/Trợ động từ S1.</b>
+
+    VD: I don’t like playing football. Neither does John.<br>
+        (Tôi k thích chơi đán bóng.John cũng vậy)</p>
+
+    He isn’t good at Maths. Neither am I.<br>
+    (Anh ấy k giỏi toán,Tôi cũng vậy)</p>
+    She wasn’t hungry. Neither was I.<br>
+    (Cô ấy không đói. Tôi cũng không đói.)</p>
+    Lan didn’t like mikl. Neither did I.<br>
+    (Lan không thích sữa. Tôi cũng không.)
+    <p><b>– S1 + V1 (phủ định). S1 + to be/ trợ động từ, either.</b></p>
+
+    VD: I don’t like playing football. John does, either.<br>
+    He <b>isn’t</b> good at Maths. I <b>am</b>, either.<br>
+(Anh ấy k giỏi toán,Tôi cũng vậy)</p>
+    Lan <b>didn’t</b> like milk. I <b>didn’t</b> either.<br>
+    (Lan không thích sữa. Tôi cũng không.)
+    <p><b>Chú ý:</b> Khi trong mệnh đề 1 có một cụm trợ động từ như will go, must do, can take,… thì khi chuyển sang câu đồng tình, những trợ động từ trong mệnh đề 1 được dùng lại.
+</p>
+    VD: I <b>cannot</b> speak Japanese. Neither <b>can</b> he.<br>
+(Tôi k nói được tiếng Nhật.Anh ấy cũng thế)</p>
+    Jane has not been to Vietnam. Neither, have I.<br>
+    (Jane chưa từng đến Việt Nam. Tôi cũng vậy.)</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</head>
