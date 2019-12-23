@@ -75,11 +75,6 @@ public class SentenceFragment extends Fragment implements SentenceAdapter.OnItem
 
     @Override
     public void onClickItem(int position) {
-        if (position == mListSentences.size() - 1) {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://translate.google.com/"));
-            startActivity(browserIntent);
-            return;
-        }
         if (mListSentences.get(position).getType() == 0) {
             Intent intent = new Intent(getActivity(), DetailActivity.class);
             intent.putExtra(Constants.KEY_POSITION, position);

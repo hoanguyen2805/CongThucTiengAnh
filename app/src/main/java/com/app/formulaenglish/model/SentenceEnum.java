@@ -105,14 +105,7 @@ public enum SentenceEnum {
             "Bảng động từ bất quy tắc",
             null,
             "dongtubatquytac",
-            null),
-
-    SENTENCE_17(2, "Dịch từ online",
-            "Dịch từ online",
-            null,
-            "https://translate.google.com/",
             null);
-
 
     private int type;
     private String title;

@@ -26,6 +26,8 @@ public class FormulaEnglishActivity extends BaseActivity implements View.OnClick
     private void initViews() {
         ImageView mImgBack = findViewById(R.id.imgBack);
         mImgBack.setOnClickListener(this);
+
+
         FormulaPagerAdapter mFormulaPagerAdapter = new FormulaPagerAdapter(getSupportFragmentManager(), this);
 
         /*Khai báo và set các thuộc tính TabLayout*/

@@ -52,9 +52,12 @@ public class DetailActivity extends BaseActivity {
         int position = getIntent().getIntExtra(Constants.KEY_POSITION, 0);
         int positionChild = getIntent().getIntExtra(Constants.KEY_POSITION_CHILD, 0);
         boolean isChild = getIntent().getBooleanExtra(Constants.KEY_CHILD, false);
+
+        /*câu hoặc từ*/
         boolean isSentence = getIntent().getBooleanExtra(Constants.KEY_SENTENCE, false);
 
         List<Sentence> list;
+        /*nếu là câu*/
         if (isSentence) {
             list = DataUtil.getSentenceData();
         } else {
@@ -64,6 +67,7 @@ public class DetailActivity extends BaseActivity {
         if (isChild) {
             mTvTitle.setText(list.get(position).getChildSentence()[positionChild]);
         } else {
+
             mTvTitle.setText(list.get(position).getTitle());
         }
 
@@ -74,6 +78,7 @@ public class DetailActivity extends BaseActivity {
             } else {
                 html = list.get(position).getFileNameChild()[positionChild] + ".html";
             }
+
             if (isSentence) {
                 html = "sentence/" + html;
             } else {
@@ -83,9 +88,6 @@ public class DetailActivity extends BaseActivity {
             mWebView.loadUrl("file:///android_asset/" + html);
             mWebView.getSettings().setJavaScriptEnabled(true);
             mWebView.getSettings().setUseWideViewPort(true);
-
-            /*mWebView.requestFocus(View.FOCUS_DOWN);
-            mWebView.requestFocusFromTouch();*/
         }
     }
 
