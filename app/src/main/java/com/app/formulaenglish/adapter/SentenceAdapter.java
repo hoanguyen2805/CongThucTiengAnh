@@ -36,20 +36,25 @@ public class SentenceAdapter extends RecyclerView.Adapter<SentenceAdapter.Senten
         return new SentenceHolder(view);
     }
 
+    //thực hiện viện set cái giá trị cho cục con
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(SentenceHolder holder, int position) {
         if (mList != null && mList.size() > 0) {
             holder.tvTitle.setText(String.valueOf(position + 1) + ". " + mList.get(position).getTitle());
+            //nếu phần tử con của list không có description thì sẽ bị ẩn
             if (TextUtils.isEmpty(mList.get(position).getDescription())) {
                 holder.tvDescription.setVisibility(View.GONE);
-            } else {
+            } 
+            //nếu có
+            else {
                 holder.tvDescription.setVisibility(View.VISIBLE);
                 holder.tvDescription.setText(mList.get(position).getDescription());
             }
         }
     }
 
+    //lấy ra size của list
     @Override
     public int getItemCount() {
         if (mList != null) {
@@ -58,6 +63,7 @@ public class SentenceAdapter extends RecyclerView.Adapter<SentenceAdapter.Senten
         return 0;
     }
 
+    //SentenceHolder đại diện cho 1 cục con
     class SentenceHolder extends RecyclerView.ViewHolder {
         private final RelativeLayout content;
         private final TextView tvTitle;

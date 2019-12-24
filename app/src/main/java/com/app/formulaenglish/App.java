@@ -12,4 +12,9 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
     }
+
+    @Override
+    public void onTrimMemory(int level) {
+        super.onTrimMemory(level);
+    }
 }

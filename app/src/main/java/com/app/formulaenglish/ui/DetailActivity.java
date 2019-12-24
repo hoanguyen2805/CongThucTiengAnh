@@ -89,6 +89,7 @@ public class DetailActivity extends BaseActivity {
             mWebView.getSettings().setJavaScriptEnabled(true);
             mWebView.getSettings().setUseWideViewPort(true);
         }
+
     }
 
     @Override
